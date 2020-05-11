@@ -14,7 +14,7 @@
 | 389.        | [找不同](https://leetcode-cn.com/problems/find-the-difference/) | 使用异或求出出现奇数次的那个字符/数字                        |
 | 面试题05.06 | [整数转换](https://leetcode-cn.com/problems/convert-integer-lcci/) | 直接按位比较                                                 |
 | 693         | [交替位二进制数](https://leetcode-cn.com/problems/binary-number-with-alternating-bits/) | 按位比较，但是根据题意不能用for循环32位，而是“有效位数”，因此要不断右移 |
-| 231         | [231. 2的幂](https://leetcode-cn.com/problems/power-of-two/) | 2的幂在二进制中只有一位是1，因此可以判断 n& (n-1) ***[可以将最右边的1变为0]***是否等于0，或者判断 n&(-n) ***[可以使得最右边1保留，其它1变为0]***  是否等于n |
+| 231         | [231. 2的幂](https://leetcode-cn.com/problems/power-of-two/) | 2的幂在二进制中只有一位是1，因此可以判断 n& (n-1)  ***（可以将最右边的1变为0）***是否等于0，或者判断 n&(-n)  ***（可以使得最右边1保留，其它1变为0）***  是否等于n |
 | 342         | [342. 4的幂](https://leetcode-cn.com/problems/power-of-four/) | 先按231判断2的幂，然后4的幂满足1处于奇数位上，因此还要满足与0xaaaaaaaa做与运算为0 |
 |             |                                                              |                                                              |
 |             |                                                              |                                                              |
