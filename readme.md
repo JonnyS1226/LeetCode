@@ -4,11 +4,12 @@
 
 [解法与总结]()
 
-| No.         | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span>                                                       | Remark                                                       |
+| No.         | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                                                       |
 | ----------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 136.        | [只出现一次的数字](https://leetcode-cn.com/problems/single-number/) | 直接异或                                                     |
 | 137.        | [只出现一次的数字Ⅱ](https://leetcode-cn.com/problems/single-number-ii/) | 1. 二进制表示中的每一位相加并分析。 2. 直接使用位运算（理解有难度，结合自动机） |
 | 260.        | [只出现一次的数字 Ⅲ](https://leetcode-cn.com/problems/single-number-iii/) | 分组异或                                                     |
+| 645         | [645. 错误的集合](https://leetcode-cn.com/problems/set-mismatch/) | 同260，先补充数组，再分组异或                                |
 | 318.        | [最大单词长度乘积](https://leetcode-cn.com/problems/maximum-product-of-word-lengths/) | 把字符串映射成26位二进制位，若两个单词无相同字符，则与操作结果为0 |
 | 1318.       | [或运算的最小翻转次数](https://leetcode-cn.com/problems/minimum-flips-to-make-a-or-b-equal-to-c/) | 从二进制每一位来模拟或运算即可                               |
 | 389.        | [找不同](https://leetcode-cn.com/problems/find-the-difference/) | 使用异或求出出现奇数次的那个字符/数字                        |
@@ -16,24 +17,24 @@
 | 693         | [交替位二进制数](https://leetcode-cn.com/problems/binary-number-with-alternating-bits/) | 按位比较，但是根据题意不能用for循环32位，而是“有效位数”，因此要不断右移 |
 | 231         | [231. 2的幂](https://leetcode-cn.com/problems/power-of-two/) | 2的幂在二进制中只有一位是1，因此可以判断 n& (n-1)  **（可以将最右边的1变为0）** 是否等于0，或者判断 n&(-n)  （**可以使得最右边1保留，其它1变为0**）  是否等于n |
 | 342         | [342. 4的幂](https://leetcode-cn.com/problems/power-of-four/) | 先按231判断2的幂，然后4的幂满足1处于奇数位上，因此还要满足与0xaaaaaaaa做与运算为0 |
-|             |                                                              |                                                              |
+| 268         | [268. 缺失数字](https://leetcode-cn.com/problems/missing-number/) | 异或                                                         |
 |             |                                                              |                                                              |
 
 #### 二分查找
 
 [解法与总结]()
 
-| No.   | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span>                                                       | Remark                                                     |
-| ----- | ------------------------------------------------------------ | ---------------------------------------------------------- |
-| 1095  | [山脉数组中查找目标值](https://leetcode-cn.com/problems/find-in-mountain-array/) | 三次二分查找（找山顶，再在前后两个有序数组中二分找target） |
-| 33.   | [搜索旋转排序数组](https://leetcode-cn.com/problems/search-in-rotated-sorted-array/) | 整个旋转数组是两段有序数组，因此可以进行二分               |
-| 34.   | [在排序数组中查找元素的第一个和最后一个位置](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/) | 直接找左边界和有边界                                       |
-| 35.   | [搜索插入位置](https://leetcode-cn.com/problems/search-insert-position/) | 直接二分查找即可，若找不到，返回值就是插入位置             |
-| 1011. | [在D天内送达包裹的能力](https://leetcode-cn.com/problems/capacity-to-ship-packages-within-d-days/) | 本质上是枚举遍历，只不过使用二分进行了优化                 |
-| 875.  | [爱吃香蕉的珂珂](https://leetcode-cn.com/problems/koko-eating-bananas/) | 类似1011，本质上是遍历优化                                 |
-| 69    | [x的平方根](https://leetcode-cn.com/problems/sqrtx/)         | 二分查找(0,x)                                              |
-|       |                                                              |                                                            |
-|       |                                                              |                                                            |
+| No.   | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                                                       |
+| ----- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 1095  | [山脉数组中查找目标值](https://leetcode-cn.com/problems/find-in-mountain-array/) | 三次二分查找（找山顶，再在前后两个有序数组中二分找target）   |
+| 33.   | [搜索旋转排序数组](https://leetcode-cn.com/problems/search-in-rotated-sorted-array/) | 整个旋转数组是两段有序数组，因此可以进行二分                 |
+| 34.   | [在排序数组中查找元素的第一个和最后一个位置](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/) | 直接找左边界和有边界                                         |
+| 35.   | [搜索插入位置](https://leetcode-cn.com/problems/search-insert-position/) | 直接二分查找即可，若找不到，返回值就是插入位置               |
+| 1011. | [在D天内送达包裹的能力](https://leetcode-cn.com/problems/capacity-to-ship-packages-within-d-days/) | 本质上是枚举遍历，只不过使用二分进行了优化                   |
+| 875.  | [爱吃香蕉的珂珂](https://leetcode-cn.com/problems/koko-eating-bananas/) | 类似1011，本质上是遍历优化                                   |
+| 69    | [x的平方根](https://leetcode-cn.com/problems/sqrtx/)         | 二分查找(0,x)                                                |
+| 287   | [287. 寻找重复数](https://leetcode-cn.com/problems/find-the-duplicate-number/) | 二分查找(0,n)，判定指针移动的标准是小于等于x的数的个数是否大于x（抽屉原理） |
+|       |                                                              |                                                              |
 
 #### 链表类型题
 
@@ -102,6 +103,10 @@
 | 236  | [二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/) | 两个节点的最近公共祖先满足这两个节点分列左右子树，因此递归全盘搜索 |
 |      |                                                              |                                                              |
 |      |                                                              |                                                              |
+| 437  | [437. 路径总和 III](https://leetcode-cn.com/problems/path-sum-iii/) | 两次dfs（先序遍历）                                          |
+|      |                                                              |                                                              |
+|      |                                                              |                                                              |
+|      |                                                              |                                                              |
 
 
 
@@ -114,7 +119,10 @@
 | 42   | [42. 接雨水](https://leetcode-cn.com/problems/trapping-rain-water/) |                                                              |      |
 | 84   | [84. 柱状图中最大的矩形](https://leetcode-cn.com/problems/largest-rectangle-in-histogram/) | 求以每个矩形高度为框出来高度的最大矩形面积（这一步通过单调栈，对于某个矩形高度，找向左延伸第一个小于它的，向右延伸第一个小于它的，然后求面积），再在里面取最大的。 |      |
 | 496  | [496. 下一个更大元素 I](https://leetcode-cn.com/problems/next-greater-element-i/) | 构造一个单调递减栈，找到一个比栈顶大的就出栈，这个元素就是出栈元素后面第一个比它大的 |      |
-|      |                                                              |                                                              |      |
+| 503  | [503. 下一个更大元素 II](https://leetcode-cn.com/problems/next-greater-element-ii/) |                                                              |      |
+| 739  | [739. 每日温度](https://leetcode-cn.com/problems/daily-temperatures/) |                                                              |      |
+| 239  | [239. 滑动窗口最大值](https://leetcode-cn.com/problems/sliding-window-maximum/) |                                                              |      |
+| 901  | [901. 股票价格跨度](https://leetcode-cn.com/problems/online-stock-span/) |                                                              |      |
 |      |                                                              |                                                              |      |
 |      |                                                              |                                                              |      |
 
@@ -122,9 +130,9 @@
 
 #### 经典模板
 
-| No.  | <span style="white-space:nowrap;">Template&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span>                                                     | description                                                  | case                                                         |
+| No.  | <span style="white-space:nowrap;">Template</span>            | description                                                  | case                                                         |
 | ---- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 1    | 快速幂 [50. Pow(x, n)](https://leetcode-cn.com/problems/powx-n/), | 从位运算或者从幂数二分的角度，将幂运算从 $O(n)$ 提升到 $O(log_2n$) | [372. 超级次方](https://leetcode-cn.com/problems/super-pow/) |
-|      |                                                              |                                                              |                                                              |
+| 2    | 前缀和                                                       | 即前n项的累加和（也可能是其它计数），对于无序数组计算区间和有效果。常与hash表或者桶合用 | [560. 和为K的子数组](https://leetcode-cn.com/problems/subarray-sum-equals-k/), <br>[1248. 统计「优美子数组」](https://leetcode-cn.com/problems/count-number-of-nice-subarrays/)<br> [554. 砖墙](https://leetcode-cn.com/problems/brick-wall/)<br> |
 |      |                                                              |                                                              |                                                              |
 
