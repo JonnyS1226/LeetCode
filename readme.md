@@ -40,13 +40,16 @@
 
 [解法与总结]()
 
-| No.  | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span>                                                        | Remark                                                       |
+| No.  | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                                                       |
 | ---- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 21.  | [合并两个有序链表](https://leetcode-cn.com/problems/merge-two-sorted-lists/) | 简单的双指针依次比较归并                                     |
 | 23.  | [合并k个有序链表](https://leetcode-cn.com/problems/merge-k-sorted-lists/) | 在No.21的基础上加上分治策略                                  |
 | 61.  | [旋转链表](https://leetcode-cn.com/problems/rotate-list/)    | 先连成环（这步非必须），再添加断点。本质就是找到旋转后的头节点 |
 | 206. | [反转链表](https://leetcode-cn.com/problems/reverse-linked-list/) | 迭代法：三指针逐步分析     递归法：输入一个节点 `head`，将「以 `head` 为起点」的链表反转，并返回反转之后的头结点 |
-|      |                                                              |                                                              |
+| 25   | [25. K 个一组翻转链表](https://leetcode-cn.com/problems/reverse-nodes-in-k-group/) |                                                              |
+| 24   | [24. 两两交换链表中的节点](https://leetcode-cn.com/problems/swap-nodes-in-pairs/) | 可设置一个dummyhead，然后链表依次操作                        |
+| 92   | [92. 反转链表 II](https://leetcode-cn.com/problems/reverse-linked-list-ii/) |                                                              |
+| 234  | [234. 回文链表](https://leetcode-cn.com/problems/palindrome-linked-list/) |                                                              |
 |      |                                                              |                                                              |
 |      |                                                              |                                                              |
 
@@ -125,6 +128,31 @@
 | 901  | [901. 股票价格跨度](https://leetcode-cn.com/problems/online-stock-span/) |                                                              |      |
 |      |                                                              |                                                              |      |
 |      |                                                              |                                                              |      |
+
+#### 滑动窗口
+
+[解法与总结]()
+
+| No.  | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark |
+| ---- | ------------------------------------------------------------ | ------ |
+| 1052 | [1052. 爱生气的书店老板](https://leetcode-cn.com/problems/grumpy-bookstore-owner/) |        |
+|      |                                                              |        |
+|      |                                                              |        |
+
+
+
+#### 拓扑排序
+
+[解法与总结]()
+
+| No   | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                          |
+| ---- | ------------------------------------------------------------ | ------------------------------- |
+| 207  | [207. 课程表](https://leetcode-cn.com/problems/course-schedule/) | 拓扑排序标准模板，判断是否是DAG |
+| 210  | [210. 课程表 II](https://leetcode-cn.com/problems/course-schedule-ii/) | 带结果集的拓扑排序              |
+| 329  | [329. 矩阵中的最长递增路径](https://leetcode-cn.com/problems/longest-increasing-path-in-a-matrix/) |                                 |
+| 1203 | [1203. 项目管理](https://leetcode-cn.com/problems/sort-items-by-groups-respecting-dependencies/) |                                 |
+|      |                                                              |                                 |
+|      |                                                              |                                 |
 
 
 
