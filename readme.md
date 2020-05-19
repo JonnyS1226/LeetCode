@@ -59,7 +59,7 @@
 
 [解法与总结]()
 
-| No.  | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span>                                                        | Remark                                                       |
+| No.  | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                                                       |
 | ---- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 55   | [跳跃游戏](https://leetcode-cn.com/problems/jump-game/)      | dp[i]表示是否能跳到下标为i的元素，可以使用动态规划解决       |
 | 983  | [最低票价](https://leetcode-cn.com/problems/minimum-cost-for-tickets/) | dp[i]表示前i天买票旅行的最低消费，dp[i]由dp[i-1],dp[i-7],dp[i-30]决定 |
@@ -70,6 +70,13 @@
 | 1340 | [跳跃游戏Ⅴ](https://leetcode-cn.com/problems/jump-game-v/)   | dp[i]表示某一点i可以到达的最大点个数，dp[i] = 1 + max(max(dp[i-d]...dp[i-1]), max(dp[i+1, i+d]))，其中要排除位置高度大于i位置的部分 |
 | 221  | [最大正方形](https://leetcode-cn.com/problems/maximal-square/) | dp(*i*,*j*) 表示以 (i, j)为右下角，且只包含1的正方形的边长最大值，dp(i, j) = min(dp(i-1, j), dp(i, j-1), dp(i-1, j-1)) + 1 |
 | 1277 | [统计全为1的正方形子矩阵](https://leetcode-cn.com/problems/count-square-submatrices-with-all-ones/) | 同221                                                        |
+| 53   | [53. 最大子序和](https://leetcode-cn.com/problems/maximum-subarray/) | *f*(*i*) = max{*f*(*i*−1)+*ai* , *ai*}                       |
+| 152  | [152. 乘积最大子数组](https://leetcode-cn.com/problems/maximum-product-subarray/) | 类似最大连续和，但是要同时维护最大乘积dp和最小乘积dp（应对负数乘积为正的情况） |
+| 198  | [198. 打家劫舍](https://leetcode-cn.com/problems/house-robber/) | dp[i]表示前i+1个房屋最大偷窃金额，dp[i] = max(dp[i-1], dp[i-2] + nums[i]) |
+| 213  | [213. 打家劫舍 II](https://leetcode-cn.com/problems/house-robber-ii/) | 类似198，可以将环形划分解成[0:n-2]和[1:n-1]两个线性的dp，使用同198的递推式分段解决，求最大值 |
+| 516  | [516. 最长回文子序列](https://leetcode-cn.com/problems/longest-palindromic-subsequence/) | 子序列问题的动态规划，dp(i)(j)表示s[i]-s[j]区间内最长回文子序列长度，注意区间dp要斜着打表或者反着打表。 <br>也可以转换为求逆字符串，再求最长公共子序列 |
+| 300  | [300. 最长上升子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/) |                                                              |
+| 1143 | [1143. 最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) |                                                              |
 |      |                                                              |                                                              |
 
 
@@ -156,11 +163,33 @@
 
 
 
+#### 回文系列
+
+[解法与总结]()
+
+| No   | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                                         |
+| ---- | ------------------------------------------------------------ | ---------------------------------------------- |
+| 125  | [125. 验证回文串](https://leetcode-cn.com/problems/valid-palindrome/) | 首尾双指针                                     |
+| 680  | [680. 验证回文字符串 Ⅱ](https://leetcode-cn.com/problems/valid-palindrome-ii/) | 首尾双指针，结合递归判断                       |
+| 1328 | [1328. 破坏回文串](https://leetcode-cn.com/problems/break-a-palindrome/) |                                                |
+| 9    | [9. 回文数](https://leetcode-cn.com/problems/palindrome-number/) |                                                |
+| 409  | [409. 最长回文串](https://leetcode-cn.com/problems/longest-palindrome/) |                                                |
+| 5    | [5. 最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/) | 中心扩展暴力，或者manacher算法                 |
+| 516  | [516. 最长回文子序列](https://leetcode-cn.com/problems/longest-palindromic-subsequence/) | 注意子串和子序列的区别，子序列问题常用动态规划 |
+|      |                                                              |                                                |
+|      |                                                              |                                                |
+
+
+
+
+
+
+
 #### 经典模板
 
 | No.  | <span style="white-space:nowrap;">Template</span>            | description                                                  | case                                                         |
 | ---- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 1    | 快速幂 [50. Pow(x, n)](https://leetcode-cn.com/problems/powx-n/), | 从位运算或者从幂数二分的角度，将幂运算从 $O(n)$ 提升到 $O(log_2n$) | [372. 超级次方](https://leetcode-cn.com/problems/super-pow/) |
-| 2    | 前缀和                                                       | 即前n项的累加和（也可能是其它计数），对于无序数组计算区间和有效果。常与hash表或者桶合用 | [560. 和为K的子数组](https://leetcode-cn.com/problems/subarray-sum-equals-k/), <br>[1248. 统计「优美子数组」](https://leetcode-cn.com/problems/count-number-of-nice-subarrays/)<br> [554. 砖墙](https://leetcode-cn.com/problems/brick-wall/)<br> |
+| 2    | 前缀和（积）                                                 | 即前n项的累加和（也可能是其它计数），对于无序数组计算区间和有效果。常与hash表或者桶合用 | [560. 和为K的子数组](https://leetcode-cn.com/problems/subarray-sum-equals-k/), <br>[1248. 统计「优美子数组」](https://leetcode-cn.com/problems/count-number-of-nice-subarrays/)<br> [554. 砖墙](https://leetcode-cn.com/problems/brick-wall/)<br>[238. 除自身以外数组的乘积](https://leetcode-cn.com/problems/product-of-array-except-self/)(前缀和后缀积的技巧)<br>[1423. 可获得的最大点数](https://leetcode-cn.com/problems/maximum-points-you-can-obtain-from-cards/)<br> |
 |      |                                                              |                                                              |                                                              |
 
