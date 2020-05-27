@@ -139,11 +139,11 @@
 
 [解法与总结]()
 
-| No   | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark |
-| ---- | ------------------------------------------------------------ | ------ |
-|      |                                                              |        |
-|      |                                                              |        |
-|      |                                                              |        |
+| No   | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                                                       |
+| ---- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 130  | [130. 被围绕的区域](https://leetcode-cn.com/problems/surrounded-regions/) | 从边界开始dfs(或BFS)，找到不被包围的，其他就是被包围的       |
+| 417  | [417. 太平洋大西洋水流问题](https://leetcode-cn.com/problems/pacific-atlantic-water-flow/) | 从两个边界开始 两次dfs（或BFS），都遍历到的地方就是结果集一部分 |
+|      |                                                              |                                                              |
 
 
 
@@ -255,7 +255,7 @@
 | No.  | <span style="white-space:nowrap;">Template</span>            | description                                                  | case                                                         |
 | ---- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 1    | 快速幂 [50. Pow(x, n)](https://leetcode-cn.com/problems/powx-n/), | 从位运算或者从幂数二分的角度，将幂运算从 $O(n)$ 提升到 $O(log_2n$) | [372. 超级次方](https://leetcode-cn.com/problems/super-pow/) |
-| 2    | 前缀和（积）                                                 | 即前n项的累加和（也可能是其它计数），对于无序数组计算区间和有效果。常与hash表或者桶合用 | [560. 和为K的子数组](https://leetcode-cn.com/problems/subarray-sum-equals-k/), <br>[1248. 统计「优美子数组」](https://leetcode-cn.com/problems/count-number-of-nice-subarrays/)<br> [554. 砖墙](https://leetcode-cn.com/problems/brick-wall/)<br>[238. 除自身以外数组的乘积](https://leetcode-cn.com/problems/product-of-array-except-self/)(前缀和后缀积的技巧)<br>[1423. 可获得的最大点数](https://leetcode-cn.com/problems/maximum-points-you-can-obtain-from-cards/)<br>[1371. 每个元音包含偶数次的最长子字符串](https://leetcode-cn.com/problems/find-the-longest-substring-containing-vowels-in-even-counts/)(状态压缩+前缀和)<br>[209. 长度最小的子数组](https://leetcode-cn.com/problems/minimum-size-subarray-sum/)<br> |
+| 2    | 前缀和（积）                                                 | 即前n项的累加和（也可能是其它计数），对于无序数组计算区间和有效果。常与hash表或者桶合用 | [560. 和为K的子数组](https://leetcode-cn.com/problems/subarray-sum-equals-k/), <br>[974. 和可被 K 整除的子数组](https://leetcode-cn.com/problems/subarray-sums-divisible-by-k/)(状态压缩+前缀和)<br/>[1248. 统计「优美子数组」](https://leetcode-cn.com/problems/count-number-of-nice-subarrays/)<br> [554. 砖墙](https://leetcode-cn.com/problems/brick-wall/)<br>[238. 除自身以外数组的乘积](https://leetcode-cn.com/problems/product-of-array-except-self/)(前缀和后缀积的技巧)<br>[1423. 可获得的最大点数](https://leetcode-cn.com/problems/maximum-points-you-can-obtain-from-cards/)<br>[1371. 每个元音包含偶数次的最长子字符串](https://leetcode-cn.com/problems/find-the-longest-substring-containing-vowels-in-even-counts/)(状态压缩+前缀和)<br>[209. 长度最小的子数组](https://leetcode-cn.com/problems/minimum-size-subarray-sum/)<br> |
 | 3    | Manacher                                                     | 用于解决最长回文子串问题，本质是暴力中心扩展的优化           | [5. 最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/)<br> |
 | 4    | KMP                                                          | 经典串匹配算法，也是对暴力法的优化加速                       |                                                              |
 |      |                                                              |                                                              |                                                              |
