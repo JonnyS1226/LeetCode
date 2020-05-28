@@ -78,7 +78,7 @@
 | 198  | [198. 打家劫舍](https://leetcode-cn.com/problems/house-robber/) | dp[i]表示前i+1个房屋最大偷窃金额，dp[i] = max(dp[i-1], dp[i-2] + nums[i]) |
 | 213  | [213. 打家劫舍 II](https://leetcode-cn.com/problems/house-robber-ii/) | 类似198，可以将环形划分解成[0:n-2]和[1:n-1]两个线性的dp，使用同198的递推式分段解决，求最大值 |
 | 516  | [516. 最长回文子序列](https://leetcode-cn.com/problems/longest-palindromic-subsequence/) | 子序列问题的动态规划，dp(i)(j)表示s[i]-s[j]区间内最长回文子序列长度，注意区间dp要斜着打表或者反着打表。 <br>也可以转换为求逆字符串，再求最长公共子序列 |
-| 300  | [300. 最长上升子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/) |                                                              |
+| 300  | [300. 最长上升子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/) | dp[i]=max{dp[j]}+1，if num[i] > num[j], 其中i>j，其中dp[i]表示前i个得最长递增序列长度，且nums[i]必须选择 |
 | 1143 | [1143. 最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) |                                                              |
 |      |                                                              |                                                              |
 | 718  | [718. 最长重复子数组](https://leetcode-cn.com/problems/maximum-length-of-repeated-subarray/) |                                                              |
@@ -160,7 +160,7 @@
 
 
 
-#### 单调栈问题
+#### 栈/单调栈问题
 
 [解法与总结]()
 
@@ -175,6 +175,9 @@
 | 901  | [901. 股票价格跨度](https://leetcode-cn.com/problems/online-stock-span/) | 与496，739一样的思路                                         |      |
 | 402  | [402. 移掉K位数字](https://leetcode-cn.com/problems/remove-k-digits/) | 贪心的想法+单调递增栈                                        |      |
 | 33   | [面试题33. 二叉搜索树的后序遍历序列](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof/) | 递归分治O($n^2$)，*可以用单调栈实现O(n)                      |      |
+|      |                                                              |                                                              |      |
+| 394  | [394. 字符串解码](https://leetcode-cn.com/problems/decode-string/) | 维护数字栈和字符栈，碰到[入栈，碰到]出栈                     |      |
+|      |                                                              |                                                              |      |
 |      |                                                              |                                                              |      |
 
 #### 滑动窗口
