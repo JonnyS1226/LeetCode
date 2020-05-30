@@ -77,14 +77,20 @@
 | 152  | [152. 乘积最大子数组](https://leetcode-cn.com/problems/maximum-product-subarray/) | 类似最大连续和，但是要同时维护最大乘积dp和最小乘积dp（应对负数乘积为正的情况） |
 | 198  | [198. 打家劫舍](https://leetcode-cn.com/problems/house-robber/) | dp[i]表示前i+1个房屋最大偷窃金额，dp[i] = max(dp[i-1], dp[i-2] + nums[i]) |
 | 213  | [213. 打家劫舍 II](https://leetcode-cn.com/problems/house-robber-ii/) | 类似198，可以将环形划分解成[0:n-2]和[1:n-1]两个线性的dp，使用同198的递推式分段解决，求最大值 |
+| 740  | [740. 删除与获得点数](https://leetcode-cn.com/problems/delete-and-earn/) | 可以转换为198问题                                            |
+|      |                                                              |                                                              |
 | 516  | [516. 最长回文子序列](https://leetcode-cn.com/problems/longest-palindromic-subsequence/) | 子序列问题的动态规划，dp(i)(j)表示s[i]-s[j]区间内最长回文子序列长度，注意区间dp要斜着打表或者反着打表。 <br>也可以转换为求逆字符串，再求最长公共子序列 |
 | 300  | [300. 最长上升子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/) | dp[i]=max{dp[j]}+1，if num[i] > num[j], 其中i>j，其中dp[i]表示前i个得最长递增序列长度，且nums[i]必须选择 |
-| 1143 | [1143. 最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) |                                                              |
+| 1143 | [1143. 最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) | dp[i] [j]代表text1前i个字符和text2前j个字符的最长公共子序列  |
 |      |                                                              |                                                              |
-| 718  | [718. 最长重复子数组](https://leetcode-cn.com/problems/maximum-length-of-repeated-subarray/) |                                                              |
+| 718  | [718. 最长重复子数组](https://leetcode-cn.com/problems/maximum-length-of-repeated-subarray/) | dp[i] [j]表示A前i个和B前j个 最长公共子数组长度               |
 |      |                                                              |                                                              |
 | 5419 | [5419. 两个子序列的最大点积](https://leetcode-cn.com/problems/max-dot-product-of-two-subsequences/) | 类似72，1143，  两个数组的dp， $O(n^2)$                      |
 |      |                                                              |                                                              |
+|      |                                                              |                                                              |
+| 1139 | [1139. 最大的以 1 为边界的正方形](https://leetcode-cn.com/problems/largest-1-bordered-square/) |                                                              |
+|      |                                                              |                                                              |
+| 64   | [64. 最小路径和](https://leetcode-cn.com/problems/minimum-path-sum/) | $dp[i][j] = min(dp[i-1][j], dp[i][j-1]) + grid[i][j]$        |
 
 
 
