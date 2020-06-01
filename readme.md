@@ -91,6 +91,9 @@
 | 1139 | [1139. 最大的以 1 为边界的正方形](https://leetcode-cn.com/problems/largest-1-bordered-square/) |                                                              |
 |      |                                                              |                                                              |
 | 64   | [64. 最小路径和](https://leetcode-cn.com/problems/minimum-path-sum/) | $dp[i][j] = min(dp[i-1][j], dp[i][j-1]) + grid[i][j]$        |
+|      |                                                              |                                                              |
+| 5411 | [5411. 摘樱桃 II](https://leetcode-cn.com/problems/cherry-pickup-ii/)（hard） | 三层dp dp[ijk]表示第i行，机器人1在j列，机器人2在k列的最大樱桃数 |
+|      |                                                              |                                                              |
 
 
 
@@ -134,14 +137,14 @@
 | 105  | [105. 从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) | 前序遍历第一个元素就是根，根据该元素在中序遍历中找到树的左右子树，然后递归或者迭代 连接 |
 | 106  | [106. 从中序与后序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/) | 后序遍历最后一个元素就是根，根据该元素在中序遍历中找到树的左右子树，然后递归或者迭代 连接 |
 |      |                                                              |                                                              |
-|      |                                                              |                                                              |
+| 101  | [101. 对称二叉树](https://leetcode-cn.com/problems/symmetric-tree/) | 递归：相当于两个指针，分别比较左右子树；迭代：一次从队列取出两个 比较值是否相等或者是否只有一个为空 |
 |      |                                                              |                                                              |
 |      |                                                              |                                                              |
 |      |                                                              |                                                              |
 
 
 
-#### DFS/BFS
+#### DFS/BFS/dijkstra/floyd/图算法
 
 [解法与总结]()
 
@@ -149,13 +152,30 @@
 | ---- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 130  | [130. 被围绕的区域](https://leetcode-cn.com/problems/surrounded-regions/) | 从边界开始dfs(或BFS)，找到不被包围的，其他就是被包围的       |
 | 417  | [417. 太平洋大西洋水流问题](https://leetcode-cn.com/problems/pacific-atlantic-water-flow/) | 从两个边界开始 两次dfs（或BFS），都遍历到的地方就是结果集一部分 |
+| 5426 | [5426. 重新规划路线](https://leetcode-cn.com/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero/) | $O(n^2)$超时，可以建两种顺序的图，BFS，bfs也可以并查集       |
+|      |                                                              |                                                              |
+| 5410 | [5410. 课程安排 IV](https://leetcode-cn.com/problems/course-schedule-iv/) |                                                              |
 |      |                                                              |                                                              |
 
+
+
+#### 并查集
+
+[解法与总结]()
+| No   | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark |
+| ---- | ------------------------------------------------------------ | ------ |
+| 5426 | [5426. 重新规划路线](https://leetcode-cn.com/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero/) |        |
+|      |                                                              |        |
+|      |                                                              |        |
+|      |                                                              |        |
+|      |                                                              |        |
+|      |                                                              |        |
 
 
 #### 回溯剪枝
 
 [解法与总结]()
+
 | No   | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                                                       |
 | ---- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 46   | [46. 全排列](https://leetcode-cn.com/problems/permutations/) | 回溯剪枝，可以用交换法，也可以纯回溯                         |
@@ -196,7 +216,7 @@
 | 209  | [209. 长度最小的子数组](https://leetcode-cn.com/problems/minimum-size-subarray-sum/) | 典型滑窗，也可以用前缀和+二分法                              |
 | 76   | [76. 最小覆盖子串](https://leetcode-cn.com/problems/minimum-window-substring/) | 滑窗，判断窗口内是否满足要求，若不满足则扩大窗口，满足则尝试缩小 |
 | 424  | [424. 替换后的最长重复字符](https://leetcode-cn.com/problems/longest-repeating-character-replacement/) | 滑动窗口，窗口内条件right - left + 1 - tmpMaxCnt <= k        |
-|      |                                                              |                                                              |
+| 1456 | [1456. 定长子串中元音的最大数目](https://leetcode-cn.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/) | map+滑动窗口                                                 |
 
 
 
@@ -236,6 +256,33 @@
 |      |                                                              |                                 |
 
 
+
+#### 字符串独立专题（前缀、后缀、字典树及其它技巧）
+
+[解法与总结]()
+| No   | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark         |
+| ---- | ------------------------------------------------------------ | -------------- |
+| 459  | [459. 重复的子字符串](https://leetcode-cn.com/problems/repeated-substring-pattern/) | 重复子串的特性 |
+| 1044 | [1044. 最长重复子串](https://leetcode-cn.com/problems/longest-duplicate-substring/) |                |
+|      |                                                              |                |
+|      |                                                              |                |
+|      |                                                              |                |
+|      |                                                              |                |
+
+
+
+#### 数学题
+
+[解法与总结]()
+
+| No   | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                                                       |
+| ---- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 961  | [961. 重复 N 次的元素](https://leetcode-cn.com/problems/n-repeated-element-in-size-2n-array/) | 推理：相当于N个不相同的元素，插入N个相同的元素，一定存在连续3个元素中有2个相同的值，这个值就是结果 |
+|      |                                                              |                                                              |
+|      |                                                              |                                                              |
+|      |                                                              |                                                              |
+|      |                                                              |                                                              |
+|      |                                                              |                                                              |
 
 #### 回文系列
 
