@@ -18,7 +18,7 @@
 | 231         | [231. 2的幂](https://leetcode-cn.com/problems/power-of-two/) | 2的幂在二进制中只有一位是1，因此可以判断 n& (n-1)  **（可以将最右边的1变为0）** 是否等于0，或者判断 n&(-n)  （**可以使得最右边1保留，其它1变为0**）  是否等于n |
 | 342         | [342. 4的幂](https://leetcode-cn.com/problems/power-of-four/) | 先按231判断2的幂，然后4的幂满足1处于奇数位上，因此还要满足与0xaaaaaaaa做与运算为0 |
 | 268         | [268. 缺失数字](https://leetcode-cn.com/problems/missing-number/) | 异或                                                         |
-|             |                                                              |                                                              |
+| 717         | [717. 1比特与2比特字符](https://leetcode-cn.com/problems/1-bit-and-2-bit-characters/) | 总是以0结尾，所以只要看最后一个0和倒数第二个0之间1的个数(即连续的1个数)，为奇数就返回false，偶数是true，可用异或计数 |
 
 #### 二分查找
 
@@ -93,7 +93,7 @@
 | 64   | [64. 最小路径和](https://leetcode-cn.com/problems/minimum-path-sum/) | $dp[i][j] = min(dp[i-1][j], dp[i][j-1]) + grid[i][j]$        |
 |      |                                                              |                                                              |
 | 5411 | [5411. 摘樱桃 II](https://leetcode-cn.com/problems/cherry-pickup-ii/)（hard） | 三层dp dp[ijk]表示第i行，机器人1在j列，机器人2在k列的最大樱桃数 |
-|      |                                                              |                                                              |
+| 837  | [837. 新21点](https://leetcode-cn.com/problems/new-21-game/) | dp[i]表示当前和为i（i < K）时获胜的概率， dp[i] = 摸j点的概率(1/w) 乘以 摸完之后成功的概率(dp[]i+j])，并遍历j求和 |
 
 
 
@@ -154,7 +154,7 @@
 | 417  | [417. 太平洋大西洋水流问题](https://leetcode-cn.com/problems/pacific-atlantic-water-flow/) | 从两个边界开始 两次dfs（或BFS），都遍历到的地方就是结果集一部分 |
 | 5426 | [5426. 重新规划路线](https://leetcode-cn.com/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero/) | $O(n^2)$超时，可以建两种顺序的图，BFS，bfs也可以并查集       |
 |      |                                                              |                                                              |
-| 5410 | [5410. 课程安排 IV](https://leetcode-cn.com/problems/course-schedule-iv/) |                                                              |
+| 5410 | [5410. 课程安排 IV](https://leetcode-cn.com/problems/course-schedule-iv/) | 可以用floyd算法判断两点是否有通路，或者使用并查集            |
 |      |                                                              |                                                              |
 
 
@@ -162,14 +162,14 @@
 #### 并查集
 
 [解法与总结]()
-| No   | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark |
-| ---- | ------------------------------------------------------------ | ------ |
-| 5426 | [5426. 重新规划路线](https://leetcode-cn.com/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero/) |        |
-|      |                                                              |        |
-|      |                                                              |        |
-|      |                                                              |        |
-|      |                                                              |        |
-|      |                                                              |        |
+| No    | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark         |
+| ----- | ------------------------------------------------------------ | -------------- |
+| 5426  | [5426. 重新规划路线](https://leetcode-cn.com/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero/) | 此处使用并查集 |
+| 5410  | [5410. 课程安排 IV](https://leetcode-cn.com/problems/course-schedule-iv/) | 此处使用并查集 |
+| 130   | [130. 被围绕的区域](https://leetcode-cn.com/problems/surrounded-regions/) |                |
+| 959   | [959. 由斜杠划分区域](https://leetcode-cn.com/problems/regions-cut-by-slashes/) |                |
+| 17.07 | [面试题 17.07. 婴儿名字](https://leetcode-cn.com/problems/baby-names-lcci/) |                |
+|       |                                                              |                |
 
 
 #### 回溯剪枝
@@ -278,7 +278,7 @@
 | No   | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                                                       |
 | ---- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 961  | [961. 重复 N 次的元素](https://leetcode-cn.com/problems/n-repeated-element-in-size-2n-array/) | 推理：相当于N个不相同的元素，插入N个相同的元素，一定存在连续3个元素中有2个相同的值，这个值就是结果 |
-|      |                                                              |                                                              |
+| 189  | [189. Rotate Array](https://leetcode-cn.com/problems/rotate-array/) |                                                              |
 |      |                                                              |                                                              |
 |      |                                                              |                                                              |
 |      |                                                              |                                                              |
