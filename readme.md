@@ -162,14 +162,14 @@
 #### 并查集
 
 [解法与总结]()
-| No    | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark         |
-| ----- | ------------------------------------------------------------ | -------------- |
-| 5426  | [5426. 重新规划路线](https://leetcode-cn.com/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero/) | 此处使用并查集 |
-| 5410  | [5410. 课程安排 IV](https://leetcode-cn.com/problems/course-schedule-iv/) | 此处使用并查集 |
-| 130   | [130. 被围绕的区域](https://leetcode-cn.com/problems/surrounded-regions/) |                |
-| 959   | [959. 由斜杠划分区域](https://leetcode-cn.com/problems/regions-cut-by-slashes/) |                |
-| 17.07 | [面试题 17.07. 婴儿名字](https://leetcode-cn.com/problems/baby-names-lcci/) |                |
-|       |                                                              |                |
+| No    | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                                                       |
+| ----- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 5426  | [5426. 重新规划路线](https://leetcode-cn.com/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero/) | 此处使用并查集                                               |
+| 5410  | [5410. 课程安排 IV](https://leetcode-cn.com/problems/course-schedule-iv/) | 此处使用并查集                                               |
+| 130   | [130. 被围绕的区域](https://leetcode-cn.com/problems/surrounded-regions/) |                                                              |
+| 959   | [959. 由斜杠划分区域](https://leetcode-cn.com/problems/regions-cut-by-slashes/) |                                                              |
+| 17.07 | [面试题 17.07. 婴儿名字](https://leetcode-cn.com/problems/baby-names-lcci/) |                                                              |
+| 128   | [128. 最长连续序列](https://leetcode-cn.com/problems/longest-consecutive-sequence/)（hard） | 维护一个map(size)，将num，num-1，num+1这样的merge，并根据连通分量的size不断更新ans |
 
 
 #### 回溯剪枝
