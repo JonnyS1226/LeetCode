@@ -67,6 +67,7 @@
 | 55   | [跳跃游戏](https://leetcode-cn.com/problems/jump-game/)      | dp[i]表示是否能跳到下标为i的元素，可以使用动态规划解决       |
 | 983  | [最低票价](https://leetcode-cn.com/problems/minimum-cost-for-tickets/) | dp[i]表示前i天买票旅行的最低消费，dp[i]由dp[i-1],dp[i-7],dp[i-30]决定 |
 | 70   | [爬楼梯](https://leetcode-cn.com/problems/climbing-stairs/)  | dp[i]表示爬i层楼的方法数，dp[i] = dp[i-1] + dp[i-2];         |
+| 46   | [面试题46. 把数字翻译成字符串](https://leetcode-cn.com/problems/ba-shu-zi-fan-yi-cheng-zi-fu-chuan-lcof/) | 类似70                                                       |
 | 322  | [零钱兑换](https://leetcode-cn.com/problems/coin-change/)    | dp[i]表示凑总金额i所需最少硬币数，dp[i] = min(dp[i], dp[i-coin]+1); |
 | 518  | [零钱兑换Ⅱ](https://leetcode-cn.com/problems/coin-change-2/) | dp[i]表示凑总金额i的方法数，dp[i] = $ \sum$ dp[i-coin];      |
 | 72   | [编辑距离](https://leetcode-cn.com/problems/edit-distance/)  | 用 dp[i] [j] 表示 `A` 的前 `i` 个字母和 `B` 的前 `j` 个字母之间的编辑距离. |
@@ -75,6 +76,10 @@
 | 1277 | [统计全为1的正方形子矩阵](https://leetcode-cn.com/problems/count-square-submatrices-with-all-ones/) | 同221                                                        |
 | 53   | [53. 最大子序和](https://leetcode-cn.com/problems/maximum-subarray/) | *f*(*i*) = max{*f*(*i*−1)+*ai* , *ai*}                       |
 | 152  | [152. 乘积最大子数组](https://leetcode-cn.com/problems/maximum-product-subarray/) | 类似最大连续和，但是要同时维护最大乘积dp和最小乘积dp（应对负数乘积为正的情况） |
+| 343  | [343. Integer Break](https://leetcode-cn.com/problems/integer-break/) | dpi 表示n的题设下，分割整数后的乘积最大值                    |
+|      |                                                              |                                                              |
+|      |                                                              |                                                              |
+|      |                                                              |                                                              |
 | 198  | [198. 打家劫舍](https://leetcode-cn.com/problems/house-robber/) | dp[i]表示前i+1个房屋最大偷窃金额，dp[i] = max(dp[i-1], dp[i-2] + nums[i]) |
 | 213  | [213. 打家劫舍 II](https://leetcode-cn.com/problems/house-robber-ii/) | 类似198，可以将环形划分解成[0:n-2]和[1:n-1]两个线性的dp，使用同198的递推式分段解决，求最大值 |
 | 740  | [740. 删除与获得点数](https://leetcode-cn.com/problems/delete-and-earn/) | 可以转换为198问题                                            |
@@ -93,6 +98,7 @@
 | 64   | [64. 最小路径和](https://leetcode-cn.com/problems/minimum-path-sum/) | $dp[i][j] = min(dp[i-1][j], dp[i][j-1]) + grid[i][j]$        |
 |      |                                                              |                                                              |
 | 5411 | [5411. 摘樱桃 II](https://leetcode-cn.com/problems/cherry-pickup-ii/)（hard） | 三层dp dp[ijk]表示第i行，机器人1在j列，机器人2在k列的最大樱桃数 |
+| 5431 | [5431. 给房子涂色 III](https://leetcode-cn.com/problems/paint-house-iii/)（hard） | 三维dp，dp i j k 表示第i个房子，涂了第j个颜色，且形成了k个社区的最小花费 |
 | 837  | [837. 新21点](https://leetcode-cn.com/problems/new-21-game/) | dp[i]表示当前和为i（i < K）时获胜的概率， dp[i] = 摸j点的概率(1/w) 乘以 摸完之后成功的概率(dp[]i+j])，并遍历j求和 |
 
 
@@ -152,7 +158,10 @@
 | ---- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 130  | [130. 被围绕的区域](https://leetcode-cn.com/problems/surrounded-regions/) | 从边界开始dfs(或BFS)，找到不被包围的，其他就是被包围的       |
 | 417  | [417. 太平洋大西洋水流问题](https://leetcode-cn.com/problems/pacific-atlantic-water-flow/) | 从两个边界开始 两次dfs（或BFS），都遍历到的地方就是结果集一部分 |
-| 5426 | [5426. 重新规划路线](https://leetcode-cn.com/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero/) | $O(n^2)$超时，可以建两种顺序的图，BFS，bfs也可以并查集       |
+| 5426 | [5426. 重新规划路线](https://leetcode-cn.com/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero/) | $O(n^2)$超时，可以建两种顺序的图，BFS，也可以并查集          |
+| 127  | [127. 单词接龙](https://leetcode-cn.com/problems/word-ladder/) |                                                              |
+| 126  | [126. 单词接龙 II](https://leetcode-cn.com/problems/word-ladder-ii/)（hard） | bfs层级遍历，并标层级号， 然后dfs从结束点回溯，找到路径存储。 |
+| 433  | [433. 最小基因变化](https://leetcode-cn.com/problems/minimum-genetic-mutation/) |                                                              |
 |      |                                                              |                                                              |
 | 5410 | [5410. 课程安排 IV](https://leetcode-cn.com/problems/course-schedule-iv/) | 可以用floyd算法判断两点是否有通路，或者使用并查集            |
 |      |                                                              |                                                              |
@@ -170,6 +179,8 @@
 | 959   | [959. 由斜杠划分区域](https://leetcode-cn.com/problems/regions-cut-by-slashes/) |                                                              |
 | 17.07 | [面试题 17.07. 婴儿名字](https://leetcode-cn.com/problems/baby-names-lcci/) |                                                              |
 | 128   | [128. 最长连续序列](https://leetcode-cn.com/problems/longest-consecutive-sequence/)（hard） | 维护一个map(size)，将num，num-1，num+1这样的merge，并根据连通分量的size不断更新ans |
+| 990   | [990. Satisfiability of Equality Equations](https://leetcode-cn.com/problems/satisfiability-of-equality-equations/) | 等号则连通，不等号则判断左右两个是否在一个连通里，如果在，则返回false |
+|       |                                                              |                                                              |
 
 
 #### 回溯剪枝
@@ -220,7 +231,7 @@
 
 
 
-#### 快慢指针
+#### 快慢指针/部分双指针
 
 [解法与总结]()
 
@@ -233,7 +244,9 @@
 | 234  | [234. 回文链表](https://leetcode-cn.com/problems/palindrome-linked-list/) | 空间O(1)：找中点，翻转后半段, pre指向翻转后头节点，比较两段相同长度部分 |
 | 202  | [202. 快乐数](https://leetcode-cn.com/problems/happy-number/) | 快慢指针思路，用这种方法判断是不是无限循环                   |
 | 876  | [876. 链表的中间结点](https://leetcode-cn.com/problems/middle-of-the-linked-list/) | 快慢指针                                                     |
-|      |                                                              |                                                              |
+| 26   | [26. Remove Duplicates from Sorted Array](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/) | 快慢指针原地修改题                                           |
+| 27   | [27. Remove Element](https://leetcode-cn.com/problems/remove-element/) | 快慢指针原地修改题                                           |
+| 283  | [283. Move Zeroes](https://leetcode-cn.com/problems/move-zeroes/) | 快慢指针原地修改题                                           |
 |      |                                                              |                                                              |
 |      |                                                              |                                                              |
 |      |                                                              |                                                              |
@@ -288,17 +301,17 @@
 
 [解法与总结]()
 
-| No   | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                                         |
-| ---- | ------------------------------------------------------------ | ---------------------------------------------- |
-| 125  | [125. 验证回文串](https://leetcode-cn.com/problems/valid-palindrome/) | 首尾双指针                                     |
-| 680  | [680. 验证回文字符串 Ⅱ](https://leetcode-cn.com/problems/valid-palindrome-ii/) | 首尾双指针，结合递归判断                       |
-| 1328 | [1328. 破坏回文串](https://leetcode-cn.com/problems/break-a-palindrome/) |                                                |
-| 9    | [9. 回文数](https://leetcode-cn.com/problems/palindrome-number/) |                                                |
-| 409  | [409. 最长回文串](https://leetcode-cn.com/problems/longest-palindrome/) |                                                |
-| 5    | [5. 最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/) | 中心扩展暴力，或者manacher算法                 |
-| 516  | [516. 最长回文子序列](https://leetcode-cn.com/problems/longest-palindromic-subsequence/) | 注意子串和子序列的区别，子序列问题常用动态规划 |
-|      |                                                              |                                                |
-|      |                                                              |                                                |
+| No   | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                                                       |
+| ---- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 125  | [125. 验证回文串](https://leetcode-cn.com/problems/valid-palindrome/) | 首尾双指针                                                   |
+| 680  | [680. 验证回文字符串 Ⅱ](https://leetcode-cn.com/problems/valid-palindrome-ii/) | 首尾双指针，结合递归判断                                     |
+| 1328 | [1328. 破坏回文串](https://leetcode-cn.com/problems/break-a-palindrome/) |                                                              |
+| 9    | [9. 回文数](https://leetcode-cn.com/problems/palindrome-number/) | 可以转换为字符串，或者取出每位，计算其逆序的数，优化方案是不需要每一位都取出来，只要取出一半 |
+| 409  | [409. 最长回文串](https://leetcode-cn.com/problems/longest-palindrome/) |                                                              |
+| 5    | [5. 最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/) | 中心扩展暴力，或者manacher算法                               |
+| 516  | [516. 最长回文子序列](https://leetcode-cn.com/problems/longest-palindromic-subsequence/) | 注意子串和子序列的区别，子序列问题常用动态规划               |
+|      |                                                              |                                                              |
+|      |                                                              |                                                              |
 
 
 
@@ -313,7 +326,7 @@
 | 1    | 快速幂 [50. Pow(x, n)](https://leetcode-cn.com/problems/powx-n/), | 从位运算或者从幂数二分的角度，将幂运算从 $O(n)$ 提升到 $O(log_2n$) | [372. 超级次方](https://leetcode-cn.com/problems/super-pow/) |
 | 2    | 前缀和（积）                                                 | 即前n项的累加和（也可能是其它计数），对于无序数组计算区间和有效果。常与hash表或者桶合用 | [560. 和为K的子数组](https://leetcode-cn.com/problems/subarray-sum-equals-k/), <br>[974. 和可被 K 整除的子数组](https://leetcode-cn.com/problems/subarray-sums-divisible-by-k/)(状态压缩+前缀和)<br/>[1248. 统计「优美子数组」](https://leetcode-cn.com/problems/count-number-of-nice-subarrays/)<br> [554. 砖墙](https://leetcode-cn.com/problems/brick-wall/)<br>[238. 除自身以外数组的乘积](https://leetcode-cn.com/problems/product-of-array-except-self/)(前缀和后缀积的技巧)<br>[1423. 可获得的最大点数](https://leetcode-cn.com/problems/maximum-points-you-can-obtain-from-cards/)<br>[1371. 每个元音包含偶数次的最长子字符串](https://leetcode-cn.com/problems/find-the-longest-substring-containing-vowels-in-even-counts/)(状态压缩+前缀和)<br>[209. 长度最小的子数组](https://leetcode-cn.com/problems/minimum-size-subarray-sum/)<br> |
 | 3    | Manacher                                                     | 用于解决最长回文子串问题，本质是暴力中心扩展的优化           | [5. 最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/)<br> |
-| 4    | KMP                                                          | 经典串匹配算法，也是对暴力法的优化加速                       |                                                              |
+| 4    | KMP                                                          | 经典串匹配算法，也是对暴力法的优化加速                       | [28. 实现 strStr()](https://leetcode-cn.com/problems/implement-strstr/) |
 |      |                                                              |                                                              |                                                              |
 |      |                                                              |                                                              |                                                              |
 
