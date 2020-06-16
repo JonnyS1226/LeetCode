@@ -36,7 +36,8 @@
 | 69    | [x的平方根](https://leetcode-cn.com/problems/sqrtx/)         | 二分查找(0,x)                                                |
 | 287   | [287. 寻找重复数](https://leetcode-cn.com/problems/find-the-duplicate-number/) | 二分查找(0,n)，判定指针移动的标准是小于等于x的数的个数是否大于x（抽屉原理） |
 | 209   | [209. 长度最小的子数组](https://leetcode-cn.com/problems/minimum-size-subarray-sum/) | 可以滑窗，也可以用前缀和构造有序数组，然后二分查找           |
-|       |                                                              |                                                              |
+| 1300  | [1300. Sum of Mutated Array Closest to Target](https://leetcode-cn.com/problems/sum-of-mutated-array-closest-to-target/) | 两次二分查找（一次是二分枚举，一次是二分查找大于等于数组中元素），结合前缀和 |
+| 5438  | [5438. Minimum Number of Days to Make m Bouquets](https://leetcode-cn.com/problems/minimum-number-of-days-to-make-m-bouquets/) | 二分查找枚举法                                               |
 | 4     | [4. 寻找两个正序数组的中位数](https://leetcode-cn.com/problems/median-of-two-sorted-arrays/)（hard） |                                                              |
 
 #### 链表类型题
@@ -135,7 +136,7 @@
 | 572  | [另一个树的子树](https://leetcode-cn.com/problems/subtree-of-another-tree/) | 当前两个树的根节点值相等； 并且，s 的左子树和 t 的左子树相等； 并且，s 的右子树和 t 的右子树相等。 |
 | 538  | [把二叉搜索树转换成累加树](https://leetcode-cn.com/problems/convert-bst-to-greater-tree/) | 反中序遍历                                                   |
 | 236  | [二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/) | 两个节点的最近公共祖先满足这两个节点分列左右子树，因此递归全盘搜索 |
-|      |                                                              |                                                              |
+| 297  | [297. Serialize and Deserialize Binary Tree](https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/)（hard） | 序列化和反序列化，用层序遍历即可                             |
 |      |                                                              |                                                              |
 | 437  | [437. 路径总和 III](https://leetcode-cn.com/problems/path-sum-iii/) | 两次dfs（先序遍历）                                          |
 | 116  | [116. 填充每个节点的下一个右侧节点指针](https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node/) |                                                              |
@@ -212,7 +213,7 @@
 | 901  | [901. 股票价格跨度](https://leetcode-cn.com/problems/online-stock-span/) | 与496，739一样的思路                                         |      |
 | 402  | [402. 移掉K位数字](https://leetcode-cn.com/problems/remove-k-digits/) | 贪心的想法+单调递增栈                                        |      |
 | 33   | [面试题33. 二叉搜索树的后序遍历序列](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof/) | 递归分治O($n^2$)，*可以用单调栈实现O(n)                      |      |
-|      |                                                              |                                                              |      |
+| 5420 | [5420. Final Prices With a Special Discount in a Shop](https://leetcode-cn.com/problems/final-prices-with-a-special-discount-in-a-shop/) | 单调栈的简单应用                                             |      |
 | 394  | [394. 字符串解码](https://leetcode-cn.com/problems/decode-string/) | 维护数字栈和字符栈，碰到[入栈，碰到]出栈                     |      |
 |      |                                                              |                                                              |      |
 |      |                                                              |                                                              |      |
@@ -225,9 +226,11 @@
 | ---- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 1052 | [1052. 爱生气的书店老板](https://leetcode-cn.com/problems/grumpy-bookstore-owner/) | 可以维护一个大小为X的滑动窗口，O(xn)   **                    |
 | 209  | [209. 长度最小的子数组](https://leetcode-cn.com/problems/minimum-size-subarray-sum/) | 典型滑窗，也可以用前缀和+二分法                              |
-| 76   | [76. 最小覆盖子串](https://leetcode-cn.com/problems/minimum-window-substring/) | 滑窗，判断窗口内是否满足要求，若不满足则扩大窗口，满足则尝试缩小 |
+| 76   | [76. 最小覆盖子串](https://leetcode-cn.com/problems/minimum-window-substring/)（hard） | 滑窗，判断窗口内是否满足要求，若不满足则扩大窗口，满足则尝试缩小 |
 | 424  | [424. 替换后的最长重复字符](https://leetcode-cn.com/problems/longest-repeating-character-replacement/) | 滑动窗口，窗口内条件right - left + 1 - tmpMaxCnt <= k        |
 | 1456 | [1456. 定长子串中元音的最大数目](https://leetcode-cn.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/) | map+滑动窗口                                                 |
+| 5423 | [5423. Find Two Non-overlapping Sub-arrays Each With Target Sum](https://leetcode-cn.com/problems/find-two-non-overlapping-sub-arrays-each-with-target-sum/) | 从后往前的滑动窗口+dp                                        |
+|      |                                                              |                                                              |
 
 
 
