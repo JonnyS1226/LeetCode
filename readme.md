@@ -143,7 +143,7 @@
 |      |                                                              |                                                              |
 | 105  | [105. 从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) | 前序遍历第一个元素就是根，根据该元素在中序遍历中找到树的左右子树，然后递归或者迭代 连接 |
 | 106  | [106. 从中序与后序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/) | 后序遍历最后一个元素就是根，根据该元素在中序遍历中找到树的左右子树，然后递归或者迭代 连接 |
-|      |                                                              |                                                              |
+| 1028 | [1028. 从先序遍历还原二叉树](https://leetcode-cn.com/problems/recover-a-tree-from-preorder-traversal/)（hard） | 通过-确定层级关系，控制出入栈                                |
 | 101  | [101. 对称二叉树](https://leetcode-cn.com/problems/symmetric-tree/) | 递归：相当于两个指针，分别比较左右子树；迭代：一次从队列取出两个 比较值是否相等或者是否只有一个为空 |
 |      |                                                              |                                                              |
 |      |                                                              |                                                              |
