@@ -97,7 +97,7 @@
 | 1139 | [1139. 最大的以 1 为边界的正方形](https://leetcode-cn.com/problems/largest-1-bordered-square/) |                                                              |
 |      |                                                              |                                                              |
 | 64   | [64. 最小路径和](https://leetcode-cn.com/problems/minimum-path-sum/) | $dp[i][j] = min(dp[i-1][j], dp[i][j-1]) + grid[i][j]$        |
-|      |                                                              |                                                              |
+| 10   | [10. 正则表达式匹配](https://leetcode-cn.com/problems/regular-expression-matching/)（hard） | 用dp i  j 表示 s的前 i 个字符与 p中的前 j 个字符是否能够匹配。 |
 | 5411 | [5411. 摘樱桃 II](https://leetcode-cn.com/problems/cherry-pickup-ii/)（hard） | 三层dp dp[ijk]表示第i行，机器人1在j列，机器人2在k列的最大樱桃数 |
 | 5431 | [5431. 给房子涂色 III](https://leetcode-cn.com/problems/paint-house-iii/)（hard） | 三维dp，dp i j k 表示第i个房子，涂了第j个颜色，且形成了k个社区的最小花费 |
 | 837  | [837. 新21点](https://leetcode-cn.com/problems/new-21-game/) | dp[i]表示当前和为i（i < K）时获胜的概率， dp[i] = 摸j点的概率(1/w) 乘以 摸完之后成功的概率(dp[]i+j])，并遍历j求和 |
@@ -146,8 +146,8 @@
 | 1028 | [1028. 从先序遍历还原二叉树](https://leetcode-cn.com/problems/recover-a-tree-from-preorder-traversal/)（hard） | 通过-确定层级关系，控制出入栈                                |
 | 101  | [101. 对称二叉树](https://leetcode-cn.com/problems/symmetric-tree/) | 递归：相当于两个指针，分别比较左右子树；迭代：一次从队列取出两个 比较值是否相等或者是否只有一个为空 |
 |      |                                                              |                                                              |
-|      |                                                              |                                                              |
-|      |                                                              |                                                              |
+| 124  | [124. 二叉树中的最大路径和](https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/)（hard） | 递归 dfs                                                     |
+| 543  | [543. 二叉树的直径](https://leetcode-cn.com/problems/diameter-of-binary-tree/) | 类似124，dfs                                                 |
 
 
 
@@ -276,29 +276,29 @@
 #### 字符串独立专题（前缀、后缀、字典树及其它技巧）
 
 [解法与总结]()
-| No   | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark         |
-| ---- | ------------------------------------------------------------ | -------------- |
-| 459  | [459. 重复的子字符串](https://leetcode-cn.com/problems/repeated-substring-pattern/) | 重复子串的特性 |
-| 1044 | [1044. 最长重复子串](https://leetcode-cn.com/problems/longest-duplicate-substring/) |                |
-|      |                                                              |                |
-|      |                                                              |                |
-|      |                                                              |                |
-|      |                                                              |                |
+| No   | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                  |
+| ---- | ------------------------------------------------------------ | ----------------------- |
+| 459  | [459. 重复的子字符串](https://leetcode-cn.com/problems/repeated-substring-pattern/) | 重复子串的特性          |
+| 1044 | [1044. 最长重复子串](https://leetcode-cn.com/problems/longest-duplicate-substring/) |                         |
+| 67   | [67. 二进制求和](https://leetcode-cn.com/problems/add-binary/) | 模拟字符串n进制求和即可 |
+| 989  | [989. 数组形式的整数加法](https://leetcode-cn.com/problems/add-to-array-form-of-integer/) | 大数加法                |
+| 43   | [43. 字符串相乘](https://leetcode-cn.com/problems/multiply-strings/) | 大数乘法                |
+|      |                                                              |                         |
 
 
 
-#### 数学题
+#### 数学题/细节分类讨论题
 
 [解法与总结]()
 
-| No   | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                                                       |
-| ---- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 961  | [961. 重复 N 次的元素](https://leetcode-cn.com/problems/n-repeated-element-in-size-2n-array/) | 推理：相当于N个不相同的元素，插入N个相同的元素，一定存在连续3个元素中有2个相同的值，这个值就是结果 |
-| 189  | [189. Rotate Array](https://leetcode-cn.com/problems/rotate-array/) |                                                              |
-|      |                                                              |                                                              |
-|      |                                                              |                                                              |
-|      |                                                              |                                                              |
-|      |                                                              |                                                              |
+| No    | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                                                       |
+| ----- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 961   | [961. 重复 N 次的元素](https://leetcode-cn.com/problems/n-repeated-element-in-size-2n-array/) | 推理：相当于N个不相同的元素，插入N个相同的元素，一定存在连续3个元素中有2个相同的值，这个值就是结果 |
+| 189   | [189. Rotate Array](https://leetcode-cn.com/problems/rotate-array/) |                                                              |
+| 16.18 | [面试题 16.18. 模式匹配](https://leetcode-cn.com/problems/pattern-matching-lcci/) | 暴力枚举，+ 严格分类讨论                                     |
+|       |                                                              |                                                              |
+|       |                                                              |                                                              |
+|       |                                                              |                                                              |
 
 #### 回文系列
 
@@ -315,8 +315,6 @@
 | 516  | [516. 最长回文子序列](https://leetcode-cn.com/problems/longest-palindromic-subsequence/) | 注意子串和子序列的区别，子序列问题常用动态规划               |
 |      |                                                              |                                                              |
 |      |                                                              |                                                              |
-
-
 
 
 
