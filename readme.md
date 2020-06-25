@@ -92,8 +92,8 @@
 | 718  | [718. 最长重复子数组](https://leetcode-cn.com/problems/maximum-length-of-repeated-subarray/) | dp[i] [j]表示A前i个和B前j个 最长公共子数组长度               |
 |      |                                                              |                                                              |
 | 5419 | [5419. 两个子序列的最大点积](https://leetcode-cn.com/problems/max-dot-product-of-two-subsequences/) | 类似72，1143，  两个数组的dp， $O(n^2)$                      |
-|      |                                                              |                                                              |
-|      |                                                              |                                                              |
+| 139  | [139. 单词拆分](https://leetcode-cn.com/problems/word-break/) | 动态规划, dp[i]表示前i个字符是否能被分隔                     |
+| 140  | [140. 单词拆分 II](https://leetcode-cn.com/problems/word-break-ii/) | 动态规划 + 回溯                                              |
 | 1139 | [1139. 最大的以 1 为边界的正方形](https://leetcode-cn.com/problems/largest-1-bordered-square/) |                                                              |
 |      |                                                              |                                                              |
 | 64   | [64. 最小路径和](https://leetcode-cn.com/problems/minimum-path-sum/) | $dp[i][j] = min(dp[i-1][j], dp[i][j-1]) + grid[i][j]$        |
@@ -101,6 +101,10 @@
 | 5411 | [5411. 摘樱桃 II](https://leetcode-cn.com/problems/cherry-pickup-ii/)（hard） | 三层dp dp[ijk]表示第i行，机器人1在j列，机器人2在k列的最大樱桃数 |
 | 5431 | [5431. 给房子涂色 III](https://leetcode-cn.com/problems/paint-house-iii/)（hard） | 三维dp，dp i j k 表示第i个房子，涂了第j个颜色，且形成了k个社区的最小花费 |
 | 837  | [837. 新21点](https://leetcode-cn.com/problems/new-21-game/) | dp[i]表示当前和为i（i < K）时获胜的概率， dp[i] = 摸j点的概率(1/w) 乘以 摸完之后成功的概率(dp[]i+j])，并遍历j求和 |
+|      |                                                              |                                                              |
+|      |                                                              |                                                              |
+
+
 
 
 
@@ -193,7 +197,7 @@
 | 46   | [46. 全排列](https://leetcode-cn.com/problems/permutations/) | 回溯剪枝，可以用交换法，也可以纯回溯                         |
 | 47   | [47. 全排列 II](https://leetcode-cn.com/problems/permutations-ii/) | 回溯剪枝，判断好去重条件                                     |
 | 784  | [784. 字母大小写全排列](https://leetcode-cn.com/problems/letter-case-permutation/) | 回溯剪枝，但结果集不需要等到搜索到叶子才添加，而是每一个节点更改都要添加 |
-|      |                                                              |                                                              |
+| 140  | [140. 单词拆分 II](https://leetcode-cn.com/problems/word-break-ii/) | 回溯剪枝                                                     |
 
 
 
@@ -250,7 +254,7 @@
 | 26   | [26. Remove Duplicates from Sorted Array](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/) | 快慢指针原地修改题                                           |
 | 27   | [27. Remove Element](https://leetcode-cn.com/problems/remove-element/) | 快慢指针原地修改题                                           |
 | 283  | [283. Move Zeroes](https://leetcode-cn.com/problems/move-zeroes/) | 快慢指针原地修改题                                           |
-|      |                                                              |                                                              |
+| 16   | [16. 最接近的三数之和](https://leetcode-cn.com/problems/3sum-closest/) | 排序+三指针                                                  |
 |      |                                                              |                                                              |
 |      |                                                              |                                                              |
 
