@@ -109,6 +109,9 @@
 | 1494 | [1494. 并行课程 II](https://leetcode-cn.com/problems/parallel-courses-ii/)（hard） |                                                              |
 | 32   | [32. 最长有效括号](https://leetcode-cn.com/problems/longest-valid-parentheses/)（hard） | 有多种方法，栈，dp，双向扫描。此处用dp，dp[i]表示以i位置结尾的最长有小括号子串长度。更新时，如果当前位置是(，显然长度为0，如果当前位置是右括号，那么要尝试找到与之对应左括号，需要判断i-dp[i-1]-1的位置是否是左括号，如果是：dp[i] = dp[i-1] + 2 + dp[i-dp[i-1]-2]  (还需要看匹配位置之前有没有有小括号) |
 | 44   | [44. 通配符匹配](https://leetcode-cn.com/problems/wildcard-matching/)（hard） | dp[i][j]表示s前i个和p前j个是否能匹配                         |
+| 309  | [309. 最佳买卖股票时机含冷冻期](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/) | dp`[i][0]`表示持有股票；dp`[i][1]`表示不持有股票，处于冷冻期;dp`[i][2]`表示不持有股票，不处于冷冻期。这里的「处于冷冻期」指的是在第 i 天结束之后的状态 |
+|      |                                                              |                                                              |
+|      |                                                              |                                                              |
 
 
 
@@ -147,7 +150,8 @@
 | 538  | [把二叉搜索树转换成累加树](https://leetcode-cn.com/problems/convert-bst-to-greater-tree/) | 反中序遍历                                                   |
 | 236  | [二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/) | 两个节点的最近公共祖先满足这两个节点分列左右子树，因此递归全盘搜索 |
 | 297  | [297. Serialize and Deserialize Binary Tree](https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/)（hard） | 序列化和反序列化，用层序遍历即可                             |
-|      |                                                              |                                                              |
+| 112  | [112. 路径总和](https://leetcode-cn.com/problems/path-sum/)  | 可以递归dfs，也可以是存储值的bfs（使用两个队列或者用pair）   |
+| 113  | [113. 路径总和 II](https://leetcode-cn.com/problems/path-sum-ii/) |                                                              |
 | 437  | [437. 路径总和 III](https://leetcode-cn.com/problems/path-sum-iii/) | 两次dfs（先序遍历）                                          |
 | 116  | [116. 填充每个节点的下一个右侧节点指针](https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node/) |                                                              |
 |      |                                                              |                                                              |
@@ -289,14 +293,15 @@
 #### 字符串独立专题（前缀、后缀、字典树及其它技巧）
 
 [解法与总结]()
-| No   | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                  |
-| ---- | ------------------------------------------------------------ | ----------------------- |
-| 459  | [459. 重复的子字符串](https://leetcode-cn.com/problems/repeated-substring-pattern/) | 重复子串的特性          |
-| 1044 | [1044. 最长重复子串](https://leetcode-cn.com/problems/longest-duplicate-substring/) |                         |
-| 67   | [67. 二进制求和](https://leetcode-cn.com/problems/add-binary/) | 模拟字符串n进制求和即可 |
-| 989  | [989. 数组形式的整数加法](https://leetcode-cn.com/problems/add-to-array-form-of-integer/) | 大数加法                |
-| 43   | [43. 字符串相乘](https://leetcode-cn.com/problems/multiply-strings/) | 大数乘法                |
-|      |                                                              |                         |
+| No    | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                  |
+| ----- | ------------------------------------------------------------ | ----------------------- |
+| 459   | [459. 重复的子字符串](https://leetcode-cn.com/problems/repeated-substring-pattern/) | 重复子串的特性          |
+| 1044  | [1044. 最长重复子串](https://leetcode-cn.com/problems/longest-duplicate-substring/) |                         |
+| 67    | [67. 二进制求和](https://leetcode-cn.com/problems/add-binary/) | 模拟字符串n进制求和即可 |
+| 989   | [989. 数组形式的整数加法](https://leetcode-cn.com/problems/add-to-array-form-of-integer/) | 大数加法                |
+| 43    | [43. 字符串相乘](https://leetcode-cn.com/problems/multiply-strings/) | 大数乘法                |
+| 17.13 | [面试题 17.13. 恢复空格](https://leetcode-cn.com/problems/re-space-lcci/) |                         |
+|       |                                                              |                         |
 
 
 
