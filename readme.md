@@ -84,7 +84,7 @@
 | 152  | [152. 乘积最大子数组](https://leetcode-cn.com/problems/maximum-product-subarray/) | 类似最大连续和，但是要同时维护最大乘积dp和最小乘积dp（应对负数乘积为正的情况） |
 | 343  | [343. Integer Break](https://leetcode-cn.com/problems/integer-break/) | dpi 表示n的题设下，分割整数后的乘积最大值                    |
 | 746  | [746. Min Cost Climbing Stairs](https://leetcode-cn.com/problems/min-cost-climbing-stairs/) | dpi表示选择了i所需要的最小cost                               |
-|      |                                                              |                                                              |
+| 96   | [96. 不同的二叉搜索树](https://leetcode-cn.com/problems/unique-binary-search-trees/) | 讨论时分析每个数为根节点的情况，可以递推出：`dp[i] = dp[0]*dp[i-1] + dp[1]*dp[i-2] + ... + dp[i-1]*dp[0]` |
 |      |                                                              |                                                              |
 | 198  | [198. 打家劫舍](https://leetcode-cn.com/problems/house-robber/) | dp[i]表示前i+1个房屋最大偷窃金额，dp[i] = max(dp[i-1], dp[i-2] + nums[i]) |
 | 213  | [213. 打家劫舍 II](https://leetcode-cn.com/problems/house-robber-ii/) | 类似198，可以将环形划分解成[0:n-2]和[1:n-1]两个线性的dp，使用同198的递推式分段解决，求最大值 |
@@ -109,9 +109,13 @@
 | 1494 | [1494. 并行课程 II](https://leetcode-cn.com/problems/parallel-courses-ii/)（hard） |                                                              |
 | 32   | [32. 最长有效括号](https://leetcode-cn.com/problems/longest-valid-parentheses/)（hard） | 有多种方法，栈，dp，双向扫描。此处用dp，dp[i]表示以i位置结尾的最长有小括号子串长度。更新时，如果当前位置是(，显然长度为0，如果当前位置是右括号，那么要尝试找到与之对应左括号，需要判断i-dp[i-1]-1的位置是否是左括号，如果是：dp[i] = dp[i-1] + 2 + dp[i-dp[i-1]-2]  (还需要看匹配位置之前有没有有小括号) |
 | 44   | [44. 通配符匹配](https://leetcode-cn.com/problems/wildcard-matching/)（hard） | dp[i][j]表示s前i个和p前j个是否能匹配                         |
+| 174  | [174. 地下城游戏](https://leetcode-cn.com/problems/dungeon-game/)（hard） | 二维逆序dp                                                   |
 | 309  | [309. 最佳买卖股票时机含冷冻期](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/) | dp`[i][0]`表示持有股票；dp`[i][1]`表示不持有股票，处于冷冻期;dp`[i][2]`表示不持有股票，不处于冷冻期。这里的「处于冷冻期」指的是在第 i 天结束之后的状态 |
-|      |                                                              |                                                              |
-|      |                                                              |                                                              |
+| 877  | [877. 石子游戏](https://leetcode-cn.com/problems/stone-game/) |                                                              |
+| 1140 | [1140. 石子游戏 II](https://leetcode-cn.com/problems/stone-game-ii/) |                                                              |
+| 1406 | [1406. 石子游戏 III](https://leetcode-cn.com/problems/stone-game-iii/)（hard） |                                                              |
+| 5447 | [5447. 石子游戏 IV](https://leetcode-cn.com/problems/stone-game-iv/)（hard） | 博弈dp，dp[i] 表示对于数i是否能先手赢                        |
+| 1025 | [1025. 除数博弈](https://leetcode-cn.com/problems/divisor-game/) |                                                              |
 
 
 
@@ -165,7 +169,7 @@
 
 
 
-#### DFS/BFS/dijkstra/floyd/图算法
+#### DFS/BFS/四种最短路算法(dijkstra,bellman-ford,spfa,floyd)
 
 [解法与总结]()
 
@@ -177,11 +181,24 @@
 | 127  | [127. 单词接龙](https://leetcode-cn.com/problems/word-ladder/) |                                                              |
 | 126  | [126. 单词接龙 II](https://leetcode-cn.com/problems/word-ladder-ii/)（hard） | bfs层级遍历，并标层级号， 然后dfs从结束点回溯，找到路径存储。 |
 | 433  | [433. 最小基因变化](https://leetcode-cn.com/problems/minimum-genetic-mutation/) |                                                              |
-|      |                                                              |                                                              |
+| 5211 | [5211. 概率最大的路径](https://leetcode-cn.com/problems/path-with-maximum-probability/) | 先要证明这种0-1之间的乘法最长路 可以用 dijkstra/bellman-ford/spfa求最短路的方法求 （反证法）。然后就可用堆优化的dijkstra，bellman-ford，或者spfa（这题没卡spfa） |
 | 5410 | [5410. 课程安排 IV](https://leetcode-cn.com/problems/course-schedule-iv/) | 可以用floyd算法判断两点是否有通路，或者使用并查集            |
 |      |                                                              |                                                              |
 
+#### 拓扑排序
 
+[解法与总结]()
+
+| No   | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                          |
+| ---- | ------------------------------------------------------------ | ------------------------------- |
+| 207  | [207. 课程表](https://leetcode-cn.com/problems/course-schedule/) | 拓扑排序标准模板，判断是否是DAG |
+| 210  | [210. 课程表 II](https://leetcode-cn.com/problems/course-schedule-ii/) | 带结果集的拓扑排序              |
+| 329  | [329. 矩阵中的最长递增路径](https://leetcode-cn.com/problems/longest-increasing-path-in-a-matrix/) |                                 |
+| 1203 | [1203. 项目管理](https://leetcode-cn.com/problems/sort-items-by-groups-respecting-dependencies/) |                                 |
+|      |                                                              |                                 |
+|      |                                                              |                                 |
+
+#### 
 
 #### 并查集
 
@@ -274,20 +291,30 @@
 
 
 
-
-#### 拓扑排序
+#### 线段树/树状数组
 
 [解法与总结]()
 
-| No   | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                          |
-| ---- | ------------------------------------------------------------ | ------------------------------- |
-| 207  | [207. 课程表](https://leetcode-cn.com/problems/course-schedule/) | 拓扑排序标准模板，判断是否是DAG |
-| 210  | [210. 课程表 II](https://leetcode-cn.com/problems/course-schedule-ii/) | 带结果集的拓扑排序              |
-| 329  | [329. 矩阵中的最长递增路径](https://leetcode-cn.com/problems/longest-increasing-path-in-a-matrix/) |                                 |
-| 1203 | [1203. 项目管理](https://leetcode-cn.com/problems/sort-items-by-groups-respecting-dependencies/) |                                 |
-|      |                                                              |                                 |
-|      |                                                              |                                 |
+| No   | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark |
+| ---- | ------------------------------------------------------------ | ------ |
+| 315  | [315. 计算右侧小于当前元素的个数](https://leetcode-cn.com/problems/count-of-smaller-numbers-after-self/)（hard） |        |
+|      |                                                              |        |
+|      |                                                              |        |
+|      |                                                              |        |
+|      |                                                              |        |
+|      |                                                              |        |
 
+
+#### hash/set/桶/计数等
+[解法与总结]()
+| No   | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                                                       |
+| ---- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 349  | [349. 两个数组的交集](https://leetcode-cn.com/problems/intersection-of-two-arrays/) | 一个set存放第一个数组元素，一个set用于验证第二个数组中交集部分 |
+| 350  | [350. 两个数组的交集 II](https://leetcode-cn.com/problems/intersection-of-two-arrays-ii/) | hash表，或者排序双指针                                       |
+|      |                                                              |                                                              |
+|      |                                                              |                                                              |
+|      |                                                              |                                                              |
+|      |                                                              |                                                              |
 
 
 #### 字符串独立专题（前缀、后缀、字典树及其它技巧）
@@ -347,5 +374,19 @@
 | 3    | Manacher                                                     | 用于解决最长回文子串问题，本质是暴力中心扩展的优化           | [5. 最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/)<br> |
 | 4    | KMP                                                          | 经典串匹配算法，也是对暴力法的优化加速                       | [28. 实现 strStr()](https://leetcode-cn.com/problems/implement-strstr/) |
 | 5    | 原地hash/座位交换法                                          | 在规定不能用额外空间时，原地的交换，如把值1放到下标0处，值2放到下标1处，类似这些方式，可以有奇效 | [41. 缺失的第一个正数](https://leetcode-cn.com/problems/first-missing-positive/)<br>[442. 数组中重复的数据](https://leetcode-cn.com/problems/find-all-duplicates-in-an-array/)<br>[448. 找到所有数组中消失的数字](https://leetcode-cn.com/problems/find-all-numbers-disappeared-in-an-array/)<br>[1497. 检查数组对是否可以被 k 整除](https://leetcode-cn.com/problems/check-if-array-pairs-are-divisible-by-k/) |
+| 6    | 归并排序求逆序对思想                                         | 分析归并排序的过程，可以求逆序对，并且在此基础上可以进一步扩展 | [剑指 Offer 51. 数组中的逆序对](https://leetcode-cn.com/problems/shu-zu-zhong-de-ni-xu-dui-lcof/)<br> |
+|      |                                                              |                                                              |                                                              |
 |      |                                                              |                                                              |                                                              |
 
+#### 补充：模拟退火/梯度下降/爬山算法
+
+[解法与总结（转载）](https://www.cnblogs.com/heaad/archive/2010/12/20/1911614.html)
+
+| No   | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark |
+| ---- | ------------------------------------------------------------ | ------ |
+| 5463 | [5463. 服务中心的最佳位置](https://leetcode-cn.com/problems/best-position-for-a-service-centre/)（hard） |        |
+|      |                                                              |        |
+|      |                                                              |        |
+|      |                                                              |        |
+|      |                                                              |        |
+|      |                                                              |        |
