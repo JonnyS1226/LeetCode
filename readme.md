@@ -95,7 +95,7 @@
 | 1143 | [1143. 最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) | dp[i] [j]代表text1前i个字符和text2前j个字符的最长公共子序列  |
 |      |                                                              |                                                              |
 | 718  | [718. 最长重复子数组](https://leetcode-cn.com/problems/maximum-length-of-repeated-subarray/) | dp[i] [j]表示A前i个和B前j个 最长公共子数组长度(且要求取到公共子数组必须以i和j结尾) |
-|      |                                                              |                                                              |
+| 97   | [97. 交错字符串](https://leetcode-cn.com/problems/interleaving-string/)（hard） |                                                              |
 | 5419 | [5419. 两个子序列的最大点积](https://leetcode-cn.com/problems/max-dot-product-of-two-subsequences/) | 类似72，1143，  两个数组的dp， $O(n^2)$                      |
 | 139  | [139. 单词拆分](https://leetcode-cn.com/problems/word-break/) | 动态规划, dp[i]表示前i个字符是否能被分隔                     |
 | 140  | [140. 单词拆分 II](https://leetcode-cn.com/problems/word-break-ii/) | 动态规划 + 回溯                                              |
@@ -111,11 +111,12 @@
 | 44   | [44. 通配符匹配](https://leetcode-cn.com/problems/wildcard-matching/)（hard） | dp[i][j]表示s前i个和p前j个是否能匹配                         |
 | 174  | [174. 地下城游戏](https://leetcode-cn.com/problems/dungeon-game/)（hard） | 二维逆序dp                                                   |
 | 309  | [309. 最佳买卖股票时机含冷冻期](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/) | dp`[i][0]`表示持有股票；dp`[i][1]`表示不持有股票，处于冷冻期;dp`[i][2]`表示不持有股票，不处于冷冻期。这里的「处于冷冻期」指的是在第 i 天结束之后的状态 |
-| 877  | [877. 石子游戏](https://leetcode-cn.com/problems/stone-game/) |                                                              |
+| 877  | [877. 石子游戏](https://leetcode-cn.com/problems/stone-game/) | dp[i][j]表示从i到j序列，先手和后手的差值；递推时分析 如果选开头堆如何更新，选末尾堆如何更新即可推出递推式 |
 | 1140 | [1140. 石子游戏 II](https://leetcode-cn.com/problems/stone-game-ii/) |                                                              |
 | 1406 | [1406. 石子游戏 III](https://leetcode-cn.com/problems/stone-game-iii/)（hard） |                                                              |
 | 5447 | [5447. 石子游戏 IV](https://leetcode-cn.com/problems/stone-game-iv/)（hard） | 博弈dp，dp[i] 表示对于数i是否能先手赢                        |
-| 1025 | [1025. 除数博弈](https://leetcode-cn.com/problems/divisor-game/) |                                                              |
+| 1025 | [1025. 除数博弈](https://leetcode-cn.com/problems/divisor-game/) | 同石子游戏Ⅳ                                                  |
+| 312  | [312. 戳气球](https://leetcode-cn.com/problems/burst-balloons/)（hard） | 本质和矩阵链乘法 一样的dp；`dp[i][j] = v[i] * v[k] * [j] + dp[i][k] + dp[k][j];` |
 
 
 
@@ -166,6 +167,9 @@
 |      |                                                              |                                                              |
 | 124  | [124. 二叉树中的最大路径和](https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/)（hard） | 递归 dfs                                                     |
 | 543  | [543. 二叉树的直径](https://leetcode-cn.com/problems/diameter-of-binary-tree/) | 类似124，dfs                                                 |
+|      |                                                              |                                                              |
+| 95   | [95. 不同的二叉搜索树 II](https://leetcode-cn.com/problems/unique-binary-search-trees-ii/) | 考虑枚举[start,end]中的值 i 为当前二叉搜索树的根，再对划分出的两部分递归求解，最后左子树右子树各选择一颗接上去即可 |
+|      |                                                              |                                                              |
 
 
 
@@ -179,6 +183,9 @@
 | 417  | [417. 太平洋大西洋水流问题](https://leetcode-cn.com/problems/pacific-atlantic-water-flow/) | 从两个边界开始 两次dfs（或BFS），都遍历到的地方就是结果集一部分 |
 | 5426 | [5426. 重新规划路线](https://leetcode-cn.com/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero/) | $O(n^2)$超时，可以建两种顺序的图，BFS，也可以并查集          |
 | 127  | [127. 单词接龙](https://leetcode-cn.com/problems/word-ladder/) |                                                              |
+| 785  | [785. 判断二分图](https://leetcode-cn.com/problems/is-graph-bipartite/) | 经典染色法，dfs或者bfs                                       |
+| 886  | [886. 可能的二分法](https://leetcode-cn.com/problems/possible-bipartition/) |                                                              |
+| 1349 | [1349. 参加考试的最大学生数](https://leetcode-cn.com/problems/maximum-students-taking-exam/) |                                                              |
 | 126  | [126. 单词接龙 II](https://leetcode-cn.com/problems/word-ladder-ii/)（hard） | bfs层级遍历，并标层级号， 然后dfs从结束点回溯，找到路径存储。 |
 | 433  | [433. 最小基因变化](https://leetcode-cn.com/problems/minimum-genetic-mutation/) |                                                              |
 | 5211 | [5211. 概率最大的路径](https://leetcode-cn.com/problems/path-with-maximum-probability/) | 先要证明这种0-1之间的乘法最长路 可以用 dijkstra/bellman-ford/spfa求最短路的方法求 （反证法）。然后就可用堆优化的dijkstra，bellman-ford，或者spfa（这题没卡spfa） |
@@ -212,7 +219,8 @@
 | 17.07 | [面试题 17.07. 婴儿名字](https://leetcode-cn.com/problems/baby-names-lcci/) |                                                              |
 | 128   | [128. 最长连续序列](https://leetcode-cn.com/problems/longest-consecutive-sequence/)（hard） | 维护一个map(size)，将num，num-1，num+1这样的merge，并根据连通分量的size不断更新ans |
 | 990   | [990. Satisfiability of Equality Equations](https://leetcode-cn.com/problems/satisfiability-of-equality-equations/) | 等号则连通，不等号则判断左右两个是否在一个连通里，如果在，则返回false |
-|       |                                                              |                                                              |
+| 785   | [785. 判断二分图](https://leetcode-cn.com/problems/is-graph-bipartite/) |                                                              |
+| 130   | [130. 被围绕的区域](https://leetcode-cn.com/problems/surrounded-regions/) |                                                              |
 
 
 #### 回溯剪枝
@@ -235,7 +243,7 @@
 
 | No   | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                                                       |      |
 | :--- | ------------------------------------------------------------ | :----------------------------------------------------------- | ---- |
-| 42   | [42. 接雨水](https://leetcode-cn.com/problems/trapping-rain-water/) |                                                              |      |
+| 42   | [42. 接雨水](https://leetcode-cn.com/problems/trapping-rain-water/)（hard） | 典型单调递减栈题目                                           |      |
 | 84   | [84. 柱状图中最大的矩形](https://leetcode-cn.com/problems/largest-rectangle-in-histogram/) | 求以每个矩形高度为框出来高度的最大矩形面积（这一步通过单调栈，对于某个矩形高度，找向左延伸第一个小于它的，向右延伸第一个小于它的，然后求面积），再在里面取最大的。 |      |
 | 496  | [496. 下一个更大元素 I](https://leetcode-cn.com/problems/next-greater-element-i/) | 构造一个单调递减栈，找到一个比栈顶大的就出栈，这个元素就是出栈元素后面第一个比它大的 |      |
 | 503  | [503. 下一个更大元素 II](https://leetcode-cn.com/problems/next-greater-element-ii/) | 构造一个单调递减栈，与496区别在于循环判断，如[4321]相当于用496的方法计算[43214321] |      |
