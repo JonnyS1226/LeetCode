@@ -42,8 +42,9 @@
 | 74    | [74. 搜索二维矩阵](https://leetcode-cn.com/problems/search-a-2d-matrix/) | 二维->一维，二分法，或者减治缩域法，从左下或者右上开始缩     |
 | 240   | [240. 搜索二维矩阵 II](https://leetcode-cn.com/problems/search-a-2d-matrix-ii/) | 减治缩域法，从左下或者右上开始缩                             |
 | 378   | [378. 有序矩阵中第K小的元素](https://leetcode-cn.com/problems/kth-smallest-element-in-a-sorted-matrix/) | 值域二分+减治缩域法                                          |
-|       |                                                              |                                                              |
-|       |                                                              |                                                              |
+| 153   | [153. 寻找旋转排序数组中的最小值](https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/) | 左闭右闭，二分法                                             |
+| 154   | [154. 寻找旋转排序数组中的最小值 II](https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array-ii/) | 同153，新增情况：对于nums[mid] == nums[j]， 我们可以不考虑j，因为mid总可以替代掉 |
+| 410   | [410. 分割数组的最大值](https://leetcode-cn.com/problems/split-array-largest-sum/) | 同875，1011，二分枚举                                        |
 
 #### 链表类型题
 
@@ -89,7 +90,7 @@
 | 198  | [198. 打家劫舍](https://leetcode-cn.com/problems/house-robber/) | dp[i]表示前i+1个房屋最大偷窃金额，dp[i] = max(dp[i-1], dp[i-2] + nums[i]) |
 | 213  | [213. 打家劫舍 II](https://leetcode-cn.com/problems/house-robber-ii/) | 类似198，可以将环形划分解成[0:n-2]和[1:n-1]两个线性的dp，使用同198的递推式分段解决，求最大值 |
 | 740  | [740. 删除与获得点数](https://leetcode-cn.com/problems/delete-and-earn/) | 可以转换为198问题                                            |
-|      |                                                              |                                                              |
+| 410  | [410. 分割数组的最大值](https://leetcode-cn.com/problems/split-array-largest-sum/) |                                                              |
 | 516  | [516. 最长回文子序列](https://leetcode-cn.com/problems/longest-palindromic-subsequence/) | 子序列问题的动态规划，dp(i)(j)表示s[i]-s[j]区间内最长回文子序列长度，注意区间dp要斜着打表或者反着打表。 <br>也可以转换为求逆字符串，再求最长公共子序列 |
 | 300  | [300. 最长上升子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/) | dp[i]=max{dp[j]}+1，if num[i] > num[j], 其中i>j，其中dp[i]表示前i个得最长递增序列长度，且nums[i]必须选择 |
 | 1143 | [1143. 最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) | dp[i] [j]代表text1前i个字符和text2前j个字符的最长公共子序列  |
@@ -255,7 +256,7 @@
 | 5420 | [5420. Final Prices With a Special Discount in a Shop](https://leetcode-cn.com/problems/final-prices-with-a-special-discount-in-a-shop/) | 单调栈的简单应用                                             |      |
 | 394  | [394. 字符串解码](https://leetcode-cn.com/problems/decode-string/) | 维护数字栈和字符栈，碰到[入栈，碰到]出栈                     |      |
 | 1499 | [1499. 满足不等式的最大值](https://leetcode-cn.com/problems/max-value-of-equation/) |                                                              |      |
-|      |                                                              |                                                              |      |
+| 5459 | [5459. 形成目标数组的子数组最少增加次数](https://leetcode-cn.com/problems/minimum-number-of-increments-on-subarrays-to-form-a-target-array/)（hard） |                                                              |      |
 
 #### 滑动窗口
 
@@ -313,13 +314,13 @@
 |      |                                                              |        |
 
 
-#### hash/set/桶/计数等
+#### hash/set/桶/计数/堆等容器使用
 [解法与总结]()
 | No   | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                                                       |
 | ---- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 349  | [349. 两个数组的交集](https://leetcode-cn.com/problems/intersection-of-two-arrays/) | 一个set存放第一个数组元素，一个set用于验证第二个数组中交集部分 |
 | 350  | [350. 两个数组的交集 II](https://leetcode-cn.com/problems/intersection-of-two-arrays-ii/) | hash表，或者排序双指针                                       |
-|      |                                                              |                                                              |
+| 牛客 | [排队](https://ac.nowcoder.com/acm/contest/6488/C)           | 优先队列实现小顶堆+归并排序/树状数组求逆序对                 |
 |      |                                                              |                                                              |
 |      |                                                              |                                                              |
 |      |                                                              |                                                              |
@@ -382,7 +383,7 @@
 | 3    | Manacher                                                     | 用于解决最长回文子串问题，本质是暴力中心扩展的优化           | [5. 最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/)<br> |
 | 4    | KMP                                                          | 经典串匹配算法，也是对暴力法的优化加速                       | [28. 实现 strStr()](https://leetcode-cn.com/problems/implement-strstr/) |
 | 5    | 原地hash/座位交换法                                          | 在规定不能用额外空间时，原地的交换，如把值1放到下标0处，值2放到下标1处，类似这些方式，可以有奇效 | [41. 缺失的第一个正数](https://leetcode-cn.com/problems/first-missing-positive/)<br>[442. 数组中重复的数据](https://leetcode-cn.com/problems/find-all-duplicates-in-an-array/)<br>[448. 找到所有数组中消失的数字](https://leetcode-cn.com/problems/find-all-numbers-disappeared-in-an-array/)<br>[1497. 检查数组对是否可以被 k 整除](https://leetcode-cn.com/problems/check-if-array-pairs-are-divisible-by-k/) |
-| 6    | 归并排序求逆序对思想                                         | 分析归并排序的过程，可以求逆序对，并且在此基础上可以进一步扩展 | [剑指 Offer 51. 数组中的逆序对](https://leetcode-cn.com/problems/shu-zu-zhong-de-ni-xu-dui-lcof/)<br> |
+| 6    | 归并排序求逆序对思想                                         | 分析归并排序的过程，可以求逆序对，并且在此基础上可以进一步扩展 | [剑指 Offer 51. 数组中的逆序对](https://leetcode-cn.com/problems/shu-zu-zhong-de-ni-xu-dui-lcof/)<br>[牛客：排队](https://ac.nowcoder.com/acm/contest/6488/C)<br> |
 |      |                                                              |                                                              |                                                              |
 |      |                                                              |                                                              |                                                              |
 
