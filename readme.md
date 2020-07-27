@@ -1,6 +1,6 @@
 ## Leetcode
 
-#### 位运算	
+### 位运算	
 
 [解法与总结]()
 
@@ -20,7 +20,7 @@
 | 268         | [268. 缺失数字](https://leetcode-cn.com/problems/missing-number/) | 异或                                                         |
 | 717         | [717. 1比特与2比特字符](https://leetcode-cn.com/problems/1-bit-and-2-bit-characters/) | 总是以0结尾，所以只要看最后一个0和倒数第二个0之间1的个数(即连续的1个数)，为奇数就返回false，偶数是true，可用异或计数 |
 
-#### 二分查找/分治减治思想
+### 二分查找/分治减治思想
 
 [解法与总结]()
 
@@ -46,7 +46,7 @@
 | 154   | [154. 寻找旋转排序数组中的最小值 II](https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array-ii/) | 同153，新增情况：对于nums[mid] == nums[j]， 我们可以不考虑j，因为mid总可以替代掉 |
 | 410   | [410. 分割数组的最大值](https://leetcode-cn.com/problems/split-array-largest-sum/) | 同875，1011，二分枚举                                        |
 
-#### 链表类型题
+### 链表类型题
 
 [解法与总结]()
 
@@ -65,7 +65,7 @@
 
 
 
-#### 动态规划
+### 动态规划
 
 [解法与总结]()
 
@@ -102,6 +102,9 @@
 | 140  | [140. 单词拆分 II](https://leetcode-cn.com/problems/word-break-ii/) | 动态规划 + 回溯                                              |
 | 1139 | [1139. 最大的以 1 为边界的正方形](https://leetcode-cn.com/problems/largest-1-bordered-square/) |                                                              |
 | 85   | [85. 最大矩形](https://leetcode-cn.com/problems/maximal-rectangle/) |                                                              |
+| 392  | [392. 判断子序列](https://leetcode-cn.com/problems/is-subsequence/)（进阶挑战） |                                                              |
+|      |                                                              |                                                              |
+|      |                                                              |                                                              |
 | 64   | [64. 最小路径和](https://leetcode-cn.com/problems/minimum-path-sum/) | $dp[i][j] = min(dp[i-1][j], dp[i][j-1]) + grid[i][j]$        |
 | 10   | [10. 正则表达式匹配](https://leetcode-cn.com/problems/regular-expression-matching/)（hard） | 用dp i  j 表示 s的前 i 个字符与 p中的前 j 个字符是否能够匹配。 |
 | 5411 | [5411. 摘樱桃 II](https://leetcode-cn.com/problems/cherry-pickup-ii/)（hard） | 三层dp dp[ijk]表示第i行，机器人1在j列，机器人2在k列的最大樱桃数 |
@@ -125,7 +128,7 @@
 
 
 
-#### 贪心算法
+### 贪心算法
 
 [解法与总结]()
 
@@ -139,7 +142,7 @@
 
 
 
-#### 二叉树及树专题
+### 二叉树及树专题
 
 [解法与总结]()
 
@@ -174,7 +177,7 @@
 
 
 
-#### DFS/BFS/四种最短路算法(dijkstra,bellman-ford,spfa,floyd)
+### DFS/BFS/四种最短路算法(dijkstra,bellman-ford,spfa,floyd)
 
 [解法与总结]()
 
@@ -193,7 +196,7 @@
 | 5410 | [5410. 课程安排 IV](https://leetcode-cn.com/problems/course-schedule-iv/) | 可以用floyd算法判断两点是否有通路，或者使用并查集            |
 |      |                                                              |                                                              |
 
-#### 拓扑排序
+### 拓扑排序
 
 [解法与总结]()
 
@@ -206,9 +209,9 @@
 |      |                                                              |                                 |
 |      |                                                              |                                 |
 
-#### 
 
-#### 并查集
+
+### 并查集
 
 [解法与总结]()
 | No    | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                                                       |
@@ -224,7 +227,7 @@
 | 130   | [130. 被围绕的区域](https://leetcode-cn.com/problems/surrounded-regions/) |                                                              |
 
 
-#### 回溯剪枝
+### 回溯剪枝
 
 [解法与总结]()
 
@@ -238,7 +241,7 @@
 
 
 
-#### 栈/单调栈问题
+### 栈/单调栈问题
 
 [解法与总结]()
 
@@ -256,9 +259,9 @@
 | 5420 | [5420. Final Prices With a Special Discount in a Shop](https://leetcode-cn.com/problems/final-prices-with-a-special-discount-in-a-shop/) | 单调栈的简单应用                                             |      |
 | 394  | [394. 字符串解码](https://leetcode-cn.com/problems/decode-string/) | 维护数字栈和字符栈，碰到[入栈，碰到]出栈                     |      |
 | 1499 | [1499. 满足不等式的最大值](https://leetcode-cn.com/problems/max-value-of-equation/) |                                                              |      |
-| 5459 | [5459. 形成目标数组的子数组最少增加次数](https://leetcode-cn.com/problems/minimum-number-of-increments-on-subarrays-to-form-a-target-array/)（hard） |                                                              |      |
+| 5459 | [5459. 形成目标数组的子数组最少增加次数](https://leetcode-cn.com/problems/minimum-number-of-increments-on-subarrays-to-form-a-target-array/)（hard） | 可以利用单调栈思想：考虑每个元素左侧相邻元素的贡献值，但不同于常规单调栈，不需要所有出栈都计算 |      |
 
-#### 滑动窗口
+### 滑动窗口/单调队列
 
 [解法与总结]()
 
@@ -270,11 +273,11 @@
 | 424  | [424. 替换后的最长重复字符](https://leetcode-cn.com/problems/longest-repeating-character-replacement/) | 滑动窗口，窗口内条件right - left + 1 - tmpMaxCnt <= k        |
 | 1456 | [1456. 定长子串中元音的最大数目](https://leetcode-cn.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/) | map+滑动窗口                                                 |
 | 5423 | [5423. Find Two Non-overlapping Sub-arrays Each With Target Sum](https://leetcode-cn.com/problems/find-two-non-overlapping-sub-arrays-each-with-target-sum/) | 从后往前的滑动窗口+dp                                        |
+| 239  | [239. 滑动窗口最大值](https://leetcode-cn.com/problems/sliding-window-maximum/)（hard） |                                                              |
+| 1499 | [1499. 满足不等式的最大值](https://leetcode-cn.com/problems/max-value-of-equation/) | 即求 `max(yi + yj + xj - xi) = max(xj + yj) + max(yi - xi), i < j`，转换后就变成了239题，单调队列求滑动窗口内（区间内）最大值 |
 |      |                                                              |                                                              |
 
-
-
-#### 快慢指针/部分双指针
+### 快慢指针/部分双指针
 
 [解法与总结]()
 
@@ -294,13 +297,7 @@
 |      |                                                              |                                                              |
 |      |                                                              |                                                              |
 
-
-
-
-
-
-
-#### 线段树/树状数组
+### 线段树/树状数组
 
 [解法与总结]()
 
@@ -314,7 +311,7 @@
 |      |                                                              |        |
 
 
-#### hash/set/桶/计数/堆等容器使用
+### hash/set/桶/计数/堆等容器使用
 [解法与总结]()
 | No   | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                                                       |
 | ---- | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -326,7 +323,7 @@
 |      |                                                              |                                                              |
 
 
-#### 字符串独立专题（前缀、后缀、字典树及其它技巧）
+### 字符串独立专题（前缀、后缀、字典树及其它技巧）
 
 [解法与总结]()
 | No    | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                  |
@@ -341,7 +338,7 @@
 
 
 
-#### 数学题/细节分类讨论题
+### 数学题/细节分类讨论题
 
 [解法与总结]()
 
@@ -354,7 +351,7 @@
 |       |                                                              |                                                              |
 |       |                                                              |                                                              |
 
-#### 回文系列
+### 回文系列
 
 [解法与总结]()
 
@@ -374,7 +371,7 @@
 
 
 
-#### 经典模板，思想和技巧（非具体算法）
+### 经典模板，思想和技巧（非具体算法）
 
 | No.  | <span style="white-space:nowrap;">Template</span>            | description                                                  | case                                                         |
 | ---- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -387,7 +384,7 @@
 |      |                                                              |                                                              |                                                              |
 |      |                                                              |                                                              |                                                              |
 
-#### 补充：模拟退火/梯度下降/爬山算法
+### 补充：模拟退火/梯度下降/爬山算法
 
 [解法与总结（转载）](https://www.cnblogs.com/heaad/archive/2010/12/20/1911614.html)
 
