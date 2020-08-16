@@ -122,7 +122,9 @@
 | 1025  | [1025. 除数博弈](https://leetcode-cn.com/problems/divisor-game/) | 同石子游戏Ⅳ                                                  |
 | 312   | [312. 戳气球](https://leetcode-cn.com/problems/burst-balloons/)（hard） | 本质和矩阵链乘法 一样的dp；`dp[i][j] = v[i] * v[k] * [j] + dp[i][k] + dp[k][j];` |
 | LCP13 | [LCP 13. 寻宝](https://leetcode-cn.com/problems/xun-bao/)（hard） |                                                              |
-| 5486  | [5486. 切棍子的最小成本](https://leetcode-cn.com/problems/minimum-cost-to-cut-a-stick/)（hard） |                                                              |
+| 5486  | [5486. 切棍子的最小成本](https://leetcode-cn.com/problems/minimum-cost-to-cut-a-stick/)（hard） | 倒过来想，区间dp，`dp[i][j] `表示区间cuts[i]到cuts[j]的距离的合并的最小代价 |
+| 1000  | [1000. 合并石头的最低成本](https://leetcode-cn.com/problems/minimum-cost-to-merge-stones/) |                                                              |
+| 546   | [546. 移除盒子](https://leetcode-cn.com/problems/remove-boxes/) |                                                              |
 
 
 
@@ -202,7 +204,8 @@
 | 433  | [433. 最小基因变化](https://leetcode-cn.com/problems/minimum-genetic-mutation/) |                                                              |
 | 5211 | [5211. 概率最大的路径](https://leetcode-cn.com/problems/path-with-maximum-probability/) | 先要证明这种0-1之间的乘法最长路 可以用 dijkstra/bellman-ford/spfa求最短路的方法求 （反证法）。然后就可用堆优化的dijkstra，bellman-ford，或者spfa（这题没卡spfa） |
 | 5410 | [5410. 课程安排 IV](https://leetcode-cn.com/problems/course-schedule-iv/) | 可以用floyd算法判断两点是否有通路，或者使用并查集            |
-|      |                                                              |                                                              |
+| 733  | [733. 图像渲染](https://leetcode-cn.com/problems/flood-fill/) | 题意就是类似油漆桶工具，存储原始color，然后使用bfs或者dfs    |
+| 5490 | [5490. 吃掉 N 个橘子的最少天数](https://leetcode-cn.com/problems/minimum-number-of-days-to-eat-n-oranges/) | 可以用带map缓存的bfs或双向bfs                                |
 
 ### 拓扑排序
 
