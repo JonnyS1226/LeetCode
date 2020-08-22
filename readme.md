@@ -206,6 +206,7 @@
 | 5410 | [5410. 课程安排 IV](https://leetcode-cn.com/problems/course-schedule-iv/) | 可以用floyd算法判断两点是否有通路，或者使用并查集            |
 | 733  | [733. 图像渲染](https://leetcode-cn.com/problems/flood-fill/) | 题意就是类似油漆桶工具，存储原始color，然后使用bfs或者dfs    |
 | 5490 | [5490. 吃掉 N 个橘子的最少天数](https://leetcode-cn.com/problems/minimum-number-of-days-to-eat-n-oranges/) | 可以用带map缓存的bfs或双向bfs                                |
+| 529  | [529. 扫雷游戏](https://leetcode-cn.com/problems/minesweeper/) | dfs                                                          |
 
 ### 拓扑排序
 
@@ -332,7 +333,9 @@
 | 350  | [350. 两个数组的交集 II](https://leetcode-cn.com/problems/intersection-of-two-arrays-ii/) | hash表，或者排序双指针                                       |
 | 牛客 | [排队](https://ac.nowcoder.com/acm/contest/6488/C)           | 优先队列实现小顶堆+归并排序/树状数组求逆序对                 |
 | 632  | [632. 最小区间](https://leetcode-cn.com/problems/smallest-range-covering-elements-from-k-lists/) | k指针+最小堆，维护最大值和最小值，取最优区间（或者分别维护最大最小堆也可） |
-|      |                                                              |                                                              |
+| 169  | [169. 多数元素](https://leetcode-cn.com/problems/majority-element/) | 摩尔投票法，一个候选人                                       |
+| 229  | [229. 求众数 II](https://leetcode-cn.com/problems/majority-element-ii/) | 摩尔投票法，两个候选人                                       |
+| 1287 | [1287. 有序数组中出现次数超过25%的元素](https://leetcode-cn.com/problems/element-appearing-more-than-25-in-sorted-array/) | 可以用摩尔投票法，找三个候选人                               |
 |      |                                                              |                                                              |
 
 
