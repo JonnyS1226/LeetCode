@@ -207,6 +207,7 @@
 | 733  | [733. 图像渲染](https://leetcode-cn.com/problems/flood-fill/) | 题意就是类似油漆桶工具，存储原始color，然后使用bfs或者dfs    |
 | 5490 | [5490. 吃掉 N 个橘子的最少天数](https://leetcode-cn.com/problems/minimum-number-of-days-to-eat-n-oranges/) | 可以用带map缓存的bfs或双向bfs                                |
 | 529  | [529. 扫雷游戏](https://leetcode-cn.com/problems/minesweeper/) | dfs                                                          |
+| 679  | [679. 24 点游戏](https://leetcode-cn.com/problems/24-game/)（hard） | 纯暴力，4种运算，4个数， dfs回溯                             |
 
 ### 拓扑排序
 
