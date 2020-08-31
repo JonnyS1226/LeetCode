@@ -19,6 +19,8 @@
 | 342         | [342. 4的幂](https://leetcode-cn.com/problems/power-of-four/) | 先按231判断2的幂，然后4的幂满足1处于奇数位上，因此还要满足与0xaaaaaaaa做与运算为0 |
 | 268         | [268. 缺失数字](https://leetcode-cn.com/problems/missing-number/) | 异或                                                         |
 | 717         | [717. 1比特与2比特字符](https://leetcode-cn.com/problems/1-bit-and-2-bit-characters/) | 总是以0结尾，所以只要看最后一个0和倒数第二个0之间1的个数(即连续的1个数)，为奇数就返回false，偶数是true，可用异或计数 |
+| 201         | [201. 数字范围按位与](https://leetcode-cn.com/problems/bitwise-and-of-numbers-range/) | 使用位移，找m和n的二进制数的公共前缀                         |
+|             |                                                              |                                                              |
 
 ### 二分查找/分治减治思想
 
@@ -83,6 +85,7 @@
 | 1277  | [统计全为1的正方形子矩阵](https://leetcode-cn.com/problems/count-square-submatrices-with-all-ones/) | 同221                                                        |
 | 53    | [53. 最大子序和](https://leetcode-cn.com/problems/maximum-subarray/) | *f*(*i*) = max{*f*(*i*−1)+*ai* , *ai*}                       |
 | 152   | [152. 乘积最大子数组](https://leetcode-cn.com/problems/maximum-product-subarray/) | 类似最大连续和，但是要同时维护最大乘积dp和最小乘积dp（应对负数乘积为正的情况） |
+| 5500  | [5500. 乘积为正数的最长子数组长度](https://leetcode-cn.com/problems/maximum-length-of-subarray-with-positive-product/) | 同152思路，需要维护以i结尾乘积为正和乘积为负的两个dp         |
 | 343   | [343. Integer Break](https://leetcode-cn.com/problems/integer-break/) | dpi 表示n的题设下，分割整数后的乘积最大值                    |
 | 746   | [746. Min Cost Climbing Stairs](https://leetcode-cn.com/problems/min-cost-climbing-stairs/) | dpi表示选择了i所需要的最小cost                               |
 | 96    | [96. 不同的二叉搜索树](https://leetcode-cn.com/problems/unique-binary-search-trees/) | 讨论时分析每个数为根节点的情况，可以递推出：`dp[i] = dp[0]*dp[i-1] + dp[1]*dp[i-2] + ... + dp[i-1]*dp[0]` |
@@ -208,6 +211,8 @@
 | 5490 | [5490. 吃掉 N 个橘子的最少天数](https://leetcode-cn.com/problems/minimum-number-of-days-to-eat-n-oranges/) | 可以用带map缓存的bfs或双向bfs                                |
 | 529  | [529. 扫雷游戏](https://leetcode-cn.com/problems/minesweeper/) | dfs                                                          |
 | 679  | [679. 24 点游戏](https://leetcode-cn.com/problems/24-game/)（hard） | 纯暴力，4种运算，4个数， dfs回溯                             |
+| 5482 | [5482. 二维网格图中探测环](https://leetcode-cn.com/problems/detect-cycles-in-2d-grid/)（hard） | 带前置节点的dfs或者bfs                                       |
+|      |                                                              |                                                              |
 
 ### 拓扑排序
 
@@ -227,6 +232,7 @@
 ### 并查集
 
 [解法与总结]()
+
 | No    | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                                                       |
 | ----- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 5426  | [5426. 重新规划路线](https://leetcode-cn.com/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero/) | 此处使用并查集                                               |
@@ -238,6 +244,9 @@
 | 990   | [990. Satisfiability of Equality Equations](https://leetcode-cn.com/problems/satisfiability-of-equality-equations/) | 等号则连通，不等号则判断左右两个是否在一个连通里，如果在，则返回false |
 | 785   | [785. 判断二分图](https://leetcode-cn.com/problems/is-graph-bipartite/) |                                                              |
 | 130   | [130. 被围绕的区域](https://leetcode-cn.com/problems/surrounded-regions/) |                                                              |
+| 5497  | [5497. 查找大小为 M 的最新分组](https://leetcode-cn.com/problems/find-latest-group-of-size-m/) |                                                              |
+|       |                                                              |                                                              |
+|       |                                                              |                                                              |
 
 
 ### 回溯剪枝
@@ -251,6 +260,7 @@
 | 784  | [784. 字母大小写全排列](https://leetcode-cn.com/problems/letter-case-permutation/) | 回溯剪枝，但结果集不需要等到搜索到叶子才添加，而是每一个节点更改都要添加 |
 | 93   | [93. 复原IP地址](https://leetcode-cn.com/problems/restore-ip-addresses/) |                                                              |
 | 140  | [140. 单词拆分 II](https://leetcode-cn.com/problems/word-break-ii/) | 回溯剪枝                                                     |
+| 491  | [491. 递增子序列](https://leetcode-cn.com/problems/increasing-subsequences/) | 回溯剪枝                                                     |
 
 
 
@@ -381,7 +391,7 @@
 | 409  | [409. 最长回文串](https://leetcode-cn.com/problems/longest-palindrome/) |                                                              |
 | 5    | [5. 最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/) | 中心扩展暴力，或者manacher算法                               |
 | 516  | [516. 最长回文子序列](https://leetcode-cn.com/problems/longest-palindromic-subsequence/) | 注意子串和子序列的区别，子序列问题常用动态规划               |
-|      |                                                              |                                                              |
+| 214  | [214. 最短回文串](https://leetcode-cn.com/problems/shortest-palindrome/)（hard） | 用kmp, s匹配~s 即可, 匹配剩下的部分加上 就是答案   或者manacher |
 |      |                                                              |                                                              |
 
 
@@ -410,8 +420,8 @@
 | No.  | <span style="white-space:nowrap;">Template</span>            | description                                                  | case                                                         |
 | ---- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 1    | 快速幂 [50. Pow(x, n)](https://leetcode-cn.com/problems/powx-n/), | 从位运算或者从幂数二分的角度，将幂运算从 $O(n)$ 提升到 $O(log_2n$) | [372. 超级次方](https://leetcode-cn.com/problems/super-pow/) |
-| 2    | Manacher                                                     | 用于解决最长回文子串问题，本质是暴力中心扩展的优化           | [5. 最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/)<br> |
-| 3    | KMP                                                          | 经典串匹配算法，也是对暴力法的优化加速                       | [28. 实现 strStr()](https://leetcode-cn.com/problems/implement-strstr/) |
+| 2    | Manacher                                                     | 用于解决最长回文子串问题，本质是暴力中心扩展的优化           | [5. 最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/)<br>[214. 最短回文串](https://leetcode-cn.com/problems/shortest-palindrome/) |
+| 3    | KMP                                                          | 经典串匹配算法，也是对暴力法的优化加速                       | [28. 实现 strStr()](https://leetcode-cn.com/problems/implement-strstr/)<br>[214. 最短回文串](https://leetcode-cn.com/problems/shortest-palindrome/) |
 | 4    | 原地hash/座位交换法                                          | 在规定不能用额外空间时，原地的交换，如把值1放到下标0处，值2放到下标1处，类似这些方式，可以有奇效 | [41. 缺失的第一个正数](https://leetcode-cn.com/problems/first-missing-positive/)<br>[442. 数组中重复的数据](https://leetcode-cn.com/problems/find-all-duplicates-in-an-array/)<br>[448. 找到所有数组中消失的数字](https://leetcode-cn.com/problems/find-all-numbers-disappeared-in-an-array/)<br>[1497. 检查数组对是否可以被 k 整除](https://leetcode-cn.com/problems/check-if-array-pairs-are-divisible-by-k/) |
 | 5    | 归并排序求逆序对思想                                         | 分析归并排序的过程，可以求逆序对，并且在此基础上可以进一步扩展 | [剑指 Offer 51. 数组中的逆序对](https://leetcode-cn.com/problems/shu-zu-zhong-de-ni-xu-dui-lcof/)<br>[牛客：排队](https://ac.nowcoder.com/acm/contest/6488/C)<br> |
 | 6    | 巧妙编码                                                     | 将原数组编码为游程（出现次数）、                             | [696. 计数二进制子串](https://leetcode-cn.com/problems/count-binary-substrings/)<br> |
