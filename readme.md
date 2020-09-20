@@ -85,7 +85,8 @@
 | 1277  | [统计全为1的正方形子矩阵](https://leetcode-cn.com/problems/count-square-submatrices-with-all-ones/) | 同221                                                        |
 | 53    | [53. 最大子序和](https://leetcode-cn.com/problems/maximum-subarray/) | *f*(*i*) = max{*f*(*i*−1)+*ai* , *ai*}                       |
 | 152   | [152. 乘积最大子数组](https://leetcode-cn.com/problems/maximum-product-subarray/) | 类似最大连续和，但是要同时维护最大乘积dp和最小乘积dp（应对负数乘积为正的情况） |
-| 5500  | [5500. 乘积为正数的最长子数组长度](https://leetcode-cn.com/problems/maximum-length-of-subarray-with-positive-product/) | 同152思路，需要维护以i结尾乘积为正和乘积为负的两个dp         |
+| 1567  | [1567. 乘积为正数的最长子数组长度](https://leetcode-cn.com/problems/maximum-length-of-subarray-with-positive-product/) | 同152思路，需要维护以i结尾乘积为正和乘积为负的两个dp         |
+| 5521  | [5521. 矩阵的最大非负积](https://leetcode-cn.com/problems/maximum-non-negative-product-in-a-matrix/) | 同152，只不过是二维dp，维护最大值和最小值，因为最小值可能翻身成为最大值 |
 | 343   | [343. Integer Break](https://leetcode-cn.com/problems/integer-break/) | dpi 表示n的题设下，分割整数后的乘积最大值                    |
 | 746   | [746. Min Cost Climbing Stairs](https://leetcode-cn.com/problems/min-cost-climbing-stairs/) | dpi表示选择了i所需要的最小cost                               |
 | 96    | [96. 不同的二叉搜索树](https://leetcode-cn.com/problems/unique-binary-search-trees/) | 讨论时分析每个数为根节点的情况，可以递推出：`dp[i] = dp[0]*dp[i-1] + dp[1]*dp[i-2] + ... + dp[i-1]*dp[0]` |
@@ -214,6 +215,7 @@
 | 5482 | [5482. 二维网格图中探测环](https://leetcode-cn.com/problems/detect-cycles-in-2d-grid/)（hard） | 带前置节点的dfs或者bfs                                       |
 | 841  | [841. 钥匙和房间](https://leetcode-cn.com/problems/keys-and-rooms/) | 建图dfs， 或者拓扑排序判环                                   |
 | 78   | [78. 子集](https://leetcode-cn.com/problems/subsets/)        | 简单dfs，或者直接遍历，遇到一个数就把所有子集加上该数组成新的子集 |
+|      |                                                              |                                                              |
 
 ### 拓扑排序
 
@@ -263,6 +265,7 @@
 | 140  | [140. 单词拆分 II](https://leetcode-cn.com/problems/word-break-ii/) | 回溯剪枝                                                     |
 | 491  | [491. 递增子序列](https://leetcode-cn.com/problems/increasing-subsequences/) | 回溯剪枝                                                     |
 | 37   | [37. 解数独](https://leetcode-cn.com/problems/sudoku-solver/)（hard） | 回溯剪枝                                                     |
+| 5520 | [5520. 拆分字符串使唯一子字符串的数目最大](https://leetcode-cn.com/problems/split-a-string-into-the-max-number-of-unique-substrings/) | dfs+回溯                                                     |
 
 
 
