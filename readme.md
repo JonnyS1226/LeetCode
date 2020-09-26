@@ -187,7 +187,8 @@
 | 404  | [404. 左叶子之和](https://leetcode-cn.com/problems/sum-of-left-leaves/) | 先序遍历，递归或迭代，找到**满足左叶子条件**就记录结果       |
 | 114  | [114. 二叉树展开为链表](https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/) | 按根右左的遍历，通过右指针组成链表                           |
 | 430  | [430. 扁平化多级双向链表](https://leetcode-cn.com/problems/flatten-a-multilevel-doubly-linked-list/) | 同114，把child看成左，next看成右即可                         |
-|      |                                                              |                                                              |
+| 235  | [235. 二叉搜索树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/) | 利用二叉搜索树的性质求LCA                                    |
+| 236  | [236. 二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/) |                                                              |
 
 
 
