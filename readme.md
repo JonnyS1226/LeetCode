@@ -171,7 +171,7 @@
 | 112  | [112. 路径总和](https://leetcode-cn.com/problems/path-sum/)  | 可以递归dfs，也可以是存储值的bfs（使用两个队列或者用pair）   |
 | 113  | [113. 路径总和 II](https://leetcode-cn.com/problems/path-sum-ii/) |                                                              |
 | 437  | [437. 路径总和 III](https://leetcode-cn.com/problems/path-sum-iii/) | 两次dfs（先序遍历）                                          |
-| 116  | [116. 填充每个节点的下一个右侧节点指针](https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node/) |                                                              |
+| 116  | [116. 填充每个节点的下一个右侧节点指针](https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node/) | 根据上层指针的next，来进行填充，整体上是bfs的思路            |
 |      |                                                              |                                                              |
 | 105  | [105. 从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) | 前序遍历第一个元素就是根，根据该元素在中序遍历中找到树的左右子树，然后递归或者迭代 连接 |
 | 106  | [106. 从中序与后序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/) | 后序遍历最后一个元素就是根，根据该元素在中序遍历中找到树的左右子树，然后递归或者迭代 连接 |
