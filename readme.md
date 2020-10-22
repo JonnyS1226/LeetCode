@@ -326,6 +326,9 @@
 | 283  | [283. Move Zeroes](https://leetcode-cn.com/problems/move-zeroes/) | 快慢指针原地修改题                                           |
 | 16   | [16. 最接近的三数之和](https://leetcode-cn.com/problems/3sum-closest/) | 排序+三指针                                                  |
 | 1537 | [1537. 最大得分](https://leetcode-cn.com/problems/get-the-maximum-score/) | 分段求值，相当于记录下岔路口时的 最优解。可以dp，也可以优化为双指针 |
+| 143  | [143. 重排链表](https://leetcode-cn.com/problems/reorder-list/) | 快慢指针找中点(向前取)，分出两段，后面的插入到前面           |
+| 763  | [763. 划分字母区间](https://leetcode-cn.com/problems/partition-labels/) | map存取最后出现的位置+双指针循环更新                         |
+|      |                                                              |                                                              |
 |      |                                                              |                                                              |
 
 ### 线段树/树状数组
