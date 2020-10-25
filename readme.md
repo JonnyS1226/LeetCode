@@ -129,6 +129,9 @@
 | 5486  | [5486. 切棍子的最小成本](https://leetcode-cn.com/problems/minimum-cost-to-cut-a-stick/)（hard） | 倒过来想，区间dp，`dp[i][j] `表示区间cuts[i]到cuts[j]的距离的合并的最小代价 |
 | 1000  | [1000. 合并石头的最低成本](https://leetcode-cn.com/problems/minimum-cost-to-merge-stones/) |                                                              |
 | 546   | [546. 移除盒子](https://leetcode-cn.com/problems/remove-boxes/) |                                                              |
+| 1024  | [1024. 视频拼接](https://leetcode-cn.com/problems/video-stitching/) | 动态规划问题，`dp[i]` 表示将区间`[0,i)`覆盖所需要的最少子区间的数量 |
+| 845   | [845. 数组中的最长山脉](https://leetcode-cn.com/problems/longest-mountain-in-array/) | 两遍扫描，类似dp思想，设定left和right数组表示向左向右能扩展的最大距离 |
+|       |                                                              |                                                              |
 
 
 
