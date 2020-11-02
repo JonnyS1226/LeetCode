@@ -47,6 +47,7 @@
 | 153   | [153. 寻找旋转排序数组中的最小值](https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/) | 左闭右闭，二分法                                             |
 | 154   | [154. 寻找旋转排序数组中的最小值 II](https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array-ii/) | 同153，新增情况：对于nums[mid] == nums[j]， 我们可以不考虑j，因为mid总可以替代掉 |
 | 410   | [410. 分割数组的最大值](https://leetcode-cn.com/problems/split-array-largest-sum/) | 同875，1011，二分枚举                                        |
+| 441   | [441. 排列硬币](https://leetcode-cn.com/problems/arranging-coins/) | 二分查找模版题                                               |
 
 ### 链表类型题
 
@@ -148,7 +149,7 @@
 | 45   | [跳跃游戏Ⅱ](https://leetcode-cn.com/problems/jump-game-ii/submissions/) | 贪心思想：每次选择能到达的最远路径，并且方法数+1，在此基础上再跳下一次 |
 | 55   | [跳跃游戏](https://leetcode-cn.com/problems/jump-game/)      | 除了使用dp，也可以使用贪心思想：也是尽可能选择最远的跳，维护一个当前可跳最远距离 |
 | 1029 | [两地调度](https://leetcode-cn.com/problems/two-city-scheduling/) | 首先将这 2N 个人全都安排飞往 BB 市，再选出 N 个人改变它们的行程，让他们飞往 AA 市。如果选择改变一个人的行程，那么公司将会额外付出 price_A - price_B 的费用，所以只要这部分最小即可 |
-|      |                                                              |                                                              |
+| 991  | [991. 坏了的计算器](https://leetcode-cn.com/problems/broken-calculator/) | 逆向思维，y+1或者y/2，贪心让y尽可能/2                        |
 |      |                                                              |                                                              |
 
 
@@ -175,7 +176,7 @@
 | 113  | [113. 路径总和 II](https://leetcode-cn.com/problems/path-sum-ii/) |                                                              |
 | 437  | [437. 路径总和 III](https://leetcode-cn.com/problems/path-sum-iii/) | 两次dfs（先序遍历）                                          |
 | 116  | [116. 填充每个节点的下一个右侧节点指针](https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node/) | 根据上层指针的next，来进行填充，整体上是bfs的思路            |
-|      |                                                              |                                                              |
+| 687  | [687. 最长同值路径](https://leetcode-cn.com/problems/longest-univalue-path/) | 递归，类似124和543                                           |
 | 105  | [105. 从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) | 前序遍历第一个元素就是根，根据该元素在中序遍历中找到树的左右子树，然后递归或者迭代 连接 |
 | 106  | [106. 从中序与后序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/) | 后序遍历最后一个元素就是根，根据该元素在中序遍历中找到树的左右子树，然后递归或者迭代 连接 |
 | 1028 | [1028. 从先序遍历还原二叉树](https://leetcode-cn.com/problems/recover-a-tree-from-preorder-traversal/)（hard） | 通过-确定层级关系，控制出入栈                                |
@@ -207,7 +208,7 @@
 | 127  | [127. 单词接龙](https://leetcode-cn.com/problems/word-ladder/) |                                                              |
 | 785  | [785. 判断二分图](https://leetcode-cn.com/problems/is-graph-bipartite/) | 经典染色法，dfs或者bfs                                       |
 | 886  | [886. 可能的二分法](https://leetcode-cn.com/problems/possible-bipartition/) |                                                              |
-| 1349 | [1349. 参加考试的最大学生数](https://leetcode-cn.com/problems/maximum-students-taking-exam/) |                                                              |
+| 1349 | [1349. 参加考试的最大学生数](https://leetcode-cn.com/problems/maximum-students-taking-exam/)（hard） |                                                              |
 | 126  | [126. 单词接龙 II](https://leetcode-cn.com/problems/word-ladder-ii/)（hard） | bfs层级遍历，并标层级号， 然后dfs从结束点回溯，找到路径存储。 |
 | 433  | [433. 最小基因变化](https://leetcode-cn.com/problems/minimum-genetic-mutation/) |                                                              |
 | 5211 | [5211. 概率最大的路径](https://leetcode-cn.com/problems/path-with-maximum-probability/) | 先要证明这种0-1之间的乘法最长路 可以用 dijkstra/bellman-ford/spfa求最短路的方法求 （反证法）。然后就可用堆优化的dijkstra，bellman-ford，或者spfa（这题没卡spfa） |
@@ -219,20 +220,23 @@
 | 5482 | [5482. 二维网格图中探测环](https://leetcode-cn.com/problems/detect-cycles-in-2d-grid/)（hard） | 带前置节点的dfs或者bfs                                       |
 | 841  | [841. 钥匙和房间](https://leetcode-cn.com/problems/keys-and-rooms/) | 建图dfs， 或者拓扑排序判环                                   |
 | 78   | [78. 子集](https://leetcode-cn.com/problems/subsets/)        | 简单dfs，或者直接遍历，遇到一个数就把所有子集加上该数组成新的子集 |
+| 1034 | [1034. 边框着色](https://leetcode-cn.com/problems/coloring-a-border/) | DFS求连通分量的边界（通过控制属于该分量返回1，不属于返回0来实现） |
+|      |                                                              |                                                              |
+|      |                                                              |                                                              |
 |      |                                                              |                                                              |
 
 ### 拓扑排序
 
 [解法与总结]()
 
-| No   | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                          |
-| ---- | ------------------------------------------------------------ | ------------------------------- |
-| 207  | [207. 课程表](https://leetcode-cn.com/problems/course-schedule/) | 拓扑排序标准模板，判断是否是DAG |
-| 210  | [210. 课程表 II](https://leetcode-cn.com/problems/course-schedule-ii/) | 带结果集的拓扑排序              |
-| 329  | [329. 矩阵中的最长递增路径](https://leetcode-cn.com/problems/longest-increasing-path-in-a-matrix/) |                                 |
-| 1203 | [1203. 项目管理](https://leetcode-cn.com/problems/sort-items-by-groups-respecting-dependencies/) |                                 |
-|      |                                                              |                                 |
-|      |                                                              |                                 |
+| No   | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                                                       |
+| ---- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 207  | [207. 课程表](https://leetcode-cn.com/problems/course-schedule/) | 拓扑排序标准模板，判断是否是DAG                              |
+| 210  | [210. 课程表 II](https://leetcode-cn.com/problems/course-schedule-ii/) | 带结果集的拓扑排序                                           |
+| 329  | [329. 矩阵中的最长递增路径](https://leetcode-cn.com/problems/longest-increasing-path-in-a-matrix/) |                                                              |
+| 1203 | [1203. 项目管理](https://leetcode-cn.com/problems/sort-items-by-groups-respecting-dependencies/) |                                                              |
+| 851  | [851. 喧闹和富有](https://leetcode-cn.com/problems/loud-and-rich/) | 富->穷，构建有向图，拓扑排序，每次遍历邻接点时找所有点中最安静的 |
+|      |                                                              |                                                              |
 
 
 
@@ -270,6 +274,10 @@
 | 491  | [491. 递增子序列](https://leetcode-cn.com/problems/increasing-subsequences/) | 回溯剪枝                                                     |
 | 37   | [37. 解数独](https://leetcode-cn.com/problems/sudoku-solver/)（hard） | 回溯剪枝                                                     |
 | 5520 | [5520. 拆分字符串使唯一子字符串的数目最大](https://leetcode-cn.com/problems/split-a-string-into-the-max-number-of-unique-substrings/) | dfs+回溯                                                     |
+| 698  | [698. 划分为k个相等的子集](https://leetcode-cn.com/problems/partition-to-k-equal-sum-subsets/) | 回溯，构建k个和为target的集合，在每个集合构建时用回溯        |
+| 473  | [473. 火柴拼正方形](https://leetcode-cn.com/problems/matchsticks-to-square/) | No.698 的k=4的特殊情况                                       |
+|      |                                                              |                                                              |
+|      |                                                              |                                                              |
 
 
 
@@ -331,7 +339,7 @@
 | 1537 | [1537. 最大得分](https://leetcode-cn.com/problems/get-the-maximum-score/) | 分段求值，相当于记录下岔路口时的 最优解。可以dp，也可以优化为双指针 |
 | 143  | [143. 重排链表](https://leetcode-cn.com/problems/reorder-list/) | 快慢指针找中点(向前取)，分出两段，后面的插入到前面           |
 | 763  | [763. 划分字母区间](https://leetcode-cn.com/problems/partition-labels/) | map存取最后出现的位置+双指针循环更新                         |
-|      |                                                              |                                                              |
+| 56   | [56. 合并区间](https://leetcode-cn.com/problems/merge-intervals/) | 和57一样，先排序，再遍历。根据指针分析可以判断sort二维数组时，默认按每行第一个进行递增排序 |
 |      |                                                              |                                                              |
 
 ### 线段树/树状数组
@@ -359,7 +367,7 @@
 | 169  | [169. 多数元素](https://leetcode-cn.com/problems/majority-element/) | 摩尔投票法，一个候选人                                       |
 | 229  | [229. 求众数 II](https://leetcode-cn.com/problems/majority-element-ii/) | 摩尔投票法，两个候选人                                       |
 | 1287 | [1287. 有序数组中出现次数超过25%的元素](https://leetcode-cn.com/problems/element-appearing-more-than-25-in-sorted-array/) | 可以用摩尔投票法，找三个候选人                               |
-|      |                                                              |                                                              |
+| 1365 | [1365. 有多少小于当前数字的数字](https://leetcode-cn.com/problems/how-many-numbers-are-smaller-than-the-current-number/) | hash存放比当前数小的数个数，从小到大累加来算                 |
 
 
 ### 字符串独立专题（前缀、后缀、字典树及其它技巧）
