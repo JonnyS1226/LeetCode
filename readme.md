@@ -48,6 +48,8 @@
 | 154   | [154. 寻找旋转排序数组中的最小值 II](https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array-ii/) | 同153，新增情况：对于nums[mid] == nums[j]， 我们可以不考虑j，因为mid总可以替代掉 |
 | 410   | [410. 分割数组的最大值](https://leetcode-cn.com/problems/split-array-largest-sum/) | 同875，1011，二分枚举                                        |
 | 441   | [441. 排列硬币](https://leetcode-cn.com/problems/arranging-coins/) | 二分查找模版题                                               |
+| 436   | [436. 寻找右区间](https://leetcode-cn.com/problems/find-right-interval/) | 排序+二分查找                                                |
+|       |                                                              |                                                              |
 
 ### 链表类型题
 
@@ -105,7 +107,7 @@
 | 5419  | [5419. 两个子序列的最大点积](https://leetcode-cn.com/problems/max-dot-product-of-two-subsequences/) | 类似72，1143，  两个数组的dp， $O(n^2)$                      |
 | 139   | [139. 单词拆分](https://leetcode-cn.com/problems/word-break/) | 动态规划, dp[i]表示前i个字符是否能被分隔                     |
 | 140   | [140. 单词拆分 II](https://leetcode-cn.com/problems/word-break-ii/) | 动态规划 + 回溯                                              |
-| 1139  | [1139. 最大的以 1 为边界的正方形](https://leetcode-cn.com/problems/largest-1-bordered-square/) |                                                              |
+| 1139  | [1139. 最大的以 1 为边界的正方形](https://leetcode-cn.com/problems/largest-1-bordered-square/) | 三维dp或者用两个二维dp，分别表示向上能扩展的个数和向左能扩展的个数。更新时，看右上角和左下角分别向左和向上延伸的长度是否符合要求 |
 | 85    | [85. 最大矩形](https://leetcode-cn.com/problems/maximal-rectangle/) |                                                              |
 | 392   | [392. 判断子序列](https://leetcode-cn.com/problems/is-subsequence/)（进阶挑战） |                                                              |
 |       |                                                              |                                                              |
@@ -209,8 +211,10 @@
 | 785  | [785. 判断二分图](https://leetcode-cn.com/problems/is-graph-bipartite/) | 经典染色法，dfs或者bfs                                       |
 | 886  | [886. 可能的二分法](https://leetcode-cn.com/problems/possible-bipartition/) |                                                              |
 | 1349 | [1349. 参加考试的最大学生数](https://leetcode-cn.com/problems/maximum-students-taking-exam/)（hard） |                                                              |
-| 126  | [126. 单词接龙 II](https://leetcode-cn.com/problems/word-ladder-ii/)（hard） | bfs层级遍历，并标层级号， 然后dfs从结束点回溯，找到路径存储。 |
-| 433  | [433. 最小基因变化](https://leetcode-cn.com/problems/minimum-genetic-mutation/) |                                                              |
+| 127  | [127. 单词接龙](https://leetcode-cn.com/problems/word-ladder/) | bfs对于无向图找最短路的问题                                  |
+| 433  | [433. 最小基因变化](https://leetcode-cn.com/problems/minimum-genetic-mutation/) | 同127                                                        |
+| 126  | [126. 单词接龙 II](https://leetcode-cn.com/problems/word-ladder-ii/)（hard） |                                                              |
+| 980  | [980. 不同路径 III](https://leetcode-cn.com/problems/unique-paths-iii/)(hard) | dfs， 先统计需要走的空格数，dfs的过程中如果走到终点，进行判断是否走完了所有空格 |
 | 5211 | [5211. 概率最大的路径](https://leetcode-cn.com/problems/path-with-maximum-probability/) | 先要证明这种0-1之间的乘法最长路 可以用 dijkstra/bellman-ford/spfa求最短路的方法求 （反证法）。然后就可用堆优化的dijkstra，bellman-ford，或者spfa（这题没卡spfa） |
 | 5410 | [5410. 课程安排 IV](https://leetcode-cn.com/problems/course-schedule-iv/) | 可以用floyd算法判断两点是否有通路，或者使用并查集            |
 | 733  | [733. 图像渲染](https://leetcode-cn.com/problems/flood-fill/) | 题意就是类似油漆桶工具，存储原始color，然后使用bfs或者dfs    |
@@ -290,6 +294,7 @@
 | :--- | ------------------------------------------------------------ | :----------------------------------------------------------- | ---- |
 | 42   | [42. 接雨水](https://leetcode-cn.com/problems/trapping-rain-water/)（hard） | 典型单调递减栈题目                                           |      |
 | 84   | [84. 柱状图中最大的矩形](https://leetcode-cn.com/problems/largest-rectangle-in-histogram/) | 求以每个矩形高度为框出来高度的最大矩形面积（这一步通过单调栈，对于某个矩形高度，找向左延伸第一个小于它的，向右延伸第一个小于它的，然后求面积），再在里面取最大的。 |      |
+| 85   | [85. 最大矩形](https://leetcode-cn.com/problems/maximal-rectangle/) | 类似84，将y轴置于最左边，将x轴作用于每一行，都调用一次84，最后取最大 |      |
 | 496  | [496. 下一个更大元素 I](https://leetcode-cn.com/problems/next-greater-element-i/) | 构造一个单调递减栈，找到一个比栈顶大的就出栈，这个元素就是出栈元素后面第一个比它大的 |      |
 | 503  | [503. 下一个更大元素 II](https://leetcode-cn.com/problems/next-greater-element-ii/) | 构造一个单调递减栈，与496区别在于循环判断，如[4321]相当于用496的方法计算[43214321] |      |
 | 739  | [739. 每日温度](https://leetcode-cn.com/problems/daily-temperatures/) | 同496，维护一个单调递减栈                                    |      |
@@ -451,11 +456,11 @@
 
 [解法与总结（转载）](https://www.cnblogs.com/heaad/archive/2010/12/20/1911614.html)
 
-| No   | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark |
-| ---- | ------------------------------------------------------------ | ------ |
-| 5463 | [5463. 服务中心的最佳位置](https://leetcode-cn.com/problems/best-position-for-a-service-centre/)（hard） |        |
-|      |                                                              |        |
-|      |                                                              |        |
-|      |                                                              |        |
-|      |                                                              |        |
-|      |                                                              |        |
+| No   | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark     |
+| ---- | ------------------------------------------------------------ | ---------- |
+| 5463 | [5463. 服务中心的最佳位置](https://leetcode-cn.com/problems/best-position-for-a-service-centre/)（hard） | 梯度下降法 |
+|      |                                                              |            |
+|      |                                                              |            |
+|      |                                                              |            |
+|      |                                                              |            |
+|      |                                                              |            |
