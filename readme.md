@@ -20,7 +20,8 @@
 | 268         | [268. 缺失数字](https://leetcode-cn.com/problems/missing-number/) | 异或                                                         |
 | 717         | [717. 1比特与2比特字符](https://leetcode-cn.com/problems/1-bit-and-2-bit-characters/) | 总是以0结尾，所以只要看最后一个0和倒数第二个0之间1的个数(即连续的1个数)，为奇数就返回false，偶数是true，可用异或计数 |
 | 201         | [201. 数字范围按位与](https://leetcode-cn.com/problems/bitwise-and-of-numbers-range/) | 使用位移，找m和n的二进制数的公共前缀                         |
-|             |                                                              |                                                              |
+| 1356        | [1356. 根据数字二进制下 1 的数目排序](https://leetcode-cn.com/problems/sort-integers-by-the-number-of-1-bits/) | 两种方式统计1的个数（不断右移或者x&(x-1)）                   |
+| 393         | [393. UTF-8 编码验证](https://leetcode-cn.com/problems/utf-8-validation/) | 移位判断即可                                                 |
 
 ### 二分查找/分治减治思想
 
@@ -49,7 +50,7 @@
 | 410   | [410. 分割数组的最大值](https://leetcode-cn.com/problems/split-array-largest-sum/) | 同875，1011，二分枚举                                        |
 | 441   | [441. 排列硬币](https://leetcode-cn.com/problems/arranging-coins/) | 二分查找模版题                                               |
 | 436   | [436. 寻找右区间](https://leetcode-cn.com/problems/find-right-interval/) | 排序+二分查找                                                |
-|       |                                                              |                                                              |
+| 5563  | [5563. 销售价值减少的颜色球](https://leetcode-cn.com/problems/sell-diminishing-valued-colored-balls/) | 二分找购买后的球剩余数的下界，然后不够的再补                 |
 
 ### 链表类型题
 
@@ -64,7 +65,7 @@
 | 25   | [25. K 个一组翻转链表](https://leetcode-cn.com/problems/reverse-nodes-in-k-group/) |                                                              |
 | 24   | [24. 两两交换链表中的节点](https://leetcode-cn.com/problems/swap-nodes-in-pairs/) | 可设置一个dummyhead，然后链表依次操作                        |
 | 92   | [92. 反转链表 II](https://leetcode-cn.com/problems/reverse-linked-list-ii/) |                                                              |
-|      |                                                              |                                                              |
+| 327  | [327. 区间和的个数](https://leetcode-cn.com/problems/count-of-range-sum/) | 前缀和 + 归并排序。即如果是两个有序的数组，可以通过双指针求出符合条件的区间。此处相当于用归并构建了不断两个有序数组来求解 （是否有序 不影响最终结果，只不过有序的话方便求解，所以这种方式是正确的） |
 |      |                                                              |                                                              |
 |      |                                                              |                                                              |
 
@@ -97,7 +98,7 @@
 | 198   | [198. 打家劫舍](https://leetcode-cn.com/problems/house-robber/) | dp[i]表示前i+1个房屋最大偷窃金额，dp[i] = max(dp[i-1], dp[i-2] + nums[i]) |
 | 213   | [213. 打家劫舍 II](https://leetcode-cn.com/problems/house-robber-ii/) | 类似198，可以将环形划分解成[0:n-2]和[1:n-1]两个线性的dp，使用同198的递推式分段解决，求最大值 |
 | 740   | [740. 删除与获得点数](https://leetcode-cn.com/problems/delete-and-earn/) | 可以转换为198问题                                            |
-| 410   | [410. 分割数组的最大值](https://leetcode-cn.com/problems/split-array-largest-sum/) |                                                              |
+| 410   | [410. 分割数组的最大值](https://leetcode-cn.com/problems/split-array-largest-sum/)（hard） |                                                              |
 | 516   | [516. 最长回文子序列](https://leetcode-cn.com/problems/longest-palindromic-subsequence/) | 子序列问题的动态规划，dp(i)(j)表示s[i]-s[j]区间内最长回文子序列长度，注意区间dp要斜着打表或者反着打表。 <br>也可以转换为求逆字符串，再求最长公共子序列 |
 | 300   | [300. 最长上升子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/) | dp[i]=max{dp[j]}+1，if num[i] > num[j], 其中i>j，其中dp[i]表示前i个得最长递增序列长度，且nums[i]必须选择 |
 | 1143  | [1143. 最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) | dp[i] [j]代表text1前i个字符和text2前j个字符的最长公共子序列  |
@@ -108,7 +109,7 @@
 | 139   | [139. 单词拆分](https://leetcode-cn.com/problems/word-break/) | 动态规划, dp[i]表示前i个字符是否能被分隔                     |
 | 140   | [140. 单词拆分 II](https://leetcode-cn.com/problems/word-break-ii/) | 动态规划 + 回溯                                              |
 | 1139  | [1139. 最大的以 1 为边界的正方形](https://leetcode-cn.com/problems/largest-1-bordered-square/) | 三维dp或者用两个二维dp，分别表示向上能扩展的个数和向左能扩展的个数。更新时，看右上角和左下角分别向左和向上延伸的长度是否符合要求 |
-| 85    | [85. 最大矩形](https://leetcode-cn.com/problems/maximal-rectangle/) |                                                              |
+|       |                                                              |                                                              |
 | 392   | [392. 判断子序列](https://leetcode-cn.com/problems/is-subsequence/)（进阶挑战） |                                                              |
 |       |                                                              |                                                              |
 |       |                                                              |                                                              |
@@ -119,8 +120,13 @@
 | 837   | [837. 新21点](https://leetcode-cn.com/problems/new-21-game/) | dp[i]表示当前和为i（i < K）时获胜的概率， dp[i] = 摸j点的概率(1/w) 乘以 摸完之后成功的概率(dp[]i+j])，并遍历j求和 |
 | 1494  | [1494. 并行课程 II](https://leetcode-cn.com/problems/parallel-courses-ii/)（hard） |                                                              |
 | 32    | [32. 最长有效括号](https://leetcode-cn.com/problems/longest-valid-parentheses/)（hard） | 有多种方法，栈，dp，双向扫描。此处用dp，dp[i]表示以i位置结尾的最长有小括号子串长度。更新时，如果当前位置是(，显然长度为0，如果当前位置是右括号，那么要尝试找到与之对应左括号，需要判断i-dp[i-1]-1的位置是否是左括号，如果是：dp[i] = dp[i-1] + 2 + dp[i-dp[i-1]-2]  (还需要看匹配位置之前有没有有小括号) |
-| 44    | [44. 通配符匹配](https://leetcode-cn.com/problems/wildcard-matching/)（hard） | dp[i][j]表示s前i个和p前j个是否能匹配                         |
+| 44    | [44. 通配符匹配](https://leetcode-cn.com/problems/wildcard-matching/)（hard） | `dp[i][j]`表示s前i个和p前j个是否能匹配                       |
 | 174   | [174. 地下城游戏](https://leetcode-cn.com/problems/dungeon-game/)（hard） | 二维逆序dp                                                   |
+| 121   | [121. 买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/) |                                                              |
+| 122   | [122. 买卖股票的最佳时机 II](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/) |                                                              |
+| 123   | [123. 买卖股票的最佳时机 III](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii/) |                                                              |
+| 188   | [188. 买卖股票的最佳时机 IV](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iv/) |                                                              |
+| 714   | [714. 买卖股票的最佳时机含手续费](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/) |                                                              |
 | 309   | [309. 最佳买卖股票时机含冷冻期](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/) | dp`[i][0]`表示持有股票；dp`[i][1]`表示不持有股票，处于冷冻期;dp`[i][2]`表示不持有股票，不处于冷冻期。这里的「处于冷冻期」指的是在第 i 天结束之后的状态 |
 | 877   | [877. 石子游戏](https://leetcode-cn.com/problems/stone-game/) | `dp[i][j]`表示从i到j序列，先手和后手的差值；递推时分析 如果选开头堆如何更新，选末尾堆如何更新即可推出递推式 |
 | 1140  | [1140. 石子游戏 II](https://leetcode-cn.com/problems/stone-game-ii/) |                                                              |
@@ -131,7 +137,7 @@
 | LCP13 | [LCP 13. 寻宝](https://leetcode-cn.com/problems/xun-bao/)（hard） |                                                              |
 | 5486  | [5486. 切棍子的最小成本](https://leetcode-cn.com/problems/minimum-cost-to-cut-a-stick/)（hard） | 倒过来想，区间dp，`dp[i][j] `表示区间cuts[i]到cuts[j]的距离的合并的最小代价 |
 | 1000  | [1000. 合并石头的最低成本](https://leetcode-cn.com/problems/minimum-cost-to-merge-stones/) |                                                              |
-| 546   | [546. 移除盒子](https://leetcode-cn.com/problems/remove-boxes/) |                                                              |
+| 546   | [546. 移除盒子](https://leetcode-cn.com/problems/remove-boxes/)（hard） |                                                              |
 | 1024  | [1024. 视频拼接](https://leetcode-cn.com/problems/video-stitching/) | 动态规划问题，`dp[i]` 表示将区间`[0,i)`覆盖所需要的最少子区间的数量 |
 | 845   | [845. 数组中的最长山脉](https://leetcode-cn.com/problems/longest-mountain-in-array/) | 两遍扫描，类似dp思想，设定left和right数组表示向左向右能扩展的最大距离 |
 |       |                                                              |                                                              |
@@ -252,15 +258,16 @@
 | ----- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 5426  | [5426. 重新规划路线](https://leetcode-cn.com/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero/) | 此处使用并查集                                               |
 | 5410  | [5410. 课程安排 IV](https://leetcode-cn.com/problems/course-schedule-iv/) | 此处使用并查集                                               |
-| 130   | [130. 被围绕的区域](https://leetcode-cn.com/problems/surrounded-regions/) |                                                              |
-| 959   | [959. 由斜杠划分区域](https://leetcode-cn.com/problems/regions-cut-by-slashes/) |                                                              |
+| 130   | [130. 被围绕的区域](https://leetcode-cn.com/problems/surrounded-regions/) | 并查集模版题，将外围的O与dummyNode作为一个集合，内部是相连的作为一个集合，最终不和dummyNode一个集合的就全部修改掉 |
+| 959   | [959. 由斜杠划分区域](https://leetcode-cn.com/problems/regions-cut-by-slashes/) | 将每一个小正方形按对角线分成四块，遇到/和\分别合并其中两块   |
 | 17.07 | [面试题 17.07. 婴儿名字](https://leetcode-cn.com/problems/baby-names-lcci/) |                                                              |
 | 128   | [128. 最长连续序列](https://leetcode-cn.com/problems/longest-consecutive-sequence/)（hard） | 维护一个map(size)，将num，num-1，num+1这样的merge，并根据连通分量的size不断更新ans |
 | 990   | [990. Satisfiability of Equality Equations](https://leetcode-cn.com/problems/satisfiability-of-equality-equations/) | 等号则连通，不等号则判断左右两个是否在一个连通里，如果在，则返回false |
 | 785   | [785. 判断二分图](https://leetcode-cn.com/problems/is-graph-bipartite/) |                                                              |
-| 130   | [130. 被围绕的区域](https://leetcode-cn.com/problems/surrounded-regions/) |                                                              |
+| 684   | [684. 冗余连接](https://leetcode-cn.com/problems/redundant-connection/) | 并查集模版题                                                 |
+| 685   | [685. 冗余连接 II](https://leetcode-cn.com/problems/redundant-connection-ii/) |                                                              |
 | 5497  | [5497. 查找大小为 M 的最新分组](https://leetcode-cn.com/problems/find-latest-group-of-size-m/) |                                                              |
-|       |                                                              |                                                              |
+| 765   | [765. 情侣牵手](https://leetcode-cn.com/problems/couples-holding-hands/)(hard) | 最后返回 情侣个数-环个数（连通分量个数）。 这道题很难想到用并查集 ！！ |
 |       |                                                              |                                                              |
 
 
@@ -351,14 +358,14 @@
 
 [解法与总结]()
 
-| No   | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark |
-| ---- | ------------------------------------------------------------ | ------ |
-| 315  | [315. 计算右侧小于当前元素的个数](https://leetcode-cn.com/problems/count-of-smaller-numbers-after-self/)（hard） |        |
-|      |                                                              |        |
-|      |                                                              |        |
-|      |                                                              |        |
-|      |                                                              |        |
-|      |                                                              |        |
+| No   | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                                                       |
+| ---- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 315  | [315. 计算右侧小于当前元素的个数](https://leetcode-cn.com/problems/count-of-smaller-numbers-after-self/)（hard） | 树状数组模版题                                               |
+| 327  | [327. 区间和的个数](https://leetcode-cn.com/problems/count-of-range-sum/)（hard） | 用树状数组，对于每一个presum[i] 用BIT求前缀的方式 求 [presum[i]-upper, presum[i]-lower] 的元素个数 |
+| 5564 | [5564. 通过指令创建有序数组](https://leetcode-cn.com/problems/create-sorted-array-through-instructions/)（hard） | 树状数组的模版题，和315类似                                  |
+|      |                                                              |                                                              |
+|      |                                                              |                                                              |
+|      |                                                              |                                                              |
 
 
 ### hash/set/桶/计数/堆等容器使用
@@ -373,6 +380,7 @@
 | 229  | [229. 求众数 II](https://leetcode-cn.com/problems/majority-element-ii/) | 摩尔投票法，两个候选人                                       |
 | 1287 | [1287. 有序数组中出现次数超过25%的元素](https://leetcode-cn.com/problems/element-appearing-more-than-25-in-sorted-array/) | 可以用摩尔投票法，找三个候选人                               |
 | 1365 | [1365. 有多少小于当前数字的数字](https://leetcode-cn.com/problems/how-many-numbers-are-smaller-than-the-current-number/) | hash存放比当前数小的数个数，从小到大累加来算                 |
+| 973  | [973. 最接近原点的 K 个点](https://leetcode-cn.com/problems/k-closest-points-to-origin/) | 本质上是topk问题，用优先队列实现的大顶堆即可                 |
 
 
 ### 字符串独立专题（前缀、后缀、字典树及其它技巧）
@@ -437,6 +445,8 @@
 | 974  | [974. 和可被 K 整除的子数组](https://leetcode-cn.com/problems/subarray-sums-divisible-by-k/) | 状态压缩+前缀和                                              |
 | 1371 | [1371. 每个元音包含偶数次的最长子字符串](https://leetcode-cn.com/problems/find-the-longest-substring-containing-vowels-in-even-counts/) | 状态压缩+前缀和                                              |
 | 5485 | [5485. 找出最长的超赞子字符串](https://leetcode-cn.com/problems/find-longest-awesome-substring/)（hard） | 状态压缩+前缀和                                              |
+| 303  |                                                              |                                                              |
+| 307  |                                                              |                                                              |
 
 
 
@@ -464,3 +474,4 @@
 |      |                                                              |            |
 |      |                                                              |            |
 |      |                                                              |            |
+
