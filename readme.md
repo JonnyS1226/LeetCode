@@ -51,6 +51,7 @@
 | 441   | [441. 排列硬币](https://leetcode-cn.com/problems/arranging-coins/) | 二分查找模版题                                               |
 | 436   | [436. 寻找右区间](https://leetcode-cn.com/problems/find-right-interval/) | 排序+二分查找                                                |
 | 5563  | [5563. 销售价值减少的颜色球](https://leetcode-cn.com/problems/sell-diminishing-valued-colored-balls/) | 二分找购买后的球剩余数的下界，然后不够的再补                 |
+| 778   | [778. 水位上升的泳池中游泳](https://leetcode-cn.com/problems/swim-in-rising-water/) | 二分答案+dfs/并查集                                          |
 
 ### 链表类型题
 
@@ -61,13 +62,16 @@
 | 21.  | [合并两个有序链表](https://leetcode-cn.com/problems/merge-two-sorted-lists/) | 简单的双指针依次比较归并                                     |
 | 23.  | [合并k个有序链表](https://leetcode-cn.com/problems/merge-k-sorted-lists/) | 在No.21的基础上加上分治策略                                  |
 | 61.  | [旋转链表](https://leetcode-cn.com/problems/rotate-list/)    | 先连成环（这步非必须），再添加断点。本质就是找到旋转后的头节点 |
-| 206. | [反转链表](https://leetcode-cn.com/problems/reverse-linked-list/) | 迭代法：三指针逐步分析     递归法：输入一个节点 `head`，将「以 `head` 为起点」的链表反转，并返回反转之后的头结点 |
+|      |                                                              |                                                              |
 | 25   | [25. K 个一组翻转链表](https://leetcode-cn.com/problems/reverse-nodes-in-k-group/) |                                                              |
 | 24   | [24. 两两交换链表中的节点](https://leetcode-cn.com/problems/swap-nodes-in-pairs/) | 可设置一个dummyhead，然后链表依次操作                        |
+| 206. | [反转链表](https://leetcode-cn.com/problems/reverse-linked-list/) | 迭代法：三指针逐步分析     递归法：输入一个节点 `head`，将「以 `head` 为起点」的链表反转，并返回反转之后的头结点 |
 | 92   | [92. 反转链表 II](https://leetcode-cn.com/problems/reverse-linked-list-ii/) |                                                              |
-| 327  | [327. 区间和的个数](https://leetcode-cn.com/problems/count-of-range-sum/) | 前缀和 + 归并排序。即如果是两个有序的数组，可以通过双指针求出符合条件的区间。此处相当于用归并构建了不断两个有序数组来求解 （是否有序 不影响最终结果，只不过有序的话方便求解，所以这种方式是正确的） |
 |      |                                                              |                                                              |
-|      |                                                              |                                                              |
+| 328  | [328. 奇偶链表](https://leetcode-cn.com/problems/odd-even-linked-list/) | 四个指针分别指向奇数偶数的链表头尾                           |
+| 725  | [725. 分隔链表](https://leetcode-cn.com/problems/split-linked-list-in-parts/) | 计算分割后每一块的长度，然后遍历链表即可                     |
+| 83   | [83. 删除排序链表中的重复元素](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/) | 相同的跳过，不同的连接，迭代/递归                            |
+| 82   | [82. 删除排序链表中的重复元素 II](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list-ii/) | 类似83，但是递归的写法要注意                                 |
 
 
 
@@ -80,6 +84,7 @@
 | 55    | [跳跃游戏](https://leetcode-cn.com/problems/jump-game/)      | dp[i]表示是否能跳到下标为i的元素，可以使用动态规划解决       |
 | 983   | [最低票价](https://leetcode-cn.com/problems/minimum-cost-for-tickets/) | dp[i]表示前i天买票旅行的最低消费，dp[i]由dp[i-1],dp[i-7],dp[i-30]决定 |
 | 70    | [爬楼梯](https://leetcode-cn.com/problems/climbing-stairs/)  | dp[i]表示爬i层楼的方法数，dp[i] = dp[i-1] + dp[i-2];         |
+| 377   | [377. 组合总和 Ⅳ](https://leetcode-cn.com/problems/combination-sum-iv/) | 70的进阶版，`dp[i]+=dp[i-num]`                               |
 | 46    | [面试题46. 把数字翻译成字符串](https://leetcode-cn.com/problems/ba-shu-zi-fan-yi-cheng-zi-fu-chuan-lcof/) | 类似70                                                       |
 | 322   | [零钱兑换](https://leetcode-cn.com/problems/coin-change/)    | dp[i]表示凑总金额i所需最少硬币数，dp[i] = min(dp[i], dp[i-coin]+1); |
 | 518   | [零钱兑换Ⅱ](https://leetcode-cn.com/problems/coin-change-2/) | dp[i]表示凑总金额i的方法数，dp[i] = $ \sum$ dp[i-coin];      |
@@ -111,7 +116,7 @@
 | 1139  | [1139. 最大的以 1 为边界的正方形](https://leetcode-cn.com/problems/largest-1-bordered-square/) | 三维dp或者用两个二维dp，分别表示向上能扩展的个数和向左能扩展的个数。更新时，看右上角和左下角分别向左和向上延伸的长度是否符合要求 |
 |       |                                                              |                                                              |
 | 392   | [392. 判断子序列](https://leetcode-cn.com/problems/is-subsequence/)（进阶挑战） |                                                              |
-|       |                                                              |                                                              |
+| 514   | [514. 自由之路](https://leetcode-cn.com/problems/freedom-trail/)（hard） | `dp[i][j]` 表示在ring的第j处找到key的第i个字符所需要移动的步数。最后返回 `*max_element(dp[m-1][t], t=1~n-1)`。使用pos记录ring中每个字符的位置 |
 |       |                                                              |                                                              |
 | 64    | [64. 最小路径和](https://leetcode-cn.com/problems/minimum-path-sum/) | $dp[i][j] = min(dp[i-1][j], dp[i][j-1]) + grid[i][j]$        |
 | 10    | [10. 正则表达式匹配](https://leetcode-cn.com/problems/regular-expression-matching/)（hard） | 用dp i  j 表示 s的前 i 个字符与 p中的前 j 个字符是否能够匹配。 |
@@ -199,8 +204,9 @@
 | 404  | [404. 左叶子之和](https://leetcode-cn.com/problems/sum-of-left-leaves/) | 先序遍历，递归或迭代，找到**满足左叶子条件**就记录结果       |
 | 114  | [114. 二叉树展开为链表](https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/) | 按根右左的遍历，通过右指针组成链表                           |
 | 430  | [430. 扁平化多级双向链表](https://leetcode-cn.com/problems/flatten-a-multilevel-doubly-linked-list/) | 同114，把child看成左，next看成右即可                         |
-| 235  | [235. 二叉搜索树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/) | 利用二叉搜索树的性质求LCA                                    |
-| 236  | [236. 二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/) |                                                              |
+| 235  | [235. 二叉搜索树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/) | 可以用236的普遍方法，也可以直接利用二叉搜索树的性质求LCA     |
+| 236  | [236. 二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/) | 左右搜，如果分列左右，那么分岔点就是。否则就向左/右搜        |
+| 834  | [834. 树中距离之和](https://leetcode-cn.com/problems/sum-of-distances-in-tree/)(hard) | 两次dfs，类似换根树形dp，`ans(child) = ans(root) - cnt(child) + N - cnt(child);` |
 
 
 
@@ -268,27 +274,32 @@
 | 685   | [685. 冗余连接 II](https://leetcode-cn.com/problems/redundant-connection-ii/) |                                                              |
 | 5497  | [5497. 查找大小为 M 的最新分组](https://leetcode-cn.com/problems/find-latest-group-of-size-m/) |                                                              |
 | 765   | [765. 情侣牵手](https://leetcode-cn.com/problems/couples-holding-hands/)(hard) | 最后返回 情侣个数-环个数（连通分量个数）。 这道题很难想到用并查集 ！！ |
-|       |                                                              |                                                              |
+| 839   | [839. 相似字符串组](https://leetcode-cn.com/problems/similar-string-groups/)(hard) | 并查集+similar函数的编写+对于长单词和短单词分别讨论是用枚举还是遍历（这样控制复杂度O（n^3）） |
+| 778   | [778. 水位上升的泳池中游泳](https://leetcode-cn.com/problems/swim-in-rising-water/) | 二分答案+dfs/并查集                                          |
 
 
 ### 回溯剪枝
 
 [解法与总结]()
 
-| No   | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                                                       |
-| ---- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 46   | [46. 全排列](https://leetcode-cn.com/problems/permutations/) | 回溯剪枝，可以用交换法，也可以纯回溯                         |
-| 47   | [47. 全排列 II](https://leetcode-cn.com/problems/permutations-ii/) | 回溯剪枝，判断好去重条件                                     |
-| 784  | [784. 字母大小写全排列](https://leetcode-cn.com/problems/letter-case-permutation/) | 回溯剪枝，但结果集不需要等到搜索到叶子才添加，而是每一个节点更改都要添加 |
-| 93   | [93. 复原IP地址](https://leetcode-cn.com/problems/restore-ip-addresses/) |                                                              |
-| 140  | [140. 单词拆分 II](https://leetcode-cn.com/problems/word-break-ii/) | 回溯剪枝                                                     |
-| 491  | [491. 递增子序列](https://leetcode-cn.com/problems/increasing-subsequences/) | 回溯剪枝                                                     |
-| 37   | [37. 解数独](https://leetcode-cn.com/problems/sudoku-solver/)（hard） | 回溯剪枝                                                     |
-| 5520 | [5520. 拆分字符串使唯一子字符串的数目最大](https://leetcode-cn.com/problems/split-a-string-into-the-max-number-of-unique-substrings/) | dfs+回溯                                                     |
-| 698  | [698. 划分为k个相等的子集](https://leetcode-cn.com/problems/partition-to-k-equal-sum-subsets/) | 回溯，构建k个和为target的集合，在每个集合构建时用回溯        |
-| 473  | [473. 火柴拼正方形](https://leetcode-cn.com/problems/matchsticks-to-square/) | No.698 的k=4的特殊情况                                       |
-|      |                                                              |                                                              |
-|      |                                                              |                                                              |
+| No    | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                                                       |
+| ----- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 46    | [46. 全排列](https://leetcode-cn.com/problems/permutations/) | 回溯剪枝，可以用交换法，也可以选取法                         |
+| 47    | [47. 全排列 II](https://leetcode-cn.com/problems/permutations-ii/) | 回溯剪枝，排序，判断好去重条件(前后两个数相等，并且前面一个数没有使用) |
+| 784   | [784. 字母大小写全排列](https://leetcode-cn.com/problems/letter-case-permutation/) | 回溯剪枝，但结果集不需要等到搜索到叶子才添加，而是每一个节点更改都要添加 |
+| 93    | [93. 复原IP地址](https://leetcode-cn.com/problems/restore-ip-addresses/) |                                                              |
+| 140   | [140. 单词拆分 II](https://leetcode-cn.com/problems/word-break-ii/) | 回溯剪枝                                                     |
+| 491   | [491. 递增子序列](https://leetcode-cn.com/problems/increasing-subsequences/) | 回溯剪枝                                                     |
+| 37    | [37. 解数独](https://leetcode-cn.com/problems/sudoku-solver/)（hard） | 回溯法                                                       |
+| 5520  | [5520. 拆分字符串使唯一子字符串的数目最大](https://leetcode-cn.com/problems/split-a-string-into-the-max-number-of-unique-substrings/) | dfs+回溯                                                     |
+| 698   | [698. 划分为k个相等的子集](https://leetcode-cn.com/problems/partition-to-k-equal-sum-subsets/) | 回溯，构建k个和为target的集合，在每个集合构建时用回溯        |
+| 473   | [473. 火柴拼正方形](https://leetcode-cn.com/problems/matchsticks-to-square/) | No.698 的k=4的特殊情况                                       |
+| 77    | [77. 组合](https://leetcode-cn.com/problems/combinations/)   | 有顺序的回溯                                                 |
+| 39    | [39. 组合总和](https://leetcode-cn.com/problems/combination-sum/) | 可以重复选取的回溯                                           |
+| 40    | [40. 组合总和 II](https://leetcode-cn.com/problems/combination-sum-ii/) | 回溯去重                                                     |
+| 216   | [216. 组合总和 III](https://leetcode-cn.com/problems/combination-sum-iii/) | 可以构造数组进行回溯（回溯函数中写一次递归即可），也可以直接回溯（分别考虑取和不取两种情况，两次递归） |
+| 08.12 | [面试题 08.12. 八皇后](https://leetcode-cn.com/problems/eight-queens-lcci/) | 经典回溯                                                     |
+|       |                                                              |                                                              |
 
 
 
@@ -307,7 +318,7 @@
 | 739  | [739. 每日温度](https://leetcode-cn.com/problems/daily-temperatures/) | 同496，维护一个单调递减栈                                    |      |
 | 239  | [239. 滑动窗口最大值](https://leetcode-cn.com/problems/sliding-window-maximum/) |                                                              |      |
 | 901  | [901. 股票价格跨度](https://leetcode-cn.com/problems/online-stock-span/) | 与496，739一样的思路                                         |      |
-| 402  | [402. 移掉K位数字](https://leetcode-cn.com/problems/remove-k-digits/) | 贪心的想法+单调递增栈                                        |      |
+| 402  | [402. 移掉K位数字](https://leetcode-cn.com/problems/remove-k-digits/) | 贪心的想法+栈，使靠前的数尽量小，所以用单调递增栈            |      |
 | 33   | [面试题33. 二叉搜索树的后序遍历序列](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof/) | 递归分治O($n^2$)，*可以用单调栈实现O(n)                      |      |
 | 5420 | [5420. Final Prices With a Special Discount in a Shop](https://leetcode-cn.com/problems/final-prices-with-a-special-discount-in-a-shop/) | 单调栈的简单应用                                             |      |
 | 394  | [394. 字符串解码](https://leetcode-cn.com/problems/decode-string/) | 维护数字栈和字符栈，碰到[入栈，碰到]出栈                     |      |
@@ -352,7 +363,8 @@
 | 143  | [143. 重排链表](https://leetcode-cn.com/problems/reorder-list/) | 快慢指针找中点(向前取)，分出两段，后面的插入到前面           |
 | 763  | [763. 划分字母区间](https://leetcode-cn.com/problems/partition-labels/) | map存取最后出现的位置+双指针循环更新                         |
 | 56   | [56. 合并区间](https://leetcode-cn.com/problems/merge-intervals/) | 和57一样，先排序，再遍历。根据指针分析可以判断sort二维数组时，默认按每行第一个进行递增排序 |
-|      |                                                              |                                                              |
+| 327  | [327. 区间和的个数](https://leetcode-cn.com/problems/count-of-range-sum/) | 前缀和 + 归并排序。即如果是两个有序的数组，可以通过双指针求出符合条件的区间。此处相当于用归并构建了不断两个有序数组来求解 （是否有序 不影响最终结果，只不过有序的话方便求解，所以这种方式是正确的） |
+| 5602 | [5602. 将 x 减到 0 的最小操作数](https://leetcode-cn.com/problems/minimum-operations-to-reduce-x-to-zero/) | 最快的方法是双指针，左右和=x 相当于 找中间最长的连续的和等于sum-x。或者用前缀和+哈希，二分等都可 |
 
 ### 线段树/树状数组
 
@@ -381,6 +393,8 @@
 | 1287 | [1287. 有序数组中出现次数超过25%的元素](https://leetcode-cn.com/problems/element-appearing-more-than-25-in-sorted-array/) | 可以用摩尔投票法，找三个候选人                               |
 | 1365 | [1365. 有多少小于当前数字的数字](https://leetcode-cn.com/problems/how-many-numbers-are-smaller-than-the-current-number/) | hash存放比当前数小的数个数，从小到大累加来算                 |
 | 973  | [973. 最接近原点的 K 个点](https://leetcode-cn.com/problems/k-closest-points-to-origin/) | 本质上是topk问题，用优先队列实现的大顶堆即可                 |
+| 164  | [164. 最大间距](https://leetcode-cn.com/problems/maximum-gap/)（hard） | 桶排序+鸽巢。基本原理就是：这么多元素，平均gap是(max-min)/(n-1)，很显然最大gap一定是大于等于平均gap的。我们让每个桶的size是这么多。这样的话，最大gap只可能出现在桶间，那么桶也只要维护最小和最大元素，然后遍历求桶间的最大间隔即可。 |
+| 1122 | [1122. 数组的相对排序](https://leetcode-cn.com/problems/relative-sort-array/) | 简单计数排序/桶排序                                          |
 
 
 ### 字符串独立专题（前缀、后缀、字典树及其它技巧）
@@ -398,7 +412,7 @@
 
 
 
-### 数学题/细节分类讨论题
+### 数学题/杂项题讨论题
 
 [解法与总结]()
 
@@ -407,9 +421,9 @@
 | 961   | [961. 重复 N 次的元素](https://leetcode-cn.com/problems/n-repeated-element-in-size-2n-array/) | 推理：相当于N个不相同的元素，插入N个相同的元素，一定存在连续3个元素中有2个相同的值，这个值就是结果 |
 | 189   | [189. Rotate Array](https://leetcode-cn.com/problems/rotate-array/) |                                                              |
 | 16.18 | [面试题 16.18. 模式匹配](https://leetcode-cn.com/problems/pattern-matching-lcci/) | 暴力枚举，+ 严格分类讨论                                     |
-|       |                                                              |                                                              |
-|       |                                                              |                                                              |
-|       |                                                              |                                                              |
+| 31    | [31. 下一个排列](https://leetcode-cn.com/problems/next-permutation/) | 两遍扫描，找到一个较小数和较大数，且两者要接近，然后后面要排序，使得变化幅度小 |
+| 60    | [60. 排列序列](https://leetcode-cn.com/problems/permutation-sequence/)（hard） | 回溯剪枝也很可能超时，使用康托展开和逆康托展开               |
+| 134   | [134. 加油站](https://leetcode-cn.com/problems/gas-station/) | 要满足总gas-cost>=0，每个子部分gas-cost>=0                   |
 
 ### 回文系列
 
