@@ -319,6 +319,10 @@
 | 239  | [239. 滑动窗口最大值](https://leetcode-cn.com/problems/sliding-window-maximum/) |                                                              |      |
 | 901  | [901. 股票价格跨度](https://leetcode-cn.com/problems/online-stock-span/) | 与496，739一样的思路                                         |      |
 | 402  | [402. 移掉K位数字](https://leetcode-cn.com/problems/remove-k-digits/) | 贪心的想法+栈，使靠前的数尽量小，所以用单调递增栈            |      |
+| 316  | [316. 去除重复字母](https://leetcode-cn.com/problems/remove-duplicate-letters/)（hard） | 类似402，使用单调递增栈，同时要满足不能删光也不能超过总数（cnt来控制），不能多加入（vis来控制） |      |
+| 1081 | [1081. 不同字符的最小子序列](https://leetcode-cn.com/problems/smallest-subsequence-of-distinct-characters/) | 和316一样                                                    |      |
+| 321  | [321. 拼接最大数](https://leetcode-cn.com/problems/create-maximum-number/)(hard) |                                                              |      |
+|      |                                                              |                                                              |      |
 | 33   | [面试题33. 二叉搜索树的后序遍历序列](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof/) | 递归分治O($n^2$)，*可以用单调栈实现O(n)                      |      |
 | 5420 | [5420. Final Prices With a Special Discount in a Shop](https://leetcode-cn.com/problems/final-prices-with-a-special-discount-in-a-shop/) | 单调栈的简单应用                                             |      |
 | 394  | [394. 字符串解码](https://leetcode-cn.com/problems/decode-string/) | 维护数字栈和字符栈，碰到[入栈，碰到]出栈                     |      |
