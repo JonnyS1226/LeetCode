@@ -52,6 +52,7 @@
 | 436   | [436. 寻找右区间](https://leetcode-cn.com/problems/find-right-interval/) | 排序+二分查找                                                |
 | 5563  | [5563. 销售价值减少的颜色球](https://leetcode-cn.com/problems/sell-diminishing-valued-colored-balls/) | 二分找购买后的球剩余数的下界，然后不够的再补                 |
 | 778   | [778. 水位上升的泳池中游泳](https://leetcode-cn.com/problems/swim-in-rising-water/) | 二分答案+dfs/并查集                                          |
+| 475   | [475. 供暖器](https://leetcode-cn.com/problems/heaters/)     | 二分查找, 对每个houses 二分找一个最近的heaters               |
 
 ### 链表类型题
 
@@ -62,7 +63,8 @@
 | 21.  | [合并两个有序链表](https://leetcode-cn.com/problems/merge-two-sorted-lists/) | 简单的双指针依次比较归并                                     |
 | 23.  | [合并k个有序链表](https://leetcode-cn.com/problems/merge-k-sorted-lists/) | 在No.21的基础上加上分治策略                                  |
 | 61.  | [旋转链表](https://leetcode-cn.com/problems/rotate-list/)    | 先连成环（这步非必须），再添加断点。本质就是找到旋转后的头节点 |
-|      |                                                              |                                                              |
+| 147  | [147. 对链表进行插入排序](https://leetcode-cn.com/problems/insertion-sort-list/) | 插入排序                                                     |
+| 148  | [148. 排序链表](https://leetcode-cn.com/problems/sort-list/) | 链表归并排序和链表快速排序                                   |
 | 25   | [25. K 个一组翻转链表](https://leetcode-cn.com/problems/reverse-nodes-in-k-group/) |                                                              |
 | 24   | [24. 两两交换链表中的节点](https://leetcode-cn.com/problems/swap-nodes-in-pairs/) | 可设置一个dummyhead，然后链表依次操作                        |
 | 206. | [反转链表](https://leetcode-cn.com/problems/reverse-linked-list/) | 迭代法：三指针逐步分析     递归法：输入一个节点 `head`，将「以 `head` 为起点」的链表反转，并返回反转之后的头结点 |
@@ -145,7 +147,7 @@
 | 546   | [546. 移除盒子](https://leetcode-cn.com/problems/remove-boxes/)（hard） |                                                              |
 | 1024  | [1024. 视频拼接](https://leetcode-cn.com/problems/video-stitching/) | 动态规划问题，`dp[i]` 表示将区间`[0,i)`覆盖所需要的最少子区间的数量 |
 | 845   | [845. 数组中的最长山脉](https://leetcode-cn.com/problems/longest-mountain-in-array/) | 两遍扫描，类似dp思想，设定left和right数组表示向左向右能扩展的最大距离 |
-|       |                                                              |                                                              |
+| LCP09 | [LCP 09. 最小跳跃次数](https://leetcode-cn.com/problems/zui-xiao-tiao-yue-ci-shu/) | 复杂度限定O(n)，所以注意剪枝                                 |
 
 
 
@@ -163,7 +165,10 @@
 | 55   | [跳跃游戏](https://leetcode-cn.com/problems/jump-game/)      | 除了使用dp，也可以使用贪心思想：也是尽可能选择最远的跳，维护一个当前可跳最远距离 |
 | 1029 | [两地调度](https://leetcode-cn.com/problems/two-city-scheduling/) | 首先将这 2N 个人全都安排飞往 BB 市，再选出 N 个人改变它们的行程，让他们飞往 AA 市。如果选择改变一个人的行程，那么公司将会额外付出 price_A - price_B 的费用，所以只要这部分最小即可 |
 | 991  | [991. 坏了的计算器](https://leetcode-cn.com/problems/broken-calculator/) | 逆向思维，y+1或者y/2，贪心让y尽可能/2                        |
-|      |                                                              |                                                              |
+| 452  | [452. 用最少数量的箭引爆气球](https://leetcode-cn.com/problems/minimum-number-of-arrows-to-burst-balloons/) | 贪心，按`points[i][1]`排序 + 区间合并。为什么按后一个排序，因为如果按前一个排序，有可能出现A,B,C, A合并B同时又能合并C，但其实B和C不能合并 |
+| 435  | [435. 无重叠区间](https://leetcode-cn.com/problems/non-overlapping-intervals/) | 和452一样，贪心，排序                                        |
+| 1665 | [1665. 完成所有任务的最少初始能量](https://leetcode-cn.com/problems/minimum-initial-energy-to-finish-tasks/)（hard） | 二分答案+贪心                                                |
+| 1663 | [1663. 具有给定数值的最小字符串](https://leetcode-cn.com/problems/smallest-string-with-a-given-numeric-value/) | 贪心，先尽量补z，再往前补和修改已有z                         |
 
 
 
@@ -221,7 +226,7 @@
 | 5426 | [5426. 重新规划路线](https://leetcode-cn.com/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero/) | $O(n^2)$超时，可以建两种顺序的图，BFS，也可以并查集          |
 | 127  | [127. 单词接龙](https://leetcode-cn.com/problems/word-ladder/) |                                                              |
 | 785  | [785. 判断二分图](https://leetcode-cn.com/problems/is-graph-bipartite/) | 经典染色法，dfs或者bfs                                       |
-| 886  | [886. 可能的二分法](https://leetcode-cn.com/problems/possible-bipartition/) |                                                              |
+| 886  | [886. 可能的二分法](https://leetcode-cn.com/problems/possible-bipartition/) | 相当于二着色问题，每个点都要遍历一次dfs，因为可能存在非连通图 |
 | 1349 | [1349. 参加考试的最大学生数](https://leetcode-cn.com/problems/maximum-students-taking-exam/)（hard） |                                                              |
 | 127  | [127. 单词接龙](https://leetcode-cn.com/problems/word-ladder/) | bfs对于无向图找最短路的问题                                  |
 | 433  | [433. 最小基因变化](https://leetcode-cn.com/problems/minimum-genetic-mutation/) | 同127                                                        |
@@ -237,9 +242,10 @@
 | 841  | [841. 钥匙和房间](https://leetcode-cn.com/problems/keys-and-rooms/) | 建图dfs， 或者拓扑排序判环                                   |
 | 78   | [78. 子集](https://leetcode-cn.com/problems/subsets/)        | 简单dfs，或者直接遍历，遇到一个数就把所有子集加上该数组成新的子集 |
 | 1034 | [1034. 边框着色](https://leetcode-cn.com/problems/coloring-a-border/) | DFS求连通分量的边界（通过控制属于该分量返回1，不属于返回0来实现） |
-|      |                                                              |                                                              |
-|      |                                                              |                                                              |
-|      |                                                              |                                                              |
+| 1293 | [1293. 网格中的最短路径](https://leetcode-cn.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/)（hard） | bfs，增加一维 k （重点题）                                   |
+| 847  | [847. 访问所有节点的最短路径](https://leetcode-cn.com/problems/shortest-path-visiting-all-nodes/) |                                                              |
+| 854  | [854. 相似度为 K 的字符串](https://leetcode-cn.com/problems/k-similar-strings/) |                                                              |
+| 1345 | [1345. 跳跃游戏 IV](https://leetcode-cn.com/problems/jump-game-iv/)(hard) | bfs+倒排索引+同值跳跃只发生一次                              |
 
 ### 拓扑排序
 
@@ -308,29 +314,28 @@
 
 [解法与总结]()
 
-| No   | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                                                       |      |
-| :--- | ------------------------------------------------------------ | :----------------------------------------------------------- | ---- |
-| 42   | [42. 接雨水](https://leetcode-cn.com/problems/trapping-rain-water/)（hard） | 典型单调递减栈题目                                           |      |
-| 84   | [84. 柱状图中最大的矩形](https://leetcode-cn.com/problems/largest-rectangle-in-histogram/) | 求以每个矩形高度为框出来高度的最大矩形面积（这一步通过单调栈，对于某个矩形高度，找向左延伸第一个小于它的，向右延伸第一个小于它的，然后求面积），再在里面取最大的。 |      |
-| 85   | [85. 最大矩形](https://leetcode-cn.com/problems/maximal-rectangle/) | 类似84，将y轴置于最左边，将x轴作用于每一行，都调用一次84，最后取最大 |      |
-| 496  | [496. 下一个更大元素 I](https://leetcode-cn.com/problems/next-greater-element-i/) | 构造一个单调递减栈，找到一个比栈顶大的就出栈，这个元素就是出栈元素后面第一个比它大的 |      |
-| 503  | [503. 下一个更大元素 II](https://leetcode-cn.com/problems/next-greater-element-ii/) | 构造一个单调递减栈，与496区别在于循环判断，如[4321]相当于用496的方法计算[43214321] |      |
-| 739  | [739. 每日温度](https://leetcode-cn.com/problems/daily-temperatures/) | 同496，维护一个单调递减栈                                    |      |
-| 239  | [239. 滑动窗口最大值](https://leetcode-cn.com/problems/sliding-window-maximum/) |                                                              |      |
-| 901  | [901. 股票价格跨度](https://leetcode-cn.com/problems/online-stock-span/) | 与496，739一样的思路                                         |      |
-| 402  | [402. 移掉K位数字](https://leetcode-cn.com/problems/remove-k-digits/) | 贪心的想法+栈，使靠前的数尽量小，所以用单调递增栈            |      |
-| 316  | [316. 去除重复字母](https://leetcode-cn.com/problems/remove-duplicate-letters/)（hard） | 类似402，使用单调递增栈，同时要满足不能删光也不能超过总数（cnt来控制），不能多加入（vis来控制） |      |
-| 1081 | [1081. 不同字符的最小子序列](https://leetcode-cn.com/problems/smallest-subsequence-of-distinct-characters/) | 和316一样                                                    |      |
-| 321  | [321. 拼接最大数](https://leetcode-cn.com/problems/create-maximum-number/)(hard) |                                                              |      |
-|      |                                                              |                                                              |      |
-| 33   | [面试题33. 二叉搜索树的后序遍历序列](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof/) | 递归分治O($n^2$)，*可以用单调栈实现O(n)                      |      |
-| 5420 | [5420. Final Prices With a Special Discount in a Shop](https://leetcode-cn.com/problems/final-prices-with-a-special-discount-in-a-shop/) | 单调栈的简单应用                                             |      |
-| 394  | [394. 字符串解码](https://leetcode-cn.com/problems/decode-string/) | 维护数字栈和字符栈，碰到[入栈，碰到]出栈                     |      |
-| 1499 | [1499. 满足不等式的最大值](https://leetcode-cn.com/problems/max-value-of-equation/) |                                                              |      |
-| 5459 | [5459. 形成目标数组的子数组最少增加次数](https://leetcode-cn.com/problems/minimum-number-of-increments-on-subarrays-to-form-a-target-array/)（hard） | 可以利用单调栈思想：考虑每个元素左侧相邻元素的贡献值，但不同于常规单调栈，不需要所有出栈都计算 |      |
-| 1544 | [1544. 整理字符串](https://leetcode-cn.com/problems/make-the-string-great/) | 用数组模拟栈，或者直接用栈                                   |      |
+| No   | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                                                       |
+| :--- | ------------------------------------------------------------ | :----------------------------------------------------------- |
+| 42   | [42. 接雨水](https://leetcode-cn.com/problems/trapping-rain-water/)（hard） | 典型单调递减栈题目                                           |
+| 84   | [84. 柱状图中最大的矩形](https://leetcode-cn.com/problems/largest-rectangle-in-histogram/) | 求以每个矩形高度为框出来高度的最大矩形面积（这一步通过单调栈，对于某个矩形高度，找向左延伸第一个小于它的，向右延伸第一个小于它的，然后求面积），再在里面取最大的。 |
+| 85   | [85. 最大矩形](https://leetcode-cn.com/problems/maximal-rectangle/) | 类似84，将y轴置于最左边，将x轴作用于每一行，都调用一次84，最后取最大 |
+| 496  | [496. 下一个更大元素 I](https://leetcode-cn.com/problems/next-greater-element-i/) | 构造一个单调递减栈，找到一个比栈顶大的就出栈，这个元素就是出栈元素后面第一个比它大的 |
+| 503  | [503. 下一个更大元素 II](https://leetcode-cn.com/problems/next-greater-element-ii/) | 构造一个单调递减栈，与496区别在于循环判断，如[4321]相当于用496的方法计算[43214321] |
+| 739  | [739. 每日温度](https://leetcode-cn.com/problems/daily-temperatures/) | 同496，维护一个单调递减栈                                    |
+|      |                                                              |                                                              |
+| 901  | [901. 股票价格跨度](https://leetcode-cn.com/problems/online-stock-span/) | 与496，739一样的思路                                         |
+| 402  | [402. 移掉K位数字](https://leetcode-cn.com/problems/remove-k-digits/) | 贪心的想法+栈，使靠前的数尽量小，所以用单调递增栈            |
+| 316  | [316. 去除重复字母](https://leetcode-cn.com/problems/remove-duplicate-letters/)（hard） | 类似402，使用单调递增栈，同时要满足不能删光也不能超过总数（cnt来控制），不能多加入（vis来控制） |
+| 1081 | [1081. 不同字符的最小子序列](https://leetcode-cn.com/problems/smallest-subsequence-of-distinct-characters/) | 和316一样                                                    |
+| 321  | [321. 拼接最大数](https://leetcode-cn.com/problems/create-maximum-number/)(hard) | 先求两个nums中能构成的长为k的最大数（单调栈、402题），然后使用类似归并的思想合并 |
+| 33   | [面试题33. 二叉搜索树的后序遍历序列](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof/) | 递归分治O($n^2$)，*可以用单调栈实现O(n)                      |
+| 5420 | [5420. Final Prices With a Special Discount in a Shop](https://leetcode-cn.com/problems/final-prices-with-a-special-discount-in-a-shop/) | 单调栈的简单应用                                             |
+| 394  | [394. 字符串解码](https://leetcode-cn.com/problems/decode-string/) | 维护数字栈和字符栈，碰到[入栈，碰到]出栈                     |
+| 5459 | [5459. 形成目标数组的子数组最少增加次数](https://leetcode-cn.com/problems/minimum-number-of-increments-on-subarrays-to-form-a-target-array/)（hard） | 可以利用单调栈思想：考虑每个元素左侧相邻元素的贡献值，但不同于常规单调栈，不需要所有出栈都计算 |
+| 1544 | [1544. 整理字符串](https://leetcode-cn.com/problems/make-the-string-great/) | 用数组模拟栈，或者直接用栈                                   |
+| 862  | [862. 和至少为 K 的最短子数组](https://leetcode-cn.com/problems/shortest-subarray-with-sum-at-least-k/) | 前缀和+双端队列模拟的单调递增栈                              |
 
-### 滑动窗口/单调队列
+### 滑动窗口/单调队列/双端队列
 
 [解法与总结]()
 
@@ -339,10 +344,12 @@
 | 1052 | [1052. 爱生气的书店老板](https://leetcode-cn.com/problems/grumpy-bookstore-owner/) | 可以维护一个大小为X的滑动窗口，O(xn)                         |
 | 209  | [209. 长度最小的子数组](https://leetcode-cn.com/problems/minimum-size-subarray-sum/) | 典型滑窗，也可以用前缀和+二分法                              |
 | 76   | [76. 最小覆盖子串](https://leetcode-cn.com/problems/minimum-window-substring/)（hard） | 滑窗，判断窗口内是否满足要求，若不满足则扩大窗口，满足则尝试缩小 |
+| 632  | [632. 最小区间](https://leetcode-cn.com/problems/smallest-range-covering-elements-from-k-lists/)（hard） | 可以使用hash+排序+滑动窗口，转换成和76类似的题目             |
 | 424  | [424. 替换后的最长重复字符](https://leetcode-cn.com/problems/longest-repeating-character-replacement/) | 滑动窗口，窗口内条件right - left + 1 - tmpMaxCnt <= k        |
 | 1456 | [1456. 定长子串中元音的最大数目](https://leetcode-cn.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/) | map+滑动窗口                                                 |
 | 5423 | [5423. Find Two Non-overlapping Sub-arrays Each With Target Sum](https://leetcode-cn.com/problems/find-two-non-overlapping-sub-arrays-each-with-target-sum/) | 从后往前的滑动窗口+dp                                        |
-| 239  | [239. 滑动窗口最大值](https://leetcode-cn.com/problems/sliding-window-maximum/)（hard） |                                                              |
+| 862  | [862. 和至少为 K 的最短子数组](https://leetcode-cn.com/problems/shortest-subarray-with-sum-at-least-k/) | 前缀和+双端队列模拟的单调递增栈                              |
+| 239  | [239. 滑动窗口最大值](https://leetcode-cn.com/problems/sliding-window-maximum/)（hard） | 双端队列，front存最大，本质也是双端队列模拟单调栈            |
 | 1499 | [1499. 满足不等式的最大值](https://leetcode-cn.com/problems/max-value-of-equation/) | 即求 `max(yi + yj + xj - xi) = max(xj + yj) + max(yi - xi), i < j`，转换后就变成了239题，单调队列求滑动窗口内（区间内）最大值 |
 | 632  | [632. 最小区间](https://leetcode-cn.com/problems/smallest-range-covering-elements-from-k-lists/)（hard） |                                                              |
 
@@ -369,6 +376,8 @@
 | 56   | [56. 合并区间](https://leetcode-cn.com/problems/merge-intervals/) | 和57一样，先排序，再遍历。根据指针分析可以判断sort二维数组时，默认按每行第一个进行递增排序 |
 | 327  | [327. 区间和的个数](https://leetcode-cn.com/problems/count-of-range-sum/) | 前缀和 + 归并排序。即如果是两个有序的数组，可以通过双指针求出符合条件的区间。此处相当于用归并构建了不断两个有序数组来求解 （是否有序 不影响最终结果，只不过有序的话方便求解，所以这种方式是正确的） |
 | 5602 | [5602. 将 x 减到 0 的最小操作数](https://leetcode-cn.com/problems/minimum-operations-to-reduce-x-to-zero/) | 最快的方法是双指针，左右和=x 相当于 找中间最长的连续的和等于sum-x。或者用前缀和+哈希，二分等都可 |
+| 632  | [632. 最小区间](https://leetcode-cn.com/problems/smallest-range-covering-elements-from-k-lists/)(hard) | 小顶堆 + 多指针，每次维护n个值中的最大和最小值，然后不断更新min和max |
+| 23.  | [合并k个有序链表](https://leetcode-cn.com/problems/merge-k-sorted-lists/)(hard) | 小顶堆+多指针，和632类似                                     |
 
 ### 线段树/树状数组
 
@@ -399,6 +408,8 @@
 | 973  | [973. 最接近原点的 K 个点](https://leetcode-cn.com/problems/k-closest-points-to-origin/) | 本质上是topk问题，用优先队列实现的大顶堆即可                 |
 | 164  | [164. 最大间距](https://leetcode-cn.com/problems/maximum-gap/)（hard） | 桶排序+鸽巢。基本原理就是：这么多元素，平均gap是(max-min)/(n-1)，很显然最大gap一定是大于等于平均gap的。我们让每个桶的size是这么多。这样的话，最大gap只可能出现在桶间，那么桶也只要维护最小和最大元素，然后遍历求桶间的最大间隔即可。 |
 | 1122 | [1122. 数组的相对排序](https://leetcode-cn.com/problems/relative-sort-array/) | 简单计数排序/桶排序                                          |
+| 49   | [49. 字母异位词分组](https://leetcode-cn.com/problems/group-anagrams/) | 定义一个`unordered_map<string, vector<string>>`              |
+| 149  | [149. 直线上最多的点数](https://leetcode-cn.com/problems/max-points-on-a-line/)（hard） | 本质就是暴力法，用hash做了简单优化                           |
 
 
 ### 字符串独立专题（前缀、后缀、字典树及其它技巧）
@@ -428,6 +439,7 @@
 | 31    | [31. 下一个排列](https://leetcode-cn.com/problems/next-permutation/) | 两遍扫描，找到一个较小数和较大数，且两者要接近，然后后面要排序，使得变化幅度小 |
 | 60    | [60. 排列序列](https://leetcode-cn.com/problems/permutation-sequence/)（hard） | 回溯剪枝也很可能超时，使用康托展开和逆康托展开               |
 | 134   | [134. 加油站](https://leetcode-cn.com/problems/gas-station/) | 要满足总gas-cost>=0，每个子部分gas-cost>=0                   |
+| 48    | [48. 旋转图像](https://leetcode-cn.com/problems/rotate-image/) | 原地旋转。先转置，再换列                                     |
 
 ### 回文系列
 
@@ -465,6 +477,7 @@
 | 5485 | [5485. 找出最长的超赞子字符串](https://leetcode-cn.com/problems/find-longest-awesome-substring/)（hard） | 状态压缩+前缀和                                              |
 | 303  |                                                              |                                                              |
 | 307  |                                                              |                                                              |
+| 1664 | [1664. 生成平衡数组的方案数](https://leetcode-cn.com/problems/ways-to-make-a-fair-array/) | 分奇偶的前缀和                                               |
 
 
 
