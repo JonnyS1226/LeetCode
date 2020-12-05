@@ -157,7 +157,7 @@
 
 
 
-### 贪心算法
+### 贪心思想
 
 [解法与总结]()
 
@@ -171,6 +171,8 @@
 | 435  | [435. 无重叠区间](https://leetcode-cn.com/problems/non-overlapping-intervals/) | 和452一样，贪心，排序                                        |
 | 1665 | [1665. 完成所有任务的最少初始能量](https://leetcode-cn.com/problems/minimum-initial-energy-to-finish-tasks/)（hard） | 二分答案+贪心                                                |
 | 1663 | [1663. 具有给定数值的最小字符串](https://leetcode-cn.com/problems/smallest-string-with-a-given-numeric-value/) | 贪心，先尽量补z，再往前补和修改已有z                         |
+| 659  | [659. 分割数组为连续子序列](https://leetcode-cn.com/problems/split-array-into-consecutive-subsequences/) | tail[i]存储以数字i结尾的且符合题意的连续子序列个数，nc存出现次数 |
+| 1402 | [1402. 做菜顺序](https://leetcode-cn.com/problems/reducing-dishes/)（hard） | 贪心                                                         |
 
 
 
@@ -285,6 +287,7 @@
 | 765   | [765. 情侣牵手](https://leetcode-cn.com/problems/couples-holding-hands/)(hard) | 最后返回 情侣个数-环个数（连通分量个数）。 这道题很难想到用并查集 ！！ |
 | 839   | [839. 相似字符串组](https://leetcode-cn.com/problems/similar-string-groups/)(hard) | 并查集+similar函数的编写+对于长单词和短单词分别讨论是用枚举还是遍历（这样控制复杂度O（n^3）） |
 | 778   | [778. 水位上升的泳池中游泳](https://leetcode-cn.com/problems/swim-in-rising-water/) | 二分答案+dfs/并查集                                          |
+| 1627  | [1627. 带阈值的图连通性](https://leetcode-cn.com/problems/graph-connectivity-with-threshold/)(hard) | 并查集+数学技巧优化                                          |
 
 
 ### 回溯剪枝
@@ -448,10 +451,14 @@
 | 60    | [60. 排列序列](https://leetcode-cn.com/problems/permutation-sequence/)（hard） | 回溯剪枝也很可能超时，使用康托展开和逆康托展开               |
 | 134   | [134. 加油站](https://leetcode-cn.com/problems/gas-station/) | 要满足总gas-cost>=0，每个子部分gas-cost>=0                   |
 | 48    | [48. 旋转图像](https://leetcode-cn.com/problems/rotate-image/) | 原地旋转。先转置，再换列                                     |
+| 204   | [204. 计数质数](https://leetcode-cn.com/problems/count-primes/) | 经典素数筛算法                                               |
+| 1012  | [1012. 至少有 1 位重复的数字](https://leetcode-cn.com/problems/numbers-with-repeated-digits/)（hard） | 数位dp+反面+排列组合                                         |
+| 621   | [621. 任务调度器](https://leetcode-cn.com/problems/task-scheduler/) | 推公式 贪心                                                  |
+| 1359  | [1359. 有效的快递序列数目](https://leetcode-cn.com/problems/count-all-valid-pickup-and-delivery-options/)（hard） | 排列组合                                                     |
 
 ### 回文系列
 
-[解法与总结]()
+[解法与总结  ]()
 
 | No   | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                                                       |
 | ---- | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -490,7 +497,7 @@
 |      |                                                              |                                                              |
 | 5615 | [5615. 使数组互补的最少操作次数](https://leetcode-cn.com/problems/minimum-moves-to-make-array-complementary/) | 好题，对于临界点的差分思想                                   |
 | 1109 | [1109. 航班预订统计](https://leetcode-cn.com/problems/corporate-flight-bookings/) | 差分数组模版，diff 是每个航班订购座位数数组的差分数组        |
-| 1094 | [1094. 拼车](https://leetcode-cn.com/problems/car-pooling/)  |                                                              |
+| 1094 | [1094. 拼车](https://leetcode-cn.com/problems/car-pooling/)  | 构造一个数组表示每一位置车上乘客数，用差分数组来求解，然后判断乘客数是否一直符合capacity要求 |
 
 
 
