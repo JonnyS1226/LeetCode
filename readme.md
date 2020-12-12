@@ -117,10 +117,8 @@
 | 139   | [139. 单词拆分](https://leetcode-cn.com/problems/word-break/) | 动态规划, dp[i]表示前i个字符是否能被分隔                     |
 | 140   | [140. 单词拆分 II](https://leetcode-cn.com/problems/word-break-ii/) | 动态规划 + 回溯                                              |
 | 1139  | [1139. 最大的以 1 为边界的正方形](https://leetcode-cn.com/problems/largest-1-bordered-square/) | 三维dp或者用两个二维dp，分别表示向上能扩展的个数和向左能扩展的个数。更新时，看右上角和左下角分别向左和向上延伸的长度是否符合要求 |
-|       |                                                              |                                                              |
 | 392   | [392. 判断子序列](https://leetcode-cn.com/problems/is-subsequence/)（进阶挑战） |                                                              |
 | 514   | [514. 自由之路](https://leetcode-cn.com/problems/freedom-trail/)（hard） | `dp[i][j]` 表示在ring的第j处找到key的第i个字符所需要移动的步数。最后返回 `*max_element(dp[m-1][t], t=1~n-1)`。使用pos记录ring中每个字符的位置 |
-|       |                                                              |                                                              |
 | 64    | [64. 最小路径和](https://leetcode-cn.com/problems/minimum-path-sum/) | $dp[i][j] = min(dp[i-1][j], dp[i][j-1]) + grid[i][j]$        |
 | 10    | [10. 正则表达式匹配](https://leetcode-cn.com/problems/regular-expression-matching/)（hard） | 用dp i  j 表示 s的前 i 个字符与 p中的前 j 个字符是否能够匹配。 |
 | 5411  | [5411. 摘樱桃 II](https://leetcode-cn.com/problems/cherry-pickup-ii/)（hard） | 三层dp dp[ijk]表示第i行，机器人1在j列，机器人2在k列的最大樱桃数 |
@@ -150,6 +148,10 @@
 | 845   | [845. 数组中的最长山脉](https://leetcode-cn.com/problems/longest-mountain-in-array/) | 两遍扫描，类似dp思想，设定left和right数组表示向左向右能扩展的最大距离 |
 | LCP09 | [LCP 09. 最小跳跃次数](https://leetcode-cn.com/problems/zui-xiao-tiao-yue-ci-shu/) | 复杂度限定O(n)，所以注意剪枝                                 |
 | 1269  | [1269. 停在原地的方案数](https://leetcode-cn.com/problems/number-of-ways-to-stay-in-the-same-place-after-some-steps/) | `dp[i][j] 表示i次操作，在j处，方案数,dp[i][j] = dp[i-1][j] + dp[i-1][j-1] + dp[i-1][j+1]` |
+| 1681  | [1681. 最小不兼容性](https://leetcode-cn.com/problems/minimum-incompatibility/)（hard） | 状态压缩动态规划                                             |
+| 1187  | [1187. 使数组严格递增](https://leetcode-cn.com/problems/make-array-strictly-increasing/)（hard） | `dp[i][j] 表示arr1前i个数，经过不多于j次变化，最后一个（即第i个）数的值，最后从小到大遍历dp[n-1][j]找到第一个符合的即可` |
+| 354   | [354. 俄罗斯套娃信封问题](https://leetcode-cn.com/problems/russian-doll-envelopes/)（hard） | 按一维排序后，转换为最大上升序列问题。然后可以使用O(n2)或者借助二分的O(nlgn)解决 |
+| 376   | [376. 摆动序列](https://leetcode-cn.com/problems/wiggle-subsequence/) | dp[i]表示前i个元素摆动序列长度，第二维是状态:0表示最后上升,1表示最后下降 |
 
 
 
@@ -173,6 +175,8 @@
 | 1663 | [1663. 具有给定数值的最小字符串](https://leetcode-cn.com/problems/smallest-string-with-a-given-numeric-value/) | 贪心，先尽量补z，再往前补和修改已有z                         |
 | 659  | [659. 分割数组为连续子序列](https://leetcode-cn.com/problems/split-array-into-consecutive-subsequences/) | tail[i]存储以数字i结尾的且符合题意的连续子序列个数，nc存出现次数 |
 | 1402 | [1402. 做菜顺序](https://leetcode-cn.com/problems/reducing-dishes/)（hard） | 贪心                                                         |
+| 861  | [861. 翻转矩阵后的得分](https://leetcode-cn.com/problems/score-after-flipping-matrix/) | **1)**行列变换使得第一列全为1.   **2)** 列变换使得后续每一列上1的个数多于0的个数 |
+| 179  | [179. 最大数](https://leetcode-cn.com/problems/largest-number/) | 贪心思想的自定义排序，这么自定义排序后的传递性证明要注意     |
 
 
 
@@ -251,6 +255,7 @@
 | 847  | [847. 访问所有节点的最短路径](https://leetcode-cn.com/problems/shortest-path-visiting-all-nodes/) |                                                              |
 | 854  | [854. 相似度为 K 的字符串](https://leetcode-cn.com/problems/k-similar-strings/) |                                                              |
 | 1345 | [1345. 跳跃游戏 IV](https://leetcode-cn.com/problems/jump-game-iv/)(hard) | bfs+倒排索引+同值跳跃只发生一次                              |
+| 301  | [301. 删除无效的括号](https://leetcode-cn.com/problems/remove-invalid-parentheses/)（hard） | 对当前串，考虑多删除一个字符后的所有新串，做bfs              |
 
 ### 拓扑排序
 
@@ -311,7 +316,8 @@
 | 40    | [40. 组合总和 II](https://leetcode-cn.com/problems/combination-sum-ii/) | 回溯去重                                                     |
 | 216   | [216. 组合总和 III](https://leetcode-cn.com/problems/combination-sum-iii/) | 可以构造数组进行回溯（回溯函数中写一次递归即可），也可以直接回溯（分别考虑取和不取两种情况，两次递归） |
 | 08.12 | [面试题 08.12. 八皇后](https://leetcode-cn.com/problems/eight-queens-lcci/) | 经典回溯                                                     |
-|       |                                                              |                                                              |
+| 842   | [842. 将数组拆分成斐波那契序列](https://leetcode-cn.com/problems/split-array-into-fibonacci-sequence/) | 回溯，剪枝情况很多                                           |
+| 306   | [306. 累加数](https://leetcode-cn.com/problems/additive-number/) | 和842完全相同的回溯，当然更好的做法是用字符串处理溢出情况    |
 
 
 
@@ -358,8 +364,8 @@
 | 862  | [862. 和至少为 K 的最短子数组](https://leetcode-cn.com/problems/shortest-subarray-with-sum-at-least-k/) | 前缀和+双端队列模拟的单调递增栈                              |
 | 239  | [239. 滑动窗口最大值](https://leetcode-cn.com/problems/sliding-window-maximum/)（hard） | 双端队列，front存最大，本质也是双端队列模拟单调栈            |
 | 1499 | [1499. 满足不等式的最大值](https://leetcode-cn.com/problems/max-value-of-equation/) | 即求 `max(yi + yj + xj - xi) = max(xj + yj) + max(yi - xi), i < j`，转换后就变成了239题，单调队列求滑动窗口内（区间内）最大值 |
-| 632  | [632. 最小区间](https://leetcode-cn.com/problems/smallest-range-covering-elements-from-k-lists/)（hard） |                                                              |
-|      |                                                              |                                                              |
+| 632  | [632. 最小区间](https://leetcode-cn.com/problems/smallest-range-covering-elements-from-k-lists/)（hard） | hash+排序后滑动窗口                                          |
+| 649  | [649. Dota2 参议院](https://leetcode-cn.com/problems/dota2-senate/) | 循环队列+贪心模拟                                            |
 
 ### 快慢指针/双指针
 
@@ -387,6 +393,9 @@
 | 632  | [632. 最小区间](https://leetcode-cn.com/problems/smallest-range-covering-elements-from-k-lists/)(hard) | 小顶堆 + 多指针，每次维护n个值中的最大和最小值，然后不断更新min和max |
 | 23.  | [合并k个有序链表](https://leetcode-cn.com/problems/merge-k-sorted-lists/)(hard) | 小顶堆+多指针，和632类似                                     |
 | 1675 | [1675. 数组的最小偏移量](https://leetcode-cn.com/problems/minimize-deviation-in-array/)（hard） | 相当于把每个元素可变的情况都加入进去，然后用632的代码求最小覆盖区间 |
+| 165  | [165. 比较版本号](https://leetcode-cn.com/problems/compare-version-numbers/) | 双指针处理                                                   |
+| 581  | [581. 最短无序连续子数组](https://leetcode-cn.com/problems/shortest-unsorted-continuous-subarray/) | 构建一个排序后数组，然后双指针                               |
+| 324  | [324. 摆动排序 II](https://leetcode-cn.com/problems/wiggle-sort-ii/) | 排序后，后一半插入到前一半中，双指针，单数注意重复数字的处理 |
 
 ### 线段树/树状数组
 
@@ -421,20 +430,24 @@
 | 149  | [149. 直线上最多的点数](https://leetcode-cn.com/problems/max-points-on-a-line/)（hard） | 本质就是暴力法，用hash做了简单优化                           |
 | 295  | [295. 数据流的中位数](https://leetcode-cn.com/problems/find-median-from-data-stream/)（hard） | 两个堆，保持平衡，一个存放小一半，一个存放大一半的元素       |
 | 767  | [767. 重构字符串](https://leetcode-cn.com/problems/reorganize-string/) | 构造出现频数大顶堆，每次出堆两个字符，加到ans上，这样能保证相邻字符不重复 |
+| 218  | [218. 天际线问题](https://leetcode-cn.com/problems/the-skyline-problem/)（hard） | 碰到建筑左侧 高度加入multiset； 碰到右侧，弹出对应的高度。multiset+扫描 |
 
 
 ### 字符串独立专题（前缀、后缀、字典树及其它技巧）
 
 [解法与总结]()
-| No    | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                  |
-| ----- | ------------------------------------------------------------ | ----------------------- |
-| 459   | [459. 重复的子字符串](https://leetcode-cn.com/problems/repeated-substring-pattern/) | 重复子串的特性          |
-| 1044  | [1044. 最长重复子串](https://leetcode-cn.com/problems/longest-duplicate-substring/) |                         |
-| 67    | [67. 二进制求和](https://leetcode-cn.com/problems/add-binary/) | 模拟字符串n进制求和即可 |
-| 989   | [989. 数组形式的整数加法](https://leetcode-cn.com/problems/add-to-array-form-of-integer/) | 大数加法                |
-| 43    | [43. 字符串相乘](https://leetcode-cn.com/problems/multiply-strings/) | 大数乘法                |
-| 17.13 | [面试题 17.13. 恢复空格](https://leetcode-cn.com/problems/re-space-lcci/) |                         |
-| 336   | [336. 回文对](https://leetcode-cn.com/problems/palindrome-pairs/)（hard） |                         |
+| No    | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                         |
+| ----- | ------------------------------------------------------------ | ------------------------------ |
+| 459   | [459. 重复的子字符串](https://leetcode-cn.com/problems/repeated-substring-pattern/) | 重复子串的特性                 |
+| 1044  | [1044. 最长重复子串](https://leetcode-cn.com/problems/longest-duplicate-substring/) |                                |
+| 67    | [67. 二进制求和](https://leetcode-cn.com/problems/add-binary/) | 模拟字符串n进制求和即可        |
+| 989   | [989. 数组形式的整数加法](https://leetcode-cn.com/problems/add-to-array-form-of-integer/) | 大数加法                       |
+| 43    | [43. 字符串相乘](https://leetcode-cn.com/problems/multiply-strings/) | 大数乘法                       |
+| 17.13 | [面试题 17.13. 恢复空格](https://leetcode-cn.com/problems/re-space-lcci/) |                                |
+| 336   | [336. 回文对](https://leetcode-cn.com/problems/palindrome-pairs/)（hard） |                                |
+| 208   | [208. 实现 Trie (前缀树)](https://leetcode-cn.com/problems/implement-trie-prefix-tree/) | 字典树模版                     |
+| 212   | [212. 单词搜索 II](https://leetcode-cn.com/problems/word-search-ii/)（hard） | 字典树+回溯                    |
+| 472   | [472. 连接词](https://leetcode-cn.com/problems/concatenated-words/)(hard) | 字典树+每个单词在树上的dfs搜索 |
 
 
 
@@ -455,6 +468,7 @@
 | 1012  | [1012. 至少有 1 位重复的数字](https://leetcode-cn.com/problems/numbers-with-repeated-digits/)（hard） | 数位dp+反面+排列组合                                         |
 | 621   | [621. 任务调度器](https://leetcode-cn.com/problems/task-scheduler/) | 推公式 贪心                                                  |
 | 1359  | [1359. 有效的快递序列数目](https://leetcode-cn.com/problems/count-all-valid-pickup-and-delivery-options/)（hard） | 排列组合                                                     |
+| 398   | [398. 随机数索引](https://leetcode-cn.com/problems/random-pick-index/) | 每次pick都看成在ans数组中，一个一个读入值为target的元素，然后用蓄水池抽样法随机返回索引 |
 
 ### 回文系列
 
