@@ -2,7 +2,7 @@
 
 ### 位运算	
 
-[解法与总结]()
+[解法与总结](Bit_operation.md)
 
 | No.         | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                                                       |
 | ----------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -22,7 +22,7 @@
 | 201         | [201. 数字范围按位与](https://leetcode-cn.com/problems/bitwise-and-of-numbers-range/) | 使用位移，找m和n的二进制数的公共前缀                         |
 | 1356        | [1356. 根据数字二进制下 1 的数目排序](https://leetcode-cn.com/problems/sort-integers-by-the-number-of-1-bits/) | 两种方式统计1的个数（不断右移或者x&(x-1)）                   |
 | 393         | [393. UTF-8 编码验证](https://leetcode-cn.com/problems/utf-8-validation/) | 移位判断即可                                                 |
-| 16.01       | [面试题 16.01. 交换数字](https://leetcode-cn.com/problems/swap-numbers-lcci/) | a xor a xor b = a; b xor b xor a = b                         |
+| 16.01       | [面试题 16.01. 交换数字](https://leetcode-cn.com/problems/swap-numbers-lcci/) | a xor a xor b = b; b xor b xor a = a                         |
 
 ### 二分查找/分治减治思想
 
