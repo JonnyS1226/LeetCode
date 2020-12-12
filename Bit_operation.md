@@ -1,6 +1,6 @@
 ## 位运算
 
-### 位运算使用技巧
+### 1. 位运算使用技巧
 
 1. 基本位运算操作，与、或、异或、非，左右移（其中左右移常用于快速乘除法）。以及简单的用位运算判断奇偶，取负等。
 
@@ -12,9 +12,9 @@
 
 ```c++
 void swap(int& a, int& b) {
-		a = a ^ b;
-		b = b ^ a;		// b = b ^ a ^ b = a
-    a = a ^ b			// a = a ^ b ^ a = b
+  a = a ^ b;
+	b = b ^ a;		// b = b ^ a ^ b = a
+  a = a ^ b			// a = a ^ b ^ a = b
 }
 ```
 
@@ -47,14 +47,14 @@ a = ((a & 0xFF00) >> 8) | ((a & 0x00FF) << 8);
 ```c++
 int cnt = 0;
 while (n) {
-	  n = n & (n - 1);
-	  cnt++;
+  n = n & (n - 1);
+  cnt++;
 }
 ```
 
 
 
-### 状态压缩中常用的技巧
+### 2. 状态压缩中常用的位运算技巧
 
 1. 要求集合中不能有两个相邻的元素
 
@@ -80,8 +80,8 @@ for (int subset = mask; subset < (1 << m); subset = (subset + 1) | mask)
 
 ```c++
 for (int mask = 0; mask < (1 << n);) {
-		int tmp = mask & (-mask);
-  	mask = (mask + tmp) | (((mask ^ (mask + tmp)) >> 2) / tmp);
+  int tmp = mask & (-mask);
+  mask = (mask + tmp) | (((mask ^ (mask + tmp)) >> 2) / tmp);
 }
 ```
 
