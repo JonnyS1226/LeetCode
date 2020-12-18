@@ -2,7 +2,7 @@
 
 ### 位运算	
 
-[解法与总结](Bit_operation.md)
+[解法与总结](bit_operation.md)
 
 | No.         | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                                                       |
 | ----------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -23,10 +23,11 @@
 | 1356        | [1356. 根据数字二进制下 1 的数目排序](https://leetcode-cn.com/problems/sort-integers-by-the-number-of-1-bits/) | 两种方式统计1的个数（不断右移或者x&(x-1)）                   |
 | 393         | [393. UTF-8 编码验证](https://leetcode-cn.com/problems/utf-8-validation/) | 移位判断即可                                                 |
 | 16.01       | [面试题 16.01. 交换数字](https://leetcode-cn.com/problems/swap-numbers-lcci/) | a xor a xor b = b; b xor b xor a = a                         |
+| 338         | [338. 比特位计数](https://leetcode-cn.com/problems/counting-bits/) | 位运算结合动态规划                                           |
 
 ### 二分查找/分治减治思想
 
-[解法与总结]()
+[解法与总结](binary_search.md)
 
 | No.   | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                                                       |
 | ----- | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -54,6 +55,7 @@
 | 5563  | [5563. 销售价值减少的颜色球](https://leetcode-cn.com/problems/sell-diminishing-valued-colored-balls/) | 二分找购买后的球剩余数的下界，然后不够的再补                 |
 | 778   | [778. 水位上升的泳池中游泳](https://leetcode-cn.com/problems/swim-in-rising-water/) | 二分答案+dfs/并查集                                          |
 | 475   | [475. 供暖器](https://leetcode-cn.com/problems/heaters/)     | 二分查找, 对每个houses 二分找一个最近的heaters               |
+| 395   | [395. 至少有K个重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-with-at-least-k-repeating-characters/) | 分治思想，以不满足条件的索引为分界点进行分治                 |
 
 ### 链表类型题
 
@@ -90,6 +92,7 @@
 | 377   | [377. 组合总和 Ⅳ](https://leetcode-cn.com/problems/combination-sum-iv/) | 70的进阶版，`dp[i]+=dp[i-num]`                               |
 | 46    | [面试题46. 把数字翻译成字符串](https://leetcode-cn.com/problems/ba-shu-zi-fan-yi-cheng-zi-fu-chuan-lcof/) | 类似70                                                       |
 | 322   | [零钱兑换](https://leetcode-cn.com/problems/coin-change/)    | dp[i]表示凑总金额i所需最少硬币数，dp[i] = min(dp[i], dp[i-coin]+1); |
+| 279   | [279. 完全平方数](https://leetcode-cn.com/problems/perfect-squares/) | 类似322，dp                                                  |
 | 518   | [零钱兑换Ⅱ](https://leetcode-cn.com/problems/coin-change-2/) | dp[i]表示凑总金额i的方法数，dp[i] = $ \sum$ dp[i-coin];      |
 | 72    | [编辑距离](https://leetcode-cn.com/problems/edit-distance/)  | 用 dp[i] [j] 表示 `A` 的前 `i` 个字母和 `B` 的前 `j` 个字母之间的编辑距离. |
 | 1340  | [跳跃游戏Ⅴ](https://leetcode-cn.com/problems/jump-game-v/)   | dp[i]表示某一点i可以到达的最大点个数，dp[i] = 1 + max(max(dp[i-d]...dp[i-1]), max(dp[i+1, i+d]))，其中要排除位置高度大于i位置的部分 |
@@ -138,6 +141,7 @@
 | 1140  | [1140. 石子游戏 II](https://leetcode-cn.com/problems/stone-game-ii/) | `dp[i][j] 表示 对于 piles[i:] 和给定的 M=j 情况下的最大值`   |
 | 1406  | [1406. 石子游戏 III](https://leetcode-cn.com/problems/stone-game-iii/)（hard） | dp[i] 表示从i开始拿，后续剩余数组 最多能领先多少             |
 | 5447  | [5447. 石子游戏 IV](https://leetcode-cn.com/problems/stone-game-iv/)（hard） | 博弈dp，dp[i] 表示对于数i是否能先手赢                        |
+| 1690  | [1690. 石子游戏 VII](https://leetcode-cn.com/problems/stone-game-vii/) | 前缀和+区间dp                                                |
 | 1025  | [1025. 除数博弈](https://leetcode-cn.com/problems/divisor-game/) | 同石子游戏Ⅳ                                                  |
 | 312   | [312. 戳气球](https://leetcode-cn.com/problems/burst-balloons/)（hard） | 本质和矩阵链乘法 一样的dp；`dp[i][j] = v[i] * v[k] * [j] + dp[i][k] + dp[k][j];` |
 | LCP13 | [LCP 13. 寻宝](https://leetcode-cn.com/problems/xun-bao/)（hard） |                                                              |
@@ -152,6 +156,8 @@
 | 1187  | [1187. 使数组严格递增](https://leetcode-cn.com/problems/make-array-strictly-increasing/)（hard） | `dp[i][j] 表示arr1前i个数，经过不多于j次变化，最后一个（即第i个）数的值，最后从小到大遍历dp[n-1][j]找到第一个符合的即可` |
 | 354   | [354. 俄罗斯套娃信封问题](https://leetcode-cn.com/problems/russian-doll-envelopes/)（hard） | 按一维排序后，转换为最大上升序列问题。然后可以使用O(n2)或者借助二分的O(nlgn)解决 |
 | 376   | [376. 摆动序列](https://leetcode-cn.com/problems/wiggle-subsequence/) | dp[i]表示前i个元素摆动序列长度，第二维是状态:0表示最后上升,1表示最后下降 |
+| 1691  | [1691. 堆叠长方体的最大高度](https://leetcode-cn.com/problems/maximum-height-by-stacking-cuboids/)（hard） | 可以把每个长方体所有情况放入数组一起考虑，三维最长递增子序列 |
+| 813   | [813. 最大平均值和的分组](https://leetcode-cn.com/problems/largest-sum-of-averages/) | `dp[i][k] 表示前i个元素，构成k个子数组时的最大平均值`        |
 
 
 
@@ -177,6 +183,8 @@
 | 1402 | [1402. 做菜顺序](https://leetcode-cn.com/problems/reducing-dishes/)（hard） | 贪心                                                         |
 | 861  | [861. 翻转矩阵后的得分](https://leetcode-cn.com/problems/score-after-flipping-matrix/) | **1)**行列变换使得第一列全为1.   **2)** 列变换使得后续每一列上1的个数多于0的个数 |
 | 179  | [179. 最大数](https://leetcode-cn.com/problems/largest-number/) | 贪心思想的自定义排序，这么自定义排序后的传递性证明要注意     |
+| 1686 | [1686. 石子游戏 VI](https://leetcode-cn.com/problems/stone-game-vi/) | 每个石头的总价值是alice[i]+Bob[i]， 每次alice拿走石头，那么alice多了alice[i]的钱，扣除了bob bob[i]的钱。所以贪心选总价值最大的 |
+| 738  | [738. 单调递增的数字](https://leetcode-cn.com/problems/monotone-increasing-digits/) | 贪心，从后往前扫描，碰到后面比前面小，就将前面减1，后面全变9 |
 
 
 
@@ -431,6 +439,7 @@
 | 295  | [295. 数据流的中位数](https://leetcode-cn.com/problems/find-median-from-data-stream/)（hard） | 两个堆，保持平衡，一个存放小一半，一个存放大一半的元素       |
 | 767  | [767. 重构字符串](https://leetcode-cn.com/problems/reorganize-string/) | 构造出现频数大顶堆，每次出堆两个字符，加到ans上，这样能保证相邻字符不重复 |
 | 218  | [218. 天际线问题](https://leetcode-cn.com/problems/the-skyline-problem/)（hard） | 碰到建筑左侧 高度加入multiset； 碰到右侧，弹出对应的高度。multiset+扫描 |
+| 290  | [290. 单词规律](https://leetcode-cn.com/problems/word-pattern/) | 双向映射，两个hash表存储关系                                 |
 
 
 ### 字符串独立专题（前缀、后缀、字典树及其它技巧）
@@ -521,7 +530,7 @@
 | ---- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 1    | 快速幂 [50. Pow(x, n)](https://leetcode-cn.com/problems/powx-n/), | 从位运算或者从幂数二分的角度，将幂运算从 $O(n)$ 提升到 $O(log_2n$) | [372. 超级次方](https://leetcode-cn.com/problems/super-pow/) |
 | 2    | Manacher                                                     | 用于解决最长回文子串问题，本质是暴力中心扩展的优化           | [5. 最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/)<br>[214. 最短回文串](https://leetcode-cn.com/problems/shortest-palindrome/) |
-| 3    | KMP                                                          | 经典串匹配算法，也是对暴力法的优化加速                       | [28. 实现 strStr()](https://leetcode-cn.com/problems/implement-strstr/)<br>[214. 最短回文串](https://leetcode-cn.com/problems/shortest-palindrome/) |
+| 3    | KMP                                                          | 经典串匹配算法，也是对暴力法的优化加速                       | [28. 实现 strStr()](https://leetcode-cn.com/problems/implement-strstr/)<br>[214. 最短回文串](https://leetcode-cn.com/problems/shortest-palindrome/)<br>[1392. 最长快乐前缀](https://leetcode-cn.com/problems/longest-happy-prefix/) |
 | 4    | 原地hash/座位交换法                                          | 在规定不能用额外空间时，原地的交换，如把值1放到下标0处，值2放到下标1处，类似这些方式，可以有奇效 | [41. 缺失的第一个正数](https://leetcode-cn.com/problems/first-missing-positive/)<br>[442. 数组中重复的数据](https://leetcode-cn.com/problems/find-all-duplicates-in-an-array/)<br>[448. 找到所有数组中消失的数字](https://leetcode-cn.com/problems/find-all-numbers-disappeared-in-an-array/)<br>[1497. 检查数组对是否可以被 k 整除](https://leetcode-cn.com/problems/check-if-array-pairs-are-divisible-by-k/) |
 | 5    | 归并排序求逆序对思想                                         | 分析归并排序的过程，可以求逆序对，并且在此基础上可以进一步扩展 | [剑指 Offer 51. 数组中的逆序对](https://leetcode-cn.com/problems/shu-zu-zhong-de-ni-xu-dui-lcof/)<br>[牛客：排队](https://ac.nowcoder.com/acm/contest/6488/C)<br> |
 | 6    | 巧妙编码                                                     | 将原数组编码为游程（出现次数）、                             | [696. 计数二进制子串](https://leetcode-cn.com/problems/count-binary-substrings/)<br> |
