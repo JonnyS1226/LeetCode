@@ -158,6 +158,7 @@
 | 376   | [376. 摆动序列](https://leetcode-cn.com/problems/wiggle-subsequence/) | dp[i]表示前i个元素摆动序列长度，第二维是状态:0表示最后上升,1表示最后下降 |
 | 1691  | [1691. 堆叠长方体的最大高度](https://leetcode-cn.com/problems/maximum-height-by-stacking-cuboids/)（hard） | 可以把每个长方体所有情况放入数组一起考虑，三维最长递增子序列 |
 | 813   | [813. 最大平均值和的分组](https://leetcode-cn.com/problems/largest-sum-of-averages/) | `dp[i][k] 表示前i个元素，构成k个子数组时的最大平均值`        |
+| 5631  | [5631. 跳跃游戏 VI](https://leetcode-cn.com/problems/jump-game-vi/) | 动态规划+单调队列优化                                        |
 
 
 
@@ -185,6 +186,8 @@
 | 179  | [179. 最大数](https://leetcode-cn.com/problems/largest-number/) | 贪心思想的自定义排序，这么自定义排序后的传递性证明要注意     |
 | 1686 | [1686. 石子游戏 VI](https://leetcode-cn.com/problems/stone-game-vi/) | 每个石头的总价值是alice[i]+Bob[i]， 每次alice拿走石头，那么alice多了alice[i]的钱，扣除了bob bob[i]的钱。所以贪心选总价值最大的 |
 | 738  | [738. 单调递增的数字](https://leetcode-cn.com/problems/monotone-increasing-digits/) | 贪心，从后往前扫描，碰到后面比前面小，就将前面减1，后面全变9 |
+| 135  | [135. 分发糖果](https://leetcode-cn.com/problems/candy/)     | 贪心，两次扫描，后一位比前一位分高，就糖果+1，否则糖果=1。前一位比后一位分高并且分到的糖果不多于后一位，就糖果+1 |
+| 330  | [330. 按要求补齐数组](https://leetcode-cn.com/problems/patching-array/) | 很有趣的贪心思想                                             |
 
 
 
@@ -440,6 +443,8 @@
 | 767  | [767. 重构字符串](https://leetcode-cn.com/problems/reorganize-string/) | 构造出现频数大顶堆，每次出堆两个字符，加到ans上，这样能保证相邻字符不重复 |
 | 218  | [218. 天际线问题](https://leetcode-cn.com/problems/the-skyline-problem/)（hard） | 碰到建筑左侧 高度加入multiset； 碰到右侧，弹出对应的高度。multiset+扫描 |
 | 290  | [290. 单词规律](https://leetcode-cn.com/problems/word-pattern/) | 双向映射，两个hash表存储关系                                 |
+| 1046 | [1046. 最后一块石头的重量](https://leetcode-cn.com/problems/last-stone-weight/) | 优先队列（堆）模拟                                           |
+| 1705 | [1705. 吃苹果的最大数目](https://leetcode-cn.com/problems/maximum-number-of-eaten-apples/) | 优先队列（堆）模拟                                           |
 
 
 ### 字符串独立专题（前缀、后缀、字典树及其它技巧）
