@@ -59,20 +59,20 @@
 
 ### 链表类型题
 
-[解法与总结]()
+[解法与总结](linkedlist.md)
 
 | No.  | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                                                       |
 | ---- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 21.  | [合并两个有序链表](https://leetcode-cn.com/problems/merge-two-sorted-lists/) | 简单的双指针依次比较归并                                     |
-| 23.  | [合并k个有序链表](https://leetcode-cn.com/problems/merge-k-sorted-lists/) | 在No.21的基础上加上分治策略                                  |
-| 61.  | [旋转链表](https://leetcode-cn.com/problems/rotate-list/)    | 先连成环（这步非必须），再添加断点。本质就是找到旋转后的头节点 |
+| 23.  | [合并k个有序链表](https://leetcode-cn.com/problems/merge-k-sorted-lists/) | 在No.21的基础上加上分治策略（类似链表归并排序）。或者使用k指针+堆 |
+| 61.  | [旋转链表](https://leetcode-cn.com/problems/rotate-list/)    | 先连成环（这步非必须），再添加断点（从前往后第n-k个，但要注意取余） |
 | 147  | [147. 对链表进行插入排序](https://leetcode-cn.com/problems/insertion-sort-list/) | 插入排序                                                     |
 | 148  | [148. 排序链表](https://leetcode-cn.com/problems/sort-list/) | 链表归并排序和链表快速排序                                   |
-| 25   | [25. K 个一组翻转链表](https://leetcode-cn.com/problems/reverse-nodes-in-k-group/) |                                                              |
+|      |                                                              |                                                              |
 | 24   | [24. 两两交换链表中的节点](https://leetcode-cn.com/problems/swap-nodes-in-pairs/) | 可设置一个dummyhead，然后链表依次操作                        |
 | 206. | [反转链表](https://leetcode-cn.com/problems/reverse-linked-list/) | 迭代法：三指针逐步分析     递归法：输入一个节点 `head`，将「以 `head` 为起点」的链表反转，并返回反转之后的头结点 |
 | 92   | [92. 反转链表 II](https://leetcode-cn.com/problems/reverse-linked-list-ii/) |                                                              |
-|      |                                                              |                                                              |
+| 25   | [25. K 个一组翻转链表](https://leetcode-cn.com/problems/reverse-nodes-in-k-group/) |                                                              |
 | 328  | [328. 奇偶链表](https://leetcode-cn.com/problems/odd-even-linked-list/) | 四个指针分别指向奇数偶数的链表头尾                           |
 | 725  | [725. 分隔链表](https://leetcode-cn.com/problems/split-linked-list-in-parts/) | 计算分割后每一块的长度，然后遍历链表即可                     |
 | 83   | [83. 删除排序链表中的重复元素](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/) | 相同的跳过，不同的连接，迭代/递归                            |
@@ -373,7 +373,7 @@
 | 1456 | [1456. 定长子串中元音的最大数目](https://leetcode-cn.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/) | map+滑动窗口                                                 |
 | 5423 | [5423. Find Two Non-overlapping Sub-arrays Each With Target Sum](https://leetcode-cn.com/problems/find-two-non-overlapping-sub-arrays-each-with-target-sum/) | 从后往前的滑动窗口+dp                                        |
 | 862  | [862. 和至少为 K 的最短子数组](https://leetcode-cn.com/problems/shortest-subarray-with-sum-at-least-k/) | 前缀和+双端队列模拟的单调递增栈                              |
-| 239  | [239. 滑动窗口最大值](https://leetcode-cn.com/problems/sliding-window-maximum/)（hard） | 双端队列，front存最大，本质也是双端队列模拟单调栈            |
+| 239  | [239. 滑动窗口最大值](https://leetcode-cn.com/problems/sliding-window-maximum/)（hard） | 双端队列，front存最大，本质也是双端队列模拟单调栈。单调队列  |
 | 1499 | [1499. 满足不等式的最大值](https://leetcode-cn.com/problems/max-value-of-equation/) | 即求 `max(yi + yj + xj - xi) = max(xj + yj) + max(yi - xi), i < j`，转换后就变成了239题，单调队列求滑动窗口内（区间内）最大值 |
 | 632  | [632. 最小区间](https://leetcode-cn.com/problems/smallest-range-covering-elements-from-k-lists/)（hard） | hash+排序后滑动窗口                                          |
 | 649  | [649. Dota2 参议院](https://leetcode-cn.com/problems/dota2-senate/) | 循环队列+贪心模拟                                            |
@@ -450,18 +450,19 @@
 ### 字符串独立专题（前缀、后缀、字典树及其它技巧）
 
 [解法与总结]()
-| No    | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                         |
-| ----- | ------------------------------------------------------------ | ------------------------------ |
-| 459   | [459. 重复的子字符串](https://leetcode-cn.com/problems/repeated-substring-pattern/) | 重复子串的特性                 |
-| 1044  | [1044. 最长重复子串](https://leetcode-cn.com/problems/longest-duplicate-substring/) |                                |
-| 67    | [67. 二进制求和](https://leetcode-cn.com/problems/add-binary/) | 模拟字符串n进制求和即可        |
-| 989   | [989. 数组形式的整数加法](https://leetcode-cn.com/problems/add-to-array-form-of-integer/) | 大数加法                       |
-| 43    | [43. 字符串相乘](https://leetcode-cn.com/problems/multiply-strings/) | 大数乘法                       |
-| 17.13 | [面试题 17.13. 恢复空格](https://leetcode-cn.com/problems/re-space-lcci/) |                                |
-| 336   | [336. 回文对](https://leetcode-cn.com/problems/palindrome-pairs/)（hard） |                                |
-| 208   | [208. 实现 Trie (前缀树)](https://leetcode-cn.com/problems/implement-trie-prefix-tree/) | 字典树模版                     |
-| 212   | [212. 单词搜索 II](https://leetcode-cn.com/problems/word-search-ii/)（hard） | 字典树+回溯                    |
-| 472   | [472. 连接词](https://leetcode-cn.com/problems/concatenated-words/)(hard) | 字典树+每个单词在树上的dfs搜索 |
+| No    | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                                                       |
+| ----- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 459   | [459. 重复的子字符串](https://leetcode-cn.com/problems/repeated-substring-pattern/) | 重复子串的特性                                               |
+| 1044  | [1044. 最长重复子串](https://leetcode-cn.com/problems/longest-duplicate-substring/) |                                                              |
+| 67    | [67. 二进制求和](https://leetcode-cn.com/problems/add-binary/) | 模拟字符串n进制求和即可                                      |
+| 989   | [989. 数组形式的整数加法](https://leetcode-cn.com/problems/add-to-array-form-of-integer/) | 大数加法                                                     |
+| 43    | [43. 字符串相乘](https://leetcode-cn.com/problems/multiply-strings/) | 大数乘法                                                     |
+| 17.13 | [面试题 17.13. 恢复空格](https://leetcode-cn.com/problems/re-space-lcci/) |                                                              |
+| 336   | [336. 回文对](https://leetcode-cn.com/problems/palindrome-pairs/)（hard） |                                                              |
+| 208   | [208. 实现 Trie (前缀树)](https://leetcode-cn.com/problems/implement-trie-prefix-tree/) | 字典树模版                                                   |
+| 212   | [212. 单词搜索 II](https://leetcode-cn.com/problems/word-search-ii/)（hard） | 字典树+回溯                                                  |
+| 472   | [472. 连接词](https://leetcode-cn.com/problems/concatenated-words/)(hard) | 字典树+每个单词在树上的dfs搜索                               |
+| 1707  | [1707. 与数组中元素的最大异或值](https://leetcode-cn.com/problems/maximum-xor-with-an-element-from-array/) | 0-1字典树, 字典树要存以当前节点为根节点的子树中的最小元素， 查询时从最高位开始处理，如果x_i当前位是1，那么优先走0分支；反之亦然 |
 
 
 
