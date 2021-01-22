@@ -24,6 +24,8 @@
 | 393         | [393. UTF-8 编码验证](https://leetcode-cn.com/problems/utf-8-validation/) | 移位判断即可                                                 |
 | 16.01       | [面试题 16.01. 交换数字](https://leetcode-cn.com/problems/swap-numbers-lcci/) | a xor a xor b = b; b xor b xor a = a                         |
 | 338         | [338. 比特位计数](https://leetcode-cn.com/problems/counting-bits/) | 位运算结合动态规划                                           |
+| 461         | [461. 汉明距离](https://leetcode-cn.com/problems/hamming-distance/) | 位运算简单题                                                 |
+| 1018        | [1018. 可被 5 整除的二进制前缀](https://leetcode-cn.com/problems/binary-prefix-divisible-by-5/) | 运用取模的基本性质+位运算                                    |
 
 ### 二分查找/分治减治思想
 
@@ -68,7 +70,6 @@
 | 61.  | [旋转链表](https://leetcode-cn.com/problems/rotate-list/)    | 先连成环（这步非必须），再添加断点（从前往后第n-k个，但要注意取余） |
 | 147  | [147. 对链表进行插入排序](https://leetcode-cn.com/problems/insertion-sort-list/) | 插入排序                                                     |
 | 148  | [148. 排序链表](https://leetcode-cn.com/problems/sort-list/) | 链表归并排序和链表快速排序                                   |
-|      |                                                              |                                                              |
 | 24   | [24. 两两交换链表中的节点](https://leetcode-cn.com/problems/swap-nodes-in-pairs/) | 可设置一个dummyhead，然后链表依次操作                        |
 | 206. | [反转链表](https://leetcode-cn.com/problems/reverse-linked-list/) | 迭代法：三指针逐步分析     递归法：输入一个节点 `head`，将「以 `head` 为起点」的链表反转，并返回反转之后的头结点 |
 | 92   | [92. 反转链表 II](https://leetcode-cn.com/problems/reverse-linked-list-ii/) |                                                              |
@@ -231,6 +232,9 @@
 | 235  | [235. 二叉搜索树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/) | 可以用236的普遍方法，也可以直接利用二叉搜索树的性质求LCA     |
 | 236  | [236. 二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/) | 左右搜，如果分列左右，那么分岔点就是。否则就向左/右搜        |
 | 834  | [834. 树中距离之和](https://leetcode-cn.com/problems/sum-of-distances-in-tree/)(hard) | 两次dfs，类似换根树形dp，`ans(child) = ans(root) - cnt(child) + N - cnt(child);` |
+|      |                                                              |                                                              |
+| 1584 | [1584. 连接所有点的最小费用](https://leetcode-cn.com/problems/min-cost-to-connect-all-points/) | 最小生成树模版题，prim或者kruskal                            |
+| 1489 | [1489. 找到最小生成树里的关键边和伪关键边](https://leetcode-cn.com/problems/find-critical-and-pseudo-critical-edges-in-minimum-spanning-tree/)（hard） | 枚举+最小生成树判定                                          |
 
 
 
@@ -304,6 +308,11 @@
 | 839   | [839. 相似字符串组](https://leetcode-cn.com/problems/similar-string-groups/)(hard) | 并查集+similar函数的编写+对于长单词和短单词分别讨论是用枚举还是遍历（这样控制复杂度O（n^3）） |
 | 778   | [778. 水位上升的泳池中游泳](https://leetcode-cn.com/problems/swim-in-rising-water/) | 二分答案+dfs/并查集                                          |
 | 1627  | [1627. 带阈值的图连通性](https://leetcode-cn.com/problems/graph-connectivity-with-threshold/)(hard) | 并查集+数学技巧优化                                          |
+| 547   | [547. 省份数量](https://leetcode-cn.com/problems/number-of-provinces/) | 并查集模版题                                                 |
+| 947   | [947. 移除最多的同行或同列石头](https://leetcode-cn.com/problems/most-stones-removed-with-same-row-or-column/) | 并查集模版题，初始化parents时需要注意                        |
+| 1202  | [1202. 交换字符串中的元素](https://leetcode-cn.com/problems/smallest-string-with-swaps/) | 索引对作为边，进行并查集合并。最后每一个连通分量中字母排序   |
+| 721   | [721. 账户合并](https://leetcode-cn.com/problems/accounts-merge/) | 并查集，注意建立序号和邮箱映射                               |
+| 803   | [803. 打砖块](https://leetcode-cn.com/problems/bricks-falling-when-hit/)(hard) | 逆向思维，每次补石块，看看导致新增多少石块和根相连了         |
 
 
 ### 回溯剪枝
@@ -484,6 +493,7 @@
 | 621   | [621. 任务调度器](https://leetcode-cn.com/problems/task-scheduler/) | 推公式 贪心                                                  |
 | 1359  | [1359. 有效的快递序列数目](https://leetcode-cn.com/problems/count-all-valid-pickup-and-delivery-options/)（hard） | 排列组合                                                     |
 | 398   | [398. 随机数索引](https://leetcode-cn.com/problems/random-pick-index/) | 每次pick都看成在ans数组中，一个一个读入值为target的元素，然后用蓄水池抽样法随机返回索引 |
+| 1232  | [1232. 缀点成线](https://leetcode-cn.com/problems/check-if-it-is-a-straight-line/) | 可以求直线一般式或者两点式，也可以使用线性相关特性，两个向量线性相关 -> 构成的行列式值为0 |
 
 ### 回文系列
 
