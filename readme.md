@@ -55,7 +55,7 @@
 | 441   | [441. 排列硬币](https://leetcode-cn.com/problems/arranging-coins/) | 二分查找模版题                                               |
 | 436   | [436. 寻找右区间](https://leetcode-cn.com/problems/find-right-interval/) | 排序+二分查找                                                |
 | 5563  | [5563. 销售价值减少的颜色球](https://leetcode-cn.com/problems/sell-diminishing-valued-colored-balls/) | 二分找购买后的球剩余数的下界，然后不够的再补                 |
-| 778   | [778. 水位上升的泳池中游泳](https://leetcode-cn.com/problems/swim-in-rising-water/) | 二分答案+dfs/并查集                                          |
+| 778   | [778. 水位上升的泳池中游泳](https://leetcode-cn.com/problems/swim-in-rising-water/)（hard） | 二分答案+dfs/并查集                                          |
 | 475   | [475. 供暖器](https://leetcode-cn.com/problems/heaters/)     | 二分查找, 对每个houses 二分找一个最近的heaters               |
 | 395   | [395. 至少有K个重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-with-at-least-k-repeating-characters/) | 分治思想，以不满足条件的索引为分界点进行分治                 |
 
@@ -313,6 +313,9 @@
 | 1202  | [1202. 交换字符串中的元素](https://leetcode-cn.com/problems/smallest-string-with-swaps/) | 索引对作为边，进行并查集合并。最后每一个连通分量中字母排序   |
 | 721   | [721. 账户合并](https://leetcode-cn.com/problems/accounts-merge/) | 并查集，注意建立序号和邮箱映射                               |
 | 803   | [803. 打砖块](https://leetcode-cn.com/problems/bricks-falling-when-hit/)(hard) | 逆向思维，每次补石块，看看导致新增多少石块和根相连了         |
+| 1319  | [1319. 连通网络的操作次数](https://leetcode-cn.com/problems/number-of-operations-to-make-network-connected/) | 并查集模版题，返回连通分量个数                               |
+| 1579  | [1579. 保证图可完全遍历](https://leetcode-cn.com/problems/remove-max-number-of-edges-to-keep-graph-fully-traversable/)（hard） | 逆向思维，补线。需要两个并查集。先补type3的，再补1，2. 补的过程中如果两点已联通，则这条边可删除。 |
+| 1631  | [1631. 最小体力消耗路径](https://leetcode-cn.com/problems/path-with-minimum-effort/) | 抽象为图论，边权重定义为高度差绝对值，排序后以此加入，直到左上角和右下角联通。或者用二分+bfs、Dijkstra |
 
 
 ### 回溯剪枝
@@ -416,6 +419,7 @@
 | 165  | [165. 比较版本号](https://leetcode-cn.com/problems/compare-version-numbers/) | 双指针处理                                                   |
 | 581  | [581. 最短无序连续子数组](https://leetcode-cn.com/problems/shortest-unsorted-continuous-subarray/) | 构建一个排序后数组，然后双指针                               |
 | 324  | [324. 摆动排序 II](https://leetcode-cn.com/problems/wiggle-sort-ii/) | 排序后，后一半插入到前一半中，双指针，单数注意重复数字的处理 |
+| 888  | [888. 公平的糖果棒交换](https://leetcode-cn.com/problems/fair-candy-swap/) | 排序+双指针, 根据差值情况更新diff                            |
 
 ### 线段树/树状数组
 
