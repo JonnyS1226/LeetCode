@@ -58,6 +58,7 @@
 | 778   | [778. 水位上升的泳池中游泳](https://leetcode-cn.com/problems/swim-in-rising-water/)（hard） | 二分答案+dfs/并查集                                          |
 | 475   | [475. 供暖器](https://leetcode-cn.com/problems/heaters/)     | 二分查找, 对每个houses 二分找一个最近的heaters               |
 | 395   | [395. 至少有K个重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-with-at-least-k-repeating-characters/) | 分治思想，以不满足条件的索引为分界点进行分治                 |
+| 480   | [480. 滑动窗口中位数](https://leetcode-cn.com/problems/sliding-window-median/) | 用deque(便于增删)维护窗口+二分查找来增删元素                 |
 
 ### 链表类型题
 
@@ -157,7 +158,8 @@
 | 1187  | [1187. 使数组严格递增](https://leetcode-cn.com/problems/make-array-strictly-increasing/)（hard） | `dp[i][j] 表示arr1前i个数，经过不多于j次变化，最后一个（即第i个）数的值，最后从小到大遍历dp[n-1][j]找到第一个符合的即可` |
 | 354   | [354. 俄罗斯套娃信封问题](https://leetcode-cn.com/problems/russian-doll-envelopes/)（hard） | 按一维排序后，转换为最大上升序列问题。然后可以使用O(n2)或者借助二分的O(nlgn)解决 |
 | 376   | [376. 摆动序列](https://leetcode-cn.com/problems/wiggle-subsequence/) | dp[i]表示前i个元素摆动序列长度，第二维是状态:0表示最后上升,1表示最后下降 |
-| 1691  | [1691. 堆叠长方体的最大高度](https://leetcode-cn.com/problems/maximum-height-by-stacking-cuboids/)（hard） | 可以把每个长方体所有情况放入数组一起考虑，三维最长递增子序列 |
+| 978   | [978. 最长湍流子数组](https://leetcode-cn.com/problems/longest-turbulent-subarray/) | 376的变形，在于要连续，所以要置1                             |
+| 1691  | 难度中等92收藏分享切换为英文接收动态反馈[1691. 堆叠长方体的最大高度](https://leetcode-cn.com/problems/maximum-height-by-stacking-cuboids/)（hard） | 可以把每个长方体所有情况放入数组一起考虑，三维最长递增子序列 |
 | 813   | [813. 最大平均值和的分组](https://leetcode-cn.com/problems/largest-sum-of-averages/) | `dp[i][k] 表示前i个元素，构成k个子数组时的最大平均值`        |
 | 5631  | [5631. 跳跃游戏 VI](https://leetcode-cn.com/problems/jump-game-vi/) | 动态规划+单调队列优化                                        |
 
@@ -189,6 +191,8 @@
 | 738  | [738. 单调递增的数字](https://leetcode-cn.com/problems/monotone-increasing-digits/) | 贪心，从后往前扫描，碰到后面比前面小，就将前面减1，后面全变9 |
 | 135  | [135. 分发糖果](https://leetcode-cn.com/problems/candy/)     | 贪心，两次扫描，后一位比前一位分高，就糖果+1，否则糖果=1。前一位比后一位分高并且分到的糖果不多于后一位，就糖果+1 |
 | 330  | [330. 按要求补齐数组](https://leetcode-cn.com/problems/patching-array/) | 很有趣的贪心思想                                             |
+| 665  | [665. 非递减数列](https://leetcode-cn.com/problems/non-decreasing-array/) | 对于当前数，要看再前面那个数，如果再前面那个数不存在或者小于等于当前数，则修改前面数为当前数。如果大于当前数，则修改当前数为前面数。 |
+| 1717 | [1717. 删除子字符串的最大得分](https://leetcode-cn.com/problems/maximum-score-from-removing-substrings/) | 贪心，先删除分值大的。可以优化预处理为总是先删“ab”，再删“ba” |
 
 
 
@@ -341,6 +345,9 @@
 | 08.12 | [面试题 08.12. 八皇后](https://leetcode-cn.com/problems/eight-queens-lcci/) | 经典回溯                                                     |
 | 842   | [842. 将数组拆分成斐波那契序列](https://leetcode-cn.com/problems/split-array-into-fibonacci-sequence/) | 回溯，剪枝情况很多                                           |
 | 306   | [306. 累加数](https://leetcode-cn.com/problems/additive-number/) | 和842完全相同的回溯，当然更好的做法是用字符串处理溢出情况    |
+| 1718  | [1718. 构建字典序最大的可行序列](https://leetcode-cn.com/problems/construct-the-lexicographically-largest-valid-sequence/) | 类似8皇后，回溯填格子                                        |
+
+
 
 
 
@@ -389,6 +396,7 @@
 | 1499 | [1499. 满足不等式的最大值](https://leetcode-cn.com/problems/max-value-of-equation/) | 即求 `max(yi + yj + xj - xi) = max(xj + yj) + max(yi - xi), i < j`，转换后就变成了239题，单调队列求滑动窗口内（区间内）最大值 |
 | 632  | [632. 最小区间](https://leetcode-cn.com/problems/smallest-range-covering-elements-from-k-lists/)（hard） | hash+排序后滑动窗口                                          |
 | 649  | [649. Dota2 参议院](https://leetcode-cn.com/problems/dota2-senate/) | 循环队列+贪心模拟                                            |
+| 1208 | [1208. 尽可能使字符串相等](https://leetcode-cn.com/problems/get-equal-substrings-within-budget/) | 滑动窗口模版题                                               |
 
 ### 快慢指针/双指针
 
@@ -458,6 +466,7 @@
 | 290  | [290. 单词规律](https://leetcode-cn.com/problems/word-pattern/) | 双向映射，两个hash表存储关系                                 |
 | 1046 | [1046. 最后一块石头的重量](https://leetcode-cn.com/problems/last-stone-weight/) | 优先队列（堆）模拟                                           |
 | 1705 | [1705. 吃苹果的最大数目](https://leetcode-cn.com/problems/maximum-number-of-eaten-apples/) | 优先队列（堆）模拟                                           |
+| 1733 | [1733. 需要教语言的最少人数](https://leetcode-cn.com/problems/minimum-number-of-people-to-teach/) | \1. 记录每个人会什么语言，\2. 找到需要解决沟通问题的朋友对， \3. 遍历语言，遍历朋友对，教语言 |
 
 
 ### 字符串独立专题（前缀、后缀、字典树及其它技巧）
@@ -527,7 +536,7 @@
 | 5471 | [5471. 和为目标值的最大数目不重叠非空子数组数目](https://leetcode-cn.com/problems/maximum-number-of-non-overlapping-subarrays-with-sum-equals-target/) | 560的变形，要清空前缀和和map                                 |
 | 1248 | [1248. 统计「优美子数组」](https://leetcode-cn.com/problems/count-number-of-nice-subarrays/) | 前缀和+map, pre 存放前n项奇数的个数,map key->pre  value->出现次数 |
 | 554  | [554. 砖墙](https://leetcode-cn.com/problems/brick-wall/)    | 前缀和+map, map key->preNum, value->出现次数                 |
-| 1423 | [1423. 可获得的最大点数](https://leetcode-cn.com/problems/maximum-points-you-can-obtain-from-cards/) | 先计算前缀和，然后求left(0-i)和right(len-k+i+1, len-1)的最大值 |
+| 1423 | [1423. 可获得的最大点数](https://leetcode-cn.com/problems/maximum-points-you-can-obtain-from-cards/) | 先计算前缀和，然后求left(0-i)和right(len-k+i+1, len-1)的最大值；或者反向思考，维护一个n-k长度的sliding window，使窗口内最小 |
 | 238  | [238. 除自身以外数组的乘积](https://leetcode-cn.com/problems/product-of-array-except-self/) | 两次扫描，前缀积和后缀积                                     |
 | 209  | [209. 长度最小的子数组](https://leetcode-cn.com/problems/minimum-size-subarray-sum/) | 前缀和构造有序数组，然后使用二分                             |
 | 974  | [974. 和可被 K 整除的子数组](https://leetcode-cn.com/problems/subarray-sums-divisible-by-k/) | 状态压缩+前缀和                                              |
