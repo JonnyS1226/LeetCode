@@ -1,4 +1,6 @@
-## Leetcode
+# Leetcode
+
+[TOC]
 
 ### 位运算	
 
@@ -397,6 +399,8 @@
 | 632  | [632. 最小区间](https://leetcode-cn.com/problems/smallest-range-covering-elements-from-k-lists/)（hard） | hash+排序后滑动窗口                                          |
 | 649  | [649. Dota2 参议院](https://leetcode-cn.com/problems/dota2-senate/) | 循环队列+贪心模拟                                            |
 | 1208 | [1208. 尽可能使字符串相等](https://leetcode-cn.com/problems/get-equal-substrings-within-budget/) | 滑动窗口模版题                                               |
+| 713  | [713. 乘积小于K的子数组](https://leetcode-cn.com/problems/subarray-product-less-than-k/) | 求最大满足的情况：对于[l,r]区间内符合条件，那么它所有符合条件的且以r为右端点的子数组一共是r-l+1个 |
+| 992  | [992. K 个不同整数的子数组](https://leetcode-cn.com/problems/subarrays-with-k-different-integers/)（hard） | 求最多K个不同子数组-最多K-1个不同子数组 即可。而求最多的情况类似713。 |
 
 ### 快慢指针/双指针
 
