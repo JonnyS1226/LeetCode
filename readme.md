@@ -116,35 +116,35 @@
 
 | No.   | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                                                       |
 | ----- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 55    | [跳跃游戏](https://leetcode-cn.com/problems/jump-game/)      | dp[i]表示是否能跳到下标为i的元素，可以使用动态规划解决       |
-| 983   | [最低票价](https://leetcode-cn.com/problems/minimum-cost-for-tickets/) | dp[i]表示前i天买票旅行的最低消费，dp[i]由dp[i-1],dp[i-7],dp[i-30]决定 |
-| 70    | [爬楼梯](https://leetcode-cn.com/problems/climbing-stairs/)  | dp[i]表示爬i层楼的方法数，dp[i] = dp[i-1] + dp[i-2];         |
+| 55    | [跳跃游戏](https://leetcode-cn.com/problems/jump-game/)      | `dp[i]`表示是否能跳到下标为i的元素，可以使用动态规划解决     |
+| 983   | [最低票价](https://leetcode-cn.com/problems/minimum-cost-for-tickets/) | `dp[i]`表示前i天买票旅行的最低消费，`dp[i]`由`dp[i-1],dp[i-7],dp[i-30]`决定 |
+| 70    | [爬楼梯](https://leetcode-cn.com/problems/climbing-stairs/)  | `dp[i]`表示爬i层楼的方法数，`dp[i] = dp[i-1] + dp[i-2];`     |
 | 377   | [377. 组合总和 Ⅳ](https://leetcode-cn.com/problems/combination-sum-iv/) | 70的进阶版，`dp[i]+=dp[i-num]`                               |
 | 46    | [面试题46. 把数字翻译成字符串](https://leetcode-cn.com/problems/ba-shu-zi-fan-yi-cheng-zi-fu-chuan-lcof/) | 类似70                                                       |
-| 322   | [零钱兑换](https://leetcode-cn.com/problems/coin-change/)    | dp[i]表示凑总金额i所需最少硬币数，dp[i] = min(dp[i], dp[i-coin]+1); |
+| 322   | [零钱兑换](https://leetcode-cn.com/problems/coin-change/)    | `dp[i]`表示凑总金额i所需最少硬币数，`dp[i] = min(dp[i], dp[i-coin]+1);` |
 | 279   | [279. 完全平方数](https://leetcode-cn.com/problems/perfect-squares/) | 类似322，dp                                                  |
-| 518   | [零钱兑换Ⅱ](https://leetcode-cn.com/problems/coin-change-2/) | dp[i]表示凑总金额i的方法数，dp[i] = $ \sum$ dp[i-coin];      |
-| 72    | [编辑距离](https://leetcode-cn.com/problems/edit-distance/)  | 用 dp[i] [j] 表示 `A` 的前 `i` 个字母和 `B` 的前 `j` 个字母之间的编辑距离. |
+| 518   | [零钱兑换Ⅱ](https://leetcode-cn.com/problems/coin-change-2/) | `dp[i]`表示凑总金额i的方法数，`dp[i] `= $ \sum$ `dp[i-coin]`; |
+| 72    | [编辑距离](https://leetcode-cn.com/problems/edit-distance/)  | 用 `dp[i] [j] `表示 `A` 的前 `i` 个字母和 `B` 的前 `j` 个字母之间的编辑距离. |
 | 1340  | [跳跃游戏Ⅴ](https://leetcode-cn.com/problems/jump-game-v/)   | dp[i]表示某一点i可以到达的最大点个数，dp[i] = 1 + max(max(dp[i-d]...dp[i-1]), max(dp[i+1, i+d]))，其中要排除位置高度大于i位置的部分 |
 | 221   | [最大正方形](https://leetcode-cn.com/problems/maximal-square/) | dp(*i*,*j*) 表示以 (i, j)为右下角，且只包含1的正方形的边长最大值，dp(i, j) = min(dp(i-1, j), dp(i, j-1), dp(i-1, j-1)) + 1 |
 | 1277  | [统计全为1的正方形子矩阵](https://leetcode-cn.com/problems/count-square-submatrices-with-all-ones/) | 同221                                                        |
-| 53    | [53. 最大子序和](https://leetcode-cn.com/problems/maximum-subarray/) | *f*(*i*) = max{*f*(*i*−1)+*ai* , *ai*}                       |
+| 53    | [53. 最大子序和](https://leetcode-cn.com/problems/maximum-subarray/) | `f(i) = max{f(i−1)+ai , ai}`                                 |
 | 152   | [152. 乘积最大子数组](https://leetcode-cn.com/problems/maximum-product-subarray/) | 类似最大连续和，但是要同时维护最大乘积dp和最小乘积dp（应对负数乘积为正的情况） |
 | 1567  | [1567. 乘积为正数的最长子数组长度](https://leetcode-cn.com/problems/maximum-length-of-subarray-with-positive-product/) | 同152思路，需要维护以i结尾乘积为正和乘积为负的两个dp         |
 | 5521  | [5521. 矩阵的最大非负积](https://leetcode-cn.com/problems/maximum-non-negative-product-in-a-matrix/) | 同152，只不过是二维dp，维护最大值和最小值，因为最小值可能翻身成为最大值 |
-| 343   | [343. Integer Break](https://leetcode-cn.com/problems/integer-break/) | dpi 表示n的题设下，分割整数后的乘积最大值                    |
-| 746   | [746. Min Cost Climbing Stairs](https://leetcode-cn.com/problems/min-cost-climbing-stairs/) | dpi表示选择了i所需要的最小cost                               |
+| 343   | [343. Integer Break](https://leetcode-cn.com/problems/integer-break/) | `dp[i]`表示n的题设下，分割整数后的乘积最大值                 |
+| 746   | [746. Min Cost Climbing Stairs](https://leetcode-cn.com/problems/min-cost-climbing-stairs/) | `dp[i]`表示选择了i所需要的最小cost                           |
 | 96    | [96. 不同的二叉搜索树](https://leetcode-cn.com/problems/unique-binary-search-trees/) | 讨论时分析每个数为根节点的情况，可以递推出：`dp[i] = dp[0]*dp[i-1] + dp[1]*dp[i-2] + ... + dp[i-1]*dp[0]` |
 |       |                                                              |                                                              |
-| 198   | [198. 打家劫舍](https://leetcode-cn.com/problems/house-robber/) | dp[i]表示前i+1个房屋最大偷窃金额，dp[i] = max(dp[i-1], dp[i-2] + nums[i]) |
+| 198   | [198. 打家劫舍](https://leetcode-cn.com/problems/house-robber/) | `dp[i]`表示前i+1个房屋最大偷窃金额，`dp[i] = max(dp[i-1], dp[i-2] + nums[i])` |
 | 213   | [213. 打家劫舍 II](https://leetcode-cn.com/problems/house-robber-ii/) | 类似198，可以将环形划分解成[0:n-2]和[1:n-1]两个线性的dp，使用同198的递推式分段解决，求最大值 |
 | 740   | [740. 删除与获得点数](https://leetcode-cn.com/problems/delete-and-earn/) | 可以转换为198问题                                            |
 | 410   | [410. 分割数组的最大值](https://leetcode-cn.com/problems/split-array-largest-sum/)（hard） |                                                              |
 | 516   | [516. 最长回文子序列](https://leetcode-cn.com/problems/longest-palindromic-subsequence/) | 子序列问题的动态规划，dp(i)(j)表示s[i]-s[j]区间内最长回文子序列长度，注意区间dp要斜着打表或者反着打表。 <br>也可以转换为求逆字符串，再求最长公共子序列 |
-| 300   | [300. 最长上升子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/) | dp[i]=max{dp[j]}+1，if num[i] > num[j], 其中i>j，其中dp[i]表示前i个得最长递增序列长度，且nums[i]必须选择 |
-| 1143  | [1143. 最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) | dp[i] [j]代表text1前i个字符和text2前j个字符的最长公共子序列  |
+| 300   | [300. 最长上升子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/) | `dp[i]=max{dp[j]}+1，if num[i] > num[j]`, 其中i>j，其中dp[i]表示前i个得最长递增序列长度，且nums[i]必须选择 |
+| 1143  | [1143. 最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) | `dp[i] [j]`代表text1前i个字符和text2前j个字符的最长公共子序列 |
 |       |                                                              |                                                              |
-| 718   | [718. 最长重复子数组](https://leetcode-cn.com/problems/maximum-length-of-repeated-subarray/) | dp[i] [j]表示A前i个和B前j个 最长公共子数组长度(且要求取到公共子数组必须以i和j结尾) |
+| 718   | [718. 最长重复子数组](https://leetcode-cn.com/problems/maximum-length-of-repeated-subarray/) | `dp[i] [j]`表示A前i个和B前j个 最长公共子数组长度(且要求取到公共子数组必须以i和j结尾) |
 | 97    | [97. 交错字符串](https://leetcode-cn.com/problems/interleaving-string/)（hard） |                                                              |
 | 5419  | [5419. 两个子序列的最大点积](https://leetcode-cn.com/problems/max-dot-product-of-two-subsequences/) | 类似72，1143，  两个数组的dp， $O(n^2)$                      |
 | 139   | [139. 单词拆分](https://leetcode-cn.com/problems/word-break/) | 动态规划, dp[i]表示前i个字符是否能被分隔                     |
@@ -152,13 +152,13 @@
 | 1139  | [1139. 最大的以 1 为边界的正方形](https://leetcode-cn.com/problems/largest-1-bordered-square/) | 三维dp或者用两个二维dp，分别表示向上能扩展的个数和向左能扩展的个数。更新时，看右上角和左下角分别向左和向上延伸的长度是否符合要求 |
 | 392   | [392. 判断子序列](https://leetcode-cn.com/problems/is-subsequence/)（进阶挑战） |                                                              |
 | 514   | [514. 自由之路](https://leetcode-cn.com/problems/freedom-trail/)（hard） | `dp[i][j]` 表示在ring的第j处找到key的第i个字符所需要移动的步数。最后返回 `*max_element(dp[m-1][t], t=1~n-1)`。使用pos记录ring中每个字符的位置 |
-| 64    | [64. 最小路径和](https://leetcode-cn.com/problems/minimum-path-sum/) | $dp[i][j] = min(dp[i-1][j], dp[i][j-1]) + grid[i][j]$        |
+| 64    | [64. 最小路径和](https://leetcode-cn.com/problems/minimum-path-sum/) | `dp[i][j] = min(dp[i-1][j], dp[i][j-1]) + grid[i][j]​`        |
 | 10    | [10. 正则表达式匹配](https://leetcode-cn.com/problems/regular-expression-matching/)（hard） | 用dp i  j 表示 s的前 i 个字符与 p中的前 j 个字符是否能够匹配。 |
-| 5411  | [5411. 摘樱桃 II](https://leetcode-cn.com/problems/cherry-pickup-ii/)（hard） | 三层dp dp[ijk]表示第i行，机器人1在j列，机器人2在k列的最大樱桃数 |
-| 5431  | [5431. 给房子涂色 III](https://leetcode-cn.com/problems/paint-house-iii/)（hard） | 三维dp，dp i j k 表示第i个房子，涂了第j个颜色，且形成了k个社区的最小花费 |
-| 837   | [837. 新21点](https://leetcode-cn.com/problems/new-21-game/) | dp[i]表示当前和为i（i < K）时获胜的概率， dp[i] = 摸j点的概率(1/w) 乘以 摸完之后成功的概率(dp[]i+j])，并遍历j求和 |
+| 5411  | [5411. 摘樱桃 II](https://leetcode-cn.com/problems/cherry-pickup-ii/)（hard） | 三层dp `dp[i][j][k]`表示第i行，机器人1在j列，机器人2在k列的最大樱桃数 |
+| 5431  | [5431. 给房子涂色 III](https://leetcode-cn.com/problems/paint-house-iii/)（hard） | 三维dp，`dp[i][j][k]` 表示第i个房子，涂了第j个颜色，且形成了k个社区的最小花费 |
+| 837   | [837. 新21点](https://leetcode-cn.com/problems/new-21-game/) | `dp[i]`表示当前和为i（i < K）时获胜的概率， dp[i] = 摸j点的概率(1/w) 乘以 摸完之后成功的概率`(dp[]i+j])`，并遍历j求和 |
 | 1494  | [1494. 并行课程 II](https://leetcode-cn.com/problems/parallel-courses-ii/)（hard） |                                                              |
-| 32    | [32. 最长有效括号](https://leetcode-cn.com/problems/longest-valid-parentheses/)（hard） | 有多种方法，栈，dp，双向扫描。此处用dp，dp[i]表示以i位置结尾的最长有小括号子串长度。更新时，如果当前位置是(，显然长度为0，如果当前位置是右括号，那么要尝试找到与之对应左括号，需要判断i-dp[i-1]-1的位置是否是左括号，如果是：dp[i] = dp[i-1] + 2 + dp[i-dp[i-1]-2]  (还需要看匹配位置之前有没有有小括号) |
+| 32    | [32. 最长有效括号](https://leetcode-cn.com/problems/longest-valid-parentheses/)（hard） | 有多种方法，栈，dp，双向扫描。此处用dp，dp[i]表示以i位置结尾的最长有小括号子串长度。更新时，如果当前位置是(，显然长度为0，如果当前位置是右括号，那么要尝试找到与之对应左括号，需要判断i-`dp[i-1]-1`的位置是否是左括号，如果是：dp[i] = `dp[i-1] + 2 + dp[i-dp[i-1]-2] ` (还需要看匹配位置之前有没有有小括号) |
 | 44    | [44. 通配符匹配](https://leetcode-cn.com/problems/wildcard-matching/)（hard） | `dp[i][j]`表示s前i个和p前j个是否能匹配                       |
 | 174   | [174. 地下城游戏](https://leetcode-cn.com/problems/dungeon-game/)（hard） | 二维逆序dp                                                   |
 | 121   | [121. 买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/) |                                                              |
@@ -169,8 +169,8 @@
 | 309   | [309. 最佳买卖股票时机含冷冻期](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/) | dp`[i][0]`表示持有股票；dp`[i][1]`表示不持有股票，处于冷冻期;dp`[i][2]`表示不持有股票，不处于冷冻期。这里的「处于冷冻期」指的是在第 i 天结束之后的状态 |
 | 877   | [877. 石子游戏](https://leetcode-cn.com/problems/stone-game/) | `dp[i][j]`表示从i到j序列，先手和后手的差值；递推时分析 如果选开头堆如何更新，选末尾堆如何更新即可推出递推式 |
 | 1140  | [1140. 石子游戏 II](https://leetcode-cn.com/problems/stone-game-ii/) | `dp[i][j] 表示 对于 piles[i:] 和给定的 M=j 情况下的最大值`   |
-| 1406  | [1406. 石子游戏 III](https://leetcode-cn.com/problems/stone-game-iii/)（hard） | dp[i] 表示从i开始拿，后续剩余数组 最多能领先多少             |
-| 5447  | [5447. 石子游戏 IV](https://leetcode-cn.com/problems/stone-game-iv/)（hard） | 博弈dp，dp[i] 表示对于数i是否能先手赢                        |
+| 1406  | [1406. 石子游戏 III](https://leetcode-cn.com/problems/stone-game-iii/)（hard） | `dp[i]` 表示从i开始拿，后续剩余数组 最多能领先多少           |
+| 5447  | [5447. 石子游戏 IV](https://leetcode-cn.com/problems/stone-game-iv/)（hard） | 博弈dp，`dp[i]` 表示对于数i是否能先手赢                      |
 | 1690  | [1690. 石子游戏 VII](https://leetcode-cn.com/problems/stone-game-vii/) | 前缀和+区间dp                                                |
 | 1025  | [1025. 除数博弈](https://leetcode-cn.com/problems/divisor-game/) | 同石子游戏Ⅳ                                                  |
 | 312   | [312. 戳气球](https://leetcode-cn.com/problems/burst-balloons/)（hard） | 本质和矩阵链乘法 一样的dp；`dp[i][j] = v[i] * v[k] * [j] + dp[i][k] + dp[k][j];` |
@@ -187,7 +187,7 @@
 | 354   | [354. 俄罗斯套娃信封问题](https://leetcode-cn.com/problems/russian-doll-envelopes/)（hard） | 按一维排序后，转换为最大上升序列问题。然后可以使用O(n2)或者借助二分的O(nlgn)解决 |
 | 376   | [376. 摆动序列](https://leetcode-cn.com/problems/wiggle-subsequence/) | dp[i]表示前i个元素摆动序列长度，第二维是状态:0表示最后上升,1表示最后下降 |
 | 978   | [978. 最长湍流子数组](https://leetcode-cn.com/problems/longest-turbulent-subarray/) | 376的变形，在于要连续，所以要置1                             |
-| 1691  | 难度中等92收藏分享切换为英文接收动态反馈[1691. 堆叠长方体的最大高度](https://leetcode-cn.com/problems/maximum-height-by-stacking-cuboids/)（hard） | 可以把每个长方体所有情况放入数组一起考虑，三维最长递增子序列 |
+| 1691  | [1691. 堆叠长方体的最大高度](https://leetcode-cn.com/problems/maximum-height-by-stacking-cuboids/)（hard） | 可以把每个长方体所有情况放入数组一起考虑，三维最长递增子序列 |
 | 813   | [813. 最大平均值和的分组](https://leetcode-cn.com/problems/largest-sum-of-averages/) | `dp[i][k] 表示前i个元素，构成k个子数组时的最大平均值`        |
 | 5631  | [5631. 跳跃游戏 VI](https://leetcode-cn.com/problems/jump-game-vi/) | 动态规划+单调队列优化                                        |
 
@@ -427,6 +427,7 @@
 | 1208 | [1208. 尽可能使字符串相等](https://leetcode-cn.com/problems/get-equal-substrings-within-budget/) | 滑动窗口模版题                                               |
 | 713  | [713. 乘积小于K的子数组](https://leetcode-cn.com/problems/subarray-product-less-than-k/) | 求最大满足的情况：对于[l,r]区间内符合条件，那么它所有符合条件的且以r为右端点的子数组一共是r-l+1个 |
 | 992  | [992. K 个不同整数的子数组](https://leetcode-cn.com/problems/subarrays-with-k-different-integers/)（hard） | 求最多K个不同子数组-最多K-1个不同子数组 即可。而求最多的情况类似713。 |
+| 567  | [567. 字符串的排列](https://leetcode-cn.com/problems/permutation-in-string/) | 滑动窗口模版题                                               |
 
 ### 快慢指针/双指针
 
