@@ -51,6 +51,63 @@ return pre;
 
 ### 3. 链表问题中的递归
 
+* 递归三个关键问题：终止条件，返回值，本级递归的作用
+
 1. **反转链表的递归写法**
-2. **删除链表中重复元素的递归写法**
+
+```c++
+    ListNode* reverseListRecur(ListNode* node) {
+        // 递归
+        // 终止条件：一个结点的链表或者空链表
+        // 返回值：翻转后的一个链表头结点
+        // 要做什么：连接已翻转的部分和未翻转的部分node结点
+        if (!node || !node->next) return node;
+        ListNode* last = reverseListRecur(node->next);
+        // node->next变为翻转后的尾结点, node是未翻转部分的尾结点, 所以连接起来
+        node->next->next = node;
+        node->next = nullptr;
+        return last;
+    }
+```
+
+
+
+2. **删除链表中重复元素的递归写法** (重复元素删到只剩一个)
+
+```c++
+    ListNode* deleteDuplicates(ListNode* head) { 
+        // 终止条件：一个结点的链表或者空链表
+        // 返回值：删除了重复元素的链表头结点
+        // 要做什么：对于重复元素删除到只剩一个，并且和前面的连接起来
+        if (!head || !head->next) return head;
+        head->next = deleteDuplicates(head->next);
+        if (head->next->val == head->val) head = head->next;
+        return head;
+    }
+```
+
+3. **删除链表中重复元素2的递归写法** (重复元素全部删除)
+
+```c++
+    ListNode* deleteDuplicates(ListNode* head) {
+        // 终止条件：一个结点的链表或者空链表
+        // 返回值：删除了重复元素的链表头结点
+        // 要做什么：对于重复元素要全部删除，并且如果head不是重复要素，要和前面的连接起来
+        if (!head || !head->next) return head;
+        // 全部删除，所以head不能再连接
+        if (head->val == head->next->val) {
+            while (head->next && head->next->val == head->val) head = head->next;
+            head = deleteDuplicates(head->next);
+        } else {
+            head->next = deleteDuplicates(head->next);
+        }
+        return head;
+    }
+```
+
+
+
+### 参考
+
+- [1] https://lyl0724.github.io/2020/01/25/1/
 
