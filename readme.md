@@ -68,7 +68,7 @@
 | 35.   | [搜索插入位置](https://leetcode-cn.com/problems/search-insert-position/) | 直接二分查找即可，若找不到，返回值就是插入位置               |
 | 1011. | [在D天内送达包裹的能力](https://leetcode-cn.com/problems/capacity-to-ship-packages-within-d-days/) | 本质上是枚举遍历，只不过使用二分进行了优化                   |
 | 875.  | [爱吃香蕉的珂珂](https://leetcode-cn.com/problems/koko-eating-bananas/) | 类似1011，本质上是遍历优化                                   |
-| 69    | [x的平方根](https://leetcode-cn.com/problems/sqrtx/)         | 二分查找(0,x)                                                |
+| 69    | [x的平方根](https://leetcode-cn.com/problems/sqrtx/)         | 二分查找(0,x/2)， 或者牛顿迭代法                             |
 | 287   | [287. 寻找重复数](https://leetcode-cn.com/problems/find-the-duplicate-number/) | 二分查找(0,n)，判定指针移动的标准是小于等于x的数的个数是否大于x（抽屉原理） |
 | 209   | [209. 长度最小的子数组](https://leetcode-cn.com/problems/minimum-size-subarray-sum/) | 可以滑窗，也可以用前缀和构造有序数组，然后二分查找           |
 | 1300  | [1300. Sum of Mutated Array Closest to Target](https://leetcode-cn.com/problems/sum-of-mutated-array-closest-to-target/) | 两次二分查找（一次是二分枚举，一次是二分查找大于等于数组中元素），结合前缀和 |
@@ -107,6 +107,7 @@
 | 725  | [725. 分隔链表](https://leetcode-cn.com/problems/split-linked-list-in-parts/) | 计算分割后每一块的长度，然后遍历链表即可                     |
 | 83   | [83. 删除排序链表中的重复元素](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/) | 相同的跳过，不同的连接，迭代/递归                            |
 | 82   | [82. 删除排序链表中的重复元素 II](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list-ii/) | 类似83，但是递归的写法要注意                                 |
+| 138  | [138. 复制带随机指针的链表](https://leetcode-cn.com/problems/copy-list-with-random-pointer/) | 1. 复制结点添加在当前结点后面，2.复制random指针情况，3.将整个链表一分为二 |
 
 
 
@@ -231,7 +232,7 @@
 
 | No.  | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                                                       |
 | ---- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 98   | [验证二叉搜索树](https://leetcode-cn.com/problems/validate-binary-search-tree/) | 中序遍历满足递增才是二叉搜索树                               |
+| 98   | [验证二叉搜索树](https://leetcode-cn.com/problems/validate-binary-search-tree/) | 中序遍历满足递增才是二叉搜索树；或者直接用递归：对于二叉搜索树每个结点要满足在区间[左子树，右子树] |
 | 337  | [337. 打家劫舍 III](https://leetcode-cn.com/problems/house-robber-iii/) | 记忆化搜索+剪枝                                              |
 | 94   | [二叉树中序遍历](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/) | 在中序遍历中，每个节点也会访问两次，第一次是入栈且不输出，第二次出栈 输出 |
 | 144  | [二叉树的前序遍历](https://leetcode-cn.com/problems/binary-tree-preorder-traversal/) | 在先序遍历中，每个节点会被访问两次，第一次是入栈，此时就输出，第二次是出栈 |
@@ -268,6 +269,8 @@
 |      |                                                              |                                                              |
 | 1584 | [1584. 连接所有点的最小费用](https://leetcode-cn.com/problems/min-cost-to-connect-all-points/) | 最小生成树模版题，prim或者kruskal                            |
 | 1489 | [1489. 找到最小生成树里的关键边和伪关键边](https://leetcode-cn.com/problems/find-critical-and-pseudo-critical-edges-in-minimum-spanning-tree/)（hard） | 枚举+最小生成树判定                                          |
+| 450  | [450. 删除二叉搜索树中的节点](https://leetcode-cn.com/problems/delete-node-in-a-bst/) | 左右子树都存在，找左子树最大的或右子树最小的作为根，然后再删除掉这个找到的结点 |
+| *    | [二叉查找树中第 K 小的元素 II]((https://leetcode-cn.com/leetbook/read/high-frequency-algorithm-exercise/5hhxs5/)) | 递归，有nodenum_root，复杂度O(h)                             |
 
 
 
@@ -375,6 +378,8 @@
 | 842   | [842. 将数组拆分成斐波那契序列](https://leetcode-cn.com/problems/split-array-into-fibonacci-sequence/) | 回溯，剪枝情况很多                                           |
 | 306   | [306. 累加数](https://leetcode-cn.com/problems/additive-number/) | 和842完全相同的回溯，当然更好的做法是用字符串处理溢出情况    |
 | 1718  | [1718. 构建字典序最大的可行序列](https://leetcode-cn.com/problems/construct-the-lexicographically-largest-valid-sequence/) | 类似8皇后，回溯填格子                                        |
+| 22    | [22. 括号生成](https://leetcode-cn.com/problems/generate-parentheses/) | 任何时刻左括号数量大于等于右括号数量， 用这个条件做回溯      |
+| 89    | [89. 格雷编码](https://leetcode-cn.com/problems/gray-code/)  | 1. 异或处理只改变一位的问题， 2. 回溯的写法！                |
 
 
 
@@ -413,7 +418,7 @@
 
 | No.  | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                                                       |
 | ---- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 1052 | [1052. 爱生气的书店老板](https://leetcode-cn.com/problems/grumpy-bookstore-owner/) | 可以维护一个大小为X的滑动窗口，O(xn)                         |
+| 1052 | [1052. 爱生气的书店老板](https://leetcode-cn.com/problems/grumpy-bookstore-owner/) | 可以维护一个大小为X的滑动窗口+逆向思维。或者直接使用前缀和+滑动窗口，正向考虑 |
 | 209  | [209. 长度最小的子数组](https://leetcode-cn.com/problems/minimum-size-subarray-sum/) | 典型滑窗，也可以用前缀和+二分法                              |
 | 76   | [76. 最小覆盖子串](https://leetcode-cn.com/problems/minimum-window-substring/)（hard） | 滑窗，判断窗口内是否满足要求，若不满足则扩大窗口，满足则尝试缩小 |
 | 632  | [632. 最小区间](https://leetcode-cn.com/problems/smallest-range-covering-elements-from-k-lists/)（hard） | 可以使用hash+排序+滑动窗口，转换成和76类似的题目             |
@@ -431,6 +436,8 @@
 | 567  | [567. 字符串的排列](https://leetcode-cn.com/problems/permutation-in-string/) | 滑动窗口模版题                                               |
 | 995  | [995. K 连续位的最小翻转次数](https://leetcode-cn.com/problems/minimum-number-of-k-consecutive-bit-flips/)（hard） | 队列模拟的滑动窗口+贪心                                      |
 | 1004 | [1004. 最大连续1的个数 III](https://leetcode-cn.com/problems/max-consecutive-ones-iii/) | 统计0个数，滑动窗口                                          |
+| 697  | [697. 数组的度](https://leetcode-cn.com/problems/degree-of-an-array/) | 可以使用滑动窗口，也可以用多个hashmap记录首尾位置            |
+| 1438 | [1438. 绝对差不超过限制的最长连续子数组](https://leetcode-cn.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/) | 滑动窗口+单调队列维护区间最大最小值                          |
 
 ### 快慢指针/双指针
 
@@ -501,6 +508,7 @@
 | 1046 | [1046. 最后一块石头的重量](https://leetcode-cn.com/problems/last-stone-weight/) | 优先队列（堆）模拟                                           |
 | 1705 | [1705. 吃苹果的最大数目](https://leetcode-cn.com/problems/maximum-number-of-eaten-apples/) | 优先队列（堆）模拟                                           |
 | 1733 | [1733. 需要教语言的最少人数](https://leetcode-cn.com/problems/minimum-number-of-people-to-teach/) | \1. 记录每个人会什么语言，\2. 找到需要解决沟通问题的朋友对， \3. 遍历语言，遍历朋友对，教语言 |
+| 146  | [146. LRU 缓存机制](https://leetcode-cn.com/problems/lru-cache/) | 双向链表 + hashmap，头部存放最近使用的，尾部存放最近最久未使用的 |
 
 
 ### 字符串独立专题（前缀、后缀、字典树及其它技巧）
