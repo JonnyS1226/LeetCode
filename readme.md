@@ -54,6 +54,9 @@
 | 338         | [338. 比特位计数](https://leetcode-cn.com/problems/counting-bits/) | 位运算结合动态规划                                           |
 | 461         | [461. 汉明距离](https://leetcode-cn.com/problems/hamming-distance/) | 位运算简单题                                                 |
 | 1018        | [1018. 可被 5 整除的二进制前缀](https://leetcode-cn.com/problems/binary-prefix-divisible-by-5/) | 运用取模的基本性质+位运算                                    |
+| 78          | [78. 子集](https://leetcode-cn.com/problems/subsets/)        | 常规的位运算迭代枚举子集                                     |
+| 1774        | [1774. 最接近目标价格的甜点成本](https://leetcode-cn.com/problems/closest-dessert-cost/) | 也可以迭代枚举子集，两次枚举二进制子集，或者直接枚举三进制子集 |
+| 1178        | [1178. 猜字谜](https://leetcode-cn.com/problems/number-of-valid-words-for-each-puzzle/)(hard) | 状态压缩 + 二进制枚举子集                                    |
 
 ### 二分查找/分治减治思想
 
@@ -223,6 +226,7 @@
 | 330  | [330. 按要求补齐数组](https://leetcode-cn.com/problems/patching-array/) | 很有趣的贪心思想                                             |
 | 665  | [665. 非递减数列](https://leetcode-cn.com/problems/non-decreasing-array/) | 对于当前数，要看再前面那个数，如果再前面那个数不存在或者小于等于当前数，则修改前面数为当前数。如果大于当前数，则修改当前数为前面数。 |
 | 1717 | [1717. 删除子字符串的最大得分](https://leetcode-cn.com/problems/maximum-score-from-removing-substrings/) | 贪心，先删除分值大的。可以优化预处理为总是先删“ab”，再删“ba” |
+| 1775 | [1775. 通过最少操作次数使数组的和相等](https://leetcode-cn.com/problems/equal-sum-arrays-with-minimum-number-of-operations/) | 贪心, 每次都最大化变，直到sum1 >= sum2 （这个说明最后一次不用最大化变） |
 
 
 
@@ -299,7 +303,7 @@
 | 679  | [679. 24 点游戏](https://leetcode-cn.com/problems/24-game/)（hard） | 纯暴力，4种运算，4个数， dfs回溯                             |
 | 5482 | [5482. 二维网格图中探测环](https://leetcode-cn.com/problems/detect-cycles-in-2d-grid/)（hard） | 带前置节点的dfs或者bfs                                       |
 | 841  | [841. 钥匙和房间](https://leetcode-cn.com/problems/keys-and-rooms/) | 建图dfs， 或者拓扑排序判环                                   |
-| 78   | [78. 子集](https://leetcode-cn.com/problems/subsets/)        | 简单dfs，或者直接遍历，遇到一个数就把所有子集加上该数组成新的子集 |
+| 78   | [78. 子集](https://leetcode-cn.com/problems/subsets/)        | 简单dfs                                                      |
 | 1034 | [1034. 边框着色](https://leetcode-cn.com/problems/coloring-a-border/) | DFS求连通分量的边界（通过控制属于该分量返回1，不属于返回0来实现） |
 | 1293 | [1293. 网格中的最短路径](https://leetcode-cn.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/)（hard） | bfs，增加一维 k （重点题）                                   |
 | 1654 | [1654. 到家的最少跳跃次数](https://leetcode-cn.com/problems/minimum-jumps-to-reach-home/) | bfs，和1293很像，增加一维状态                                |
@@ -307,6 +311,7 @@
 | 854  | [854. 相似度为 K 的字符串](https://leetcode-cn.com/problems/k-similar-strings/) |                                                              |
 | 1345 | [1345. 跳跃游戏 IV](https://leetcode-cn.com/problems/jump-game-iv/)(hard) | bfs+倒排索引+同值跳跃只发生一次                              |
 | 301  | [301. 删除无效的括号](https://leetcode-cn.com/problems/remove-invalid-parentheses/)（hard） | 对当前串，考虑多删除一个字符后的所有新串，做bfs              |
+| 1774 | [1774. 最接近目标价格的甜点成本](https://leetcode-cn.com/problems/closest-dessert-cost/) | 可以用dfs枚举情况                                            |
 
 ### 拓扑排序
 
@@ -411,6 +416,7 @@
 | 1526 | [1526. 形成目标数组的子数组最少增加次数](https://leetcode-cn.com/problems/minimum-number-of-increments-on-subarrays-to-form-a-target-array/)(hard） | 可以利用单调栈思想：考虑每个元素左侧相邻元素的贡献值，但不同于常规单调栈，不需要所有出栈都计算 |
 | 1544 | [1544. 整理字符串](https://leetcode-cn.com/problems/make-the-string-great/) | 用数组模拟栈，或者直接用栈                                   |
 | 862  | [862. 和至少为 K 的最短子数组](https://leetcode-cn.com/problems/shortest-subarray-with-sum-at-least-k/) | 前缀和+双端队列模拟的单调递增栈                              |
+| 1776 | [1776. 车队 II](https://leetcode-cn.com/problems/car-fleet-ii/)(hard) |                                                              |
 
 ### 滑动窗口/单调队列/双端队列
 

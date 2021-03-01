@@ -66,13 +66,15 @@ if ((mask >> 1) & mask) continue;
 
 ```c++
 // 限定mask的某些位必须不在集合中
-for (int subset = mask; subset >= 0; subset = (subset - 1) & mask)
+// mask中某一位为0表示这一位必须不在子集中
+for (int subset = mask; subset > 0; subset = (subset - 1) & mask)
 ```
 
 3. 在限定必须取某些元素的前提下枚举子集
 
 ```c++
 // 限定mask的某些位必须在集合中
+// mask中某一位为1表示这一位必须在集合中
 for (int subset = mask; subset < (1 << m); subset = (subset + 1) | mask)
 ```
 
