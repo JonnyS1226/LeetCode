@@ -57,6 +57,7 @@
 | 78          | [78. 子集](https://leetcode-cn.com/problems/subsets/)        | 常规的位运算迭代枚举子集                                     |
 | 1774        | [1774. 最接近目标价格的甜点成本](https://leetcode-cn.com/problems/closest-dessert-cost/) | 也可以迭代枚举子集，两次枚举二进制子集，或者直接枚举三进制子集 |
 | 1178        | [1178. 猜字谜](https://leetcode-cn.com/problems/number-of-valid-words-for-each-puzzle/)(hard) | 状态压缩 + 二进制枚举子集                                    |
+| 338         | [338. 比特位计数](https://leetcode-cn.com/problems/counting-bits/) | 运用 (n-1)&n 和动态规划 的思想                               |
 
 ### 二分查找/分治减治思想
 
@@ -147,7 +148,7 @@
 | 516   | [516. 最长回文子序列](https://leetcode-cn.com/problems/longest-palindromic-subsequence/) | 子序列问题的动态规划，dp(i)(j)表示s[i]-s[j]区间内最长回文子序列长度，注意区间dp要斜着打表或者反着打表。 <br>也可以转换为求逆字符串，再求最长公共子序列 |
 | 300   | [300. 最长上升子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/) | `dp[i]=max{dp[j]}+1，if num[i] > num[j]`, 其中i>j，其中dp[i]表示前i个得最长递增序列长度，且nums[i]必须选择 |
 | 1143  | [1143. 最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) | `dp[i] [j]`代表text1前i个字符和text2前j个字符的最长公共子序列 |
-|       |                                                              |                                                              |
+| 1770  | [1770. 执行乘法运算的最大分数](https://leetcode-cn.com/problems/maximum-score-from-performing-multiplication-operations/) | `dp[i][j]表示前i个数，后j个数乘以mul后最大值,最后遍历所有i+j=m的情况下的最大值` |
 | 718   | [718. 最长重复子数组](https://leetcode-cn.com/problems/maximum-length-of-repeated-subarray/) | `dp[i] [j]`表示A前i个和B前j个 最长公共子数组长度(且要求取到公共子数组必须以i和j结尾) |
 | 97    | [97. 交错字符串](https://leetcode-cn.com/problems/interleaving-string/)（hard） |                                                              |
 | 5419  | [5419. 两个子序列的最大点积](https://leetcode-cn.com/problems/max-dot-product-of-two-subsequences/) | 类似72，1143，  两个数组的dp， $O(n^2)$                      |
@@ -195,6 +196,7 @@
 | 813   | [813. 最大平均值和的分组](https://leetcode-cn.com/problems/largest-sum-of-averages/) | `dp[i][k] 表示前i个元素，构成k个子数组时的最大平均值`        |
 | 5631  | [5631. 跳跃游戏 VI](https://leetcode-cn.com/problems/jump-game-vi/) | 动态规划+单调队列优化                                        |
 | 119   | [119. 杨辉三角 II](https://leetcode-cn.com/problems/pascals-triangle-ii/) | 重点是优化空间，类似背包问题中的方式，从尾开始加，滚动数组   |
+| 1771  | [1771. 由子序列构造的最长回文串的长度](https://leetcode-cn.com/problems/maximize-palindrome-length-from-subsequences/)（hard） | 类似516，`dp[i][j]表示 s[i]到s[j]范围内最长回文串长度`       |
 
 
 
@@ -385,6 +387,7 @@
 | 1718  | [1718. 构建字典序最大的可行序列](https://leetcode-cn.com/problems/construct-the-lexicographically-largest-valid-sequence/) | 类似8皇后，回溯填格子                                        |
 | 22    | [22. 括号生成](https://leetcode-cn.com/problems/generate-parentheses/) | 任何时刻左括号数量大于等于右括号数量， 用这个条件做回溯      |
 | 89    | [89. 格雷编码](https://leetcode-cn.com/problems/gray-code/)  | 1. 异或处理只改变一位的问题， 2. 回溯的写法！                |
+| 131   | [131. 分割回文串](https://leetcode-cn.com/problems/palindrome-partitioning/) | 回溯+check 模版题                                            |
 
 
 
@@ -416,7 +419,7 @@
 | 1526 | [1526. 形成目标数组的子数组最少增加次数](https://leetcode-cn.com/problems/minimum-number-of-increments-on-subarrays-to-form-a-target-array/)(hard） | 可以利用单调栈思想：考虑每个元素左侧相邻元素的贡献值，但不同于常规单调栈，不需要所有出栈都计算 |
 | 1544 | [1544. 整理字符串](https://leetcode-cn.com/problems/make-the-string-great/) | 用数组模拟栈，或者直接用栈                                   |
 | 862  | [862. 和至少为 K 的最短子数组](https://leetcode-cn.com/problems/shortest-subarray-with-sum-at-least-k/) | 前缀和+双端队列模拟的单调递增栈                              |
-| 1776 | [1776. 车队 II](https://leetcode-cn.com/problems/car-fleet-ii/)(hard) |                                                              |
+| 1776 | [1776. 车队 II](https://leetcode-cn.com/problems/car-fleet-ii/)(hard) | 首先，要追上前面的车，一定速度大于前车；所以 很显然只要考虑车子右边，因此从后往前遍历；所以 很显然只要考虑车子右边，因此从后往前遍历 |
 
 ### 滑动窗口/单调队列/双端队列
 
@@ -590,7 +593,8 @@
 | 974  | [974. 和可被 K 整除的子数组](https://leetcode-cn.com/problems/subarray-sums-divisible-by-k/) | 状态压缩+前缀和                                              |
 | 1371 | [1371. 每个元音包含偶数次的最长子字符串](https://leetcode-cn.com/problems/find-the-longest-substring-containing-vowels-in-even-counts/) | 状态压缩+前缀和                                              |
 | 5485 | [5485. 找出最长的超赞子字符串](https://leetcode-cn.com/problems/find-longest-awesome-substring/)（hard） | 状态压缩+前缀和                                              |
-| 303  |                                                              |                                                              |
+| 303  | [303. 区域和检索 - 数组不可变](https://leetcode-cn.com/problems/range-sum-query-immutable/) | 前缀和模版                                                   |
+| 104  | [304. 二维区域和检索 - 矩阵不可变](https://leetcode-cn.com/problems/range-sum-query-2d-immutable/) | 二维前缀和模版                                               |
 | 307  |                                                              |                                                              |
 | 1664 | [1664. 生成平衡数组的方案数](https://leetcode-cn.com/problems/ways-to-make-a-fair-array/) | 分奇偶的前缀和                                               |
 | 1653 | [1653. 使字符串平衡的最少删除次数](https://leetcode-cn.com/problems/minimum-deletions-to-make-string-balanced/) | 用两个数组分别表示某个位置前缀a个数和后缀b个数，最终就是n-max(前缀+后缀) |
