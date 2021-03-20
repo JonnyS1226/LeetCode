@@ -129,7 +129,8 @@
 | 322   | [零钱兑换](https://leetcode-cn.com/problems/coin-change/)    | `dp[i]`表示凑总金额i所需最少硬币数，`dp[i] = min(dp[i], dp[i-coin]+1);` |
 | 279   | [279. 完全平方数](https://leetcode-cn.com/problems/perfect-squares/) | 类似322，dp                                                  |
 | 518   | [零钱兑换Ⅱ](https://leetcode-cn.com/problems/coin-change-2/) | `dp[i]`表示凑总金额i的方法数，`dp[i] `= $ \sum$ `dp[i-coin]`; |
-| 72    | [编辑距离](https://leetcode-cn.com/problems/edit-distance/)  | 用 `dp[i] [j] `表示 `A` 的前 `i` 个字母和 `B` 的前 `j` 个字母之间的编辑距离. |
+| 72    | [编辑距离](https://leetcode-cn.com/problems/edit-distance/)(hard) | 用 `dp[i] [j] `表示 `A` 的前 `i` 个字母和 `B` 的前 `j` 个字母之间的编辑距离. |
+| 115   | [115. 不同的子序列](https://leetcode-cn.com/problems/distinct-subsequences/)(hard) | 两个字符串，子序列问题dp，类似72，1143等                     |
 | 1340  | [跳跃游戏Ⅴ](https://leetcode-cn.com/problems/jump-game-v/)   | dp[i]表示某一点i可以到达的最大点个数，dp[i] = 1 + max(max(dp[i-d]...dp[i-1]), max(dp[i+1, i+d]))，其中要排除位置高度大于i位置的部分 |
 | 221   | [最大正方形](https://leetcode-cn.com/problems/maximal-square/) | dp(*i*,*j*) 表示以 (i, j)为右下角，且只包含1的正方形的边长最大值，dp(i, j) = min(dp(i-1, j), dp(i, j-1), dp(i-1, j-1)) + 1 |
 | 1277  | [统计全为1的正方形子矩阵](https://leetcode-cn.com/problems/count-square-submatrices-with-all-ones/) | 同221                                                        |
@@ -254,9 +255,9 @@
 | 687  | [687. 最长同值路径](https://leetcode-cn.com/problems/longest-univalue-path/) | 递归，类似124和543                                           |
 | 105  | [105. 从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) | 前序遍历第一个元素就是根，根据该元素在中序遍历中找到树的左右子树，然后递归或者迭代 连接 |
 | 106  | [106. 从中序与后序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/) | 后序遍历最后一个元素就是根，根据该元素在中序遍历中找到树的左右子树，然后递归或者迭代 连接 |
+| 889  | [889. 根据前序和后序遍历构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-postorder-traversal/) | 类似思路，但要注意特殊情况                                   |
 | 1028 | [1028. 从先序遍历还原二叉树](https://leetcode-cn.com/problems/recover-a-tree-from-preorder-traversal/)（hard） | 通过-确定层级关系，控制出入栈                                |
 | 101  | [101. 对称二叉树](https://leetcode-cn.com/problems/symmetric-tree/) | 递归：相当于两个指针，分别比较左右子树；迭代：一次从队列取出两个 比较值是否相等或者是否只有一个为空 |
-|      |                                                              |                                                              |
 | 124  | [124. 二叉树中的最大路径和](https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/)（hard） | 递归 dfs                                                     |
 | 543  | [543. 二叉树的直径](https://leetcode-cn.com/problems/diameter-of-binary-tree/) | 类似124，687，dfs                                            |
 | 99   | [99. 恢复二叉搜索树](https://leetcode-cn.com/problems/recover-binary-search-tree/)（hard） |                                                              |
@@ -275,6 +276,7 @@
 | 450  | [450. 删除二叉搜索树中的节点](https://leetcode-cn.com/problems/delete-node-in-a-bst/) | 左右子树都存在，找左子树最大的或右子树最小的作为根，然后再删除掉这个找到的结点 |
 | *    | [二叉查找树中第 K 小的元素 II]((https://leetcode-cn.com/leetbook/read/high-frequency-algorithm-exercise/5hhxs5/)) | 递归，有nodenum_root，复杂度O(h)                             |
 | 331  | [331. 验证二叉树的前序序列化](https://leetcode-cn.com/problems/verify-preorder-serialization-of-a-binary-tree/) | 运用n0=n2+1，一次遍历                                        |
+| 386  | [386. 字典序排数](https://leetcode-cn.com/problems/lexicographical-numbers/) | 可以转换为10叉树先序遍历，或者直接模拟                       |
 
 
 
@@ -314,6 +316,7 @@
 | 301  | [301. 删除无效的括号](https://leetcode-cn.com/problems/remove-invalid-parentheses/)（hard） | 对当前串，考虑多删除一个字符后的所有新串，做bfs              |
 | 1774 | [1774. 最接近目标价格的甜点成本](https://leetcode-cn.com/problems/closest-dessert-cost/) | 可以用dfs枚举情况                                            |
 | 1786 | [1786. 从第一个节点出发到最后一个节点的受限路径数](https://leetcode-cn.com/problems/number-of-restricted-paths-from-first-to-last-node/) | 堆优化的dijkstra + dp（注意剪枝）                            |
+| 79   | [79. 单词搜索](https://leetcode-cn.com/problems/word-search/) | 对每个点做dfs                                                |
 
 ### 拓扑排序
 
@@ -423,6 +426,7 @@
 | 1776 | [1776. 车队 II](https://leetcode-cn.com/problems/car-fleet-ii/)(hard) | 首先，要追上前面的车，一定速度大于前车；所以 很显然只要考虑车子右边，因此从后往前遍历；所以 很显然只要考虑车子右边，因此从后往前遍历 |
 | 224  | [224. 基本计算器](https://leetcode-cn.com/problems/basic-calculator/)(hard) | 栈 + 拆括号                                                  |
 | 227  | [227. 基本计算器 II](https://leetcode-cn.com/problems/basic-calculator-ii/) | 双栈                                                         |
+| 150  | [150. 逆波兰表达式求值](https://leetcode-cn.com/problems/evaluate-reverse-polish-notation/) | 经典问题，一个数字栈即可                                     |
 
 ### 滑动窗口/单调队列/双端队列
 
@@ -450,6 +454,7 @@
 | 1004 | [1004. 最大连续1的个数 III](https://leetcode-cn.com/problems/max-consecutive-ones-iii/) | 统计0个数，滑动窗口                                          |
 | 697  | [697. 数组的度](https://leetcode-cn.com/problems/degree-of-an-array/) | 可以使用滑动窗口，也可以用多个hashmap记录首尾位置            |
 | 1438 | [1438. 绝对差不超过限制的最长连续子数组](https://leetcode-cn.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/) | 滑动窗口+单调队列维护区间最大最小值                          |
+| 1358 | [1358. 包含所有三种字符的子字符串数目](https://leetcode-cn.com/problems/number-of-substrings-containing-all-three-characters/) | 滑动窗口，注意累加的时候，[i,j]符合条件的话，[i,j+1],[i,j+2]这些都会符合条件 |
 
 ### 快慢指针/双指针
 
@@ -483,6 +488,7 @@
 | 888  | [888. 公平的糖果棒交换](https://leetcode-cn.com/problems/fair-candy-swap/) | 排序+双指针, 根据差值情况更新diff                            |
 | 15   | [15. 三数之和](https://leetcode-cn.com/problems/3sum/)       | 暴力枚举+二分$O(n^2\log n)$超时，使用枚举+双指针$O(n^2)$     |
 | 160  | [160. 相交链表](https://leetcode-cn.com/problems/intersection-of-two-linked-lists/) | 相当于让一个指针先走一个长度差的距离，然后再一起走，就能得到第一个相遇点 |
+| 75   | [75. 颜色分类](https://leetcode-cn.com/problems/sort-colors/) | 类似三路快排，0放左边，1不动，2放右边                        |
 
 ### 线段树/树状数组
 
@@ -569,6 +575,8 @@
 | 382*  | [382. 链表随机节点](https://leetcode-cn.com/problems/linked-list-random-node/) | 蓄水池抽样算法                                               |
 | 384*  | [384. 打乱数组](https://leetcode-cn.com/problems/shuffle-an-array/) | 经典洗牌算法                                                 |
 | 1232  | [1232. 缀点成线](https://leetcode-cn.com/problems/check-if-it-is-a-straight-line/) | 可以求直线一般式或者两点式，也可以使用线性相关特性，两个向量线性相关 -> 构成的行列式值为0 |
+| 319*  | [319. 灯泡开关](https://leetcode-cn.com/problems/bulb-switcher/) | 转化为分解因子 -> 求1-n中平方数个数 -> 求平方根问题          |
+| 73    | [73. 矩阵置零](https://leetcode-cn.com/problems/set-matrix-zeroes/) | 首先先开两个标记 首行和首列是否要清0，然后对于非首行首列为0的，将其转换为对应的(row, 0), (0, col)，最后再根据flag和(row,0),(0,col)进行置零操作 |
 
 ### 回文系列
 
