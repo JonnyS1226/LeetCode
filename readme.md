@@ -26,6 +26,7 @@
 - [说明](#说明)
 
 <!-- /TOC -->
+
 ## Leetcode
 
 ### 位运算	
@@ -149,6 +150,7 @@
 | 516   | [516. 最长回文子序列](https://leetcode-cn.com/problems/longest-palindromic-subsequence/) | 子序列问题的动态规划，dp(i)(j)表示s[i]-s[j]区间内最长回文子序列长度，注意区间dp要斜着打表或者反着打表。 <br>也可以转换为求逆字符串，再求最长公共子序列 |
 | 300   | [300. 最长上升子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/) | `dp[i]=max{dp[j]}+1，if num[i] > num[j]`, 其中i>j，其中dp[i]表示前i个得最长递增序列长度，且nums[i]必须选择 |
 | 1143  | [1143. 最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) | `dp[i] [j]`代表text1前i个字符和text2前j个字符的最长公共子序列 |
+| 712   | [712. 两个字符串的最小ASCII删除和](https://leetcode-cn.com/problems/minimum-ascii-delete-sum-for-two-strings/) | 和1143一样思路，只不过目标是找到ascii码最大的子串            |
 | 1770  | [1770. 执行乘法运算的最大分数](https://leetcode-cn.com/problems/maximum-score-from-performing-multiplication-operations/) | `dp[i][j]表示前i个数，后j个数乘以mul后最大值,最后遍历所有i+j=m的情况下的最大值` |
 | 718   | [718. 最长重复子数组](https://leetcode-cn.com/problems/maximum-length-of-repeated-subarray/) | `dp[i] [j]`表示A前i个和B前j个 最长公共子数组长度(且要求取到公共子数组必须以i和j结尾) |
 | 97    | [97. 交错字符串](https://leetcode-cn.com/problems/interleaving-string/)（hard） |                                                              |
@@ -427,6 +429,7 @@
 | 224  | [224. 基本计算器](https://leetcode-cn.com/problems/basic-calculator/)(hard) | 栈 + 拆括号                                                  |
 | 227  | [227. 基本计算器 II](https://leetcode-cn.com/problems/basic-calculator-ii/) | 双栈                                                         |
 | 150  | [150. 逆波兰表达式求值](https://leetcode-cn.com/problems/evaluate-reverse-polish-notation/) | 经典问题，一个数字栈即可                                     |
+| 1047 | [1047. 删除字符串中的所有相邻重复项](https://leetcode-cn.com/problems/remove-all-adjacent-duplicates-in-string/) | 栈的简单使用，关键是要想到用栈                               |
 
 ### 滑动窗口/单调队列/双端队列
 
