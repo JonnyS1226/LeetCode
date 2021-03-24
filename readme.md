@@ -92,6 +92,7 @@
 | 475   | [475. 供暖器](https://leetcode-cn.com/problems/heaters/)     | 二分查找, 对每个houses 二分找一个最近的heaters               |
 | 395   | [395. 至少有K个重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-with-at-least-k-repeating-characters/) | 分治思想，以不满足条件的索引为分界点进行分治                 |
 | 480   | [480. 滑动窗口中位数](https://leetcode-cn.com/problems/sliding-window-median/) | 用deque(便于增删)维护窗口+二分查找来增删元素                 |
+| 1802  | [1802. 有界数组中指定下标处的最大值](https://leetcode-cn.com/problems/maximum-value-at-a-given-index-in-a-bounded-array/) | 二分答案                                                     |
 
 ### 链表类型题
 
@@ -408,7 +409,7 @@
 | 42   | [42. 接雨水](https://leetcode-cn.com/problems/trapping-rain-water/)（hard） | 典型单调递减栈题目                                           |
 | 84   | [84. 柱状图中最大的矩形](https://leetcode-cn.com/problems/largest-rectangle-in-histogram/) | 求以每个矩形高度为框出来高度的最大矩形面积（这一步通过单调栈，对于某个矩形高度，找向左延伸第一个小于它的，向右延伸第一个小于它的，然后求面积），再在里面取最大的。 |
 | 85   | [85. 最大矩形](https://leetcode-cn.com/problems/maximal-rectangle/) | 类似84，将y轴置于最左边，将x轴作用于每一行，都调用一次84，最后取最大 |
-| 5704 | [5704. 好子数组的最大分数](https://leetcode-cn.com/problems/maximum-score-of-a-good-subarray/)（hard） | 类似84，加一个简单的限制条件                                 |
+| 1793 | [1793. 好子数组的最大分数](https://leetcode-cn.com/problems/maximum-score-of-a-good-subarray/)(hard) | 类似84，加一个简单的限制条件                                 |
 | 496  | [496. 下一个更大元素 I](https://leetcode-cn.com/problems/next-greater-element-i/) | 构造一个单调递减栈，找到一个比栈顶大的就出栈，这个元素就是出栈元素后面第一个比它大的 |
 | 503  | [503. 下一个更大元素 II](https://leetcode-cn.com/problems/next-greater-element-ii/) | 构造一个单调递减栈，与496区别在于循环判断，如[4321]相当于用496的方法计算[43214321] |
 | 739  | [739. 每日温度](https://leetcode-cn.com/problems/daily-temperatures/) | 同496，维护一个单调递减栈                                    |
@@ -430,6 +431,7 @@
 | 227  | [227. 基本计算器 II](https://leetcode-cn.com/problems/basic-calculator-ii/) | 双栈                                                         |
 | 150  | [150. 逆波兰表达式求值](https://leetcode-cn.com/problems/evaluate-reverse-polish-notation/) | 经典问题，一个数字栈即可                                     |
 | 1047 | [1047. 删除字符串中的所有相邻重复项](https://leetcode-cn.com/problems/remove-all-adjacent-duplicates-in-string/) | 栈的简单使用，关键是要想到用栈                               |
+| 456  | [456. 132 模式](https://leetcode-cn.com/problems/132-pattern/) | 记录左侧最小值作为“1”（贪心思想）， 单调递减栈 找小于“3”的右边的最大元素（因此从右往左遍历）。 最后判断找到的“2” 是否大于 “1” |
 
 ### 滑动窗口/单调队列/双端队列
 
@@ -580,6 +582,7 @@
 | 1232  | [1232. 缀点成线](https://leetcode-cn.com/problems/check-if-it-is-a-straight-line/) | 可以求直线一般式或者两点式，也可以使用线性相关特性，两个向量线性相关 -> 构成的行列式值为0 |
 | 319*  | [319. 灯泡开关](https://leetcode-cn.com/problems/bulb-switcher/) | 转化为分解因子 -> 求1-n中平方数个数 -> 求平方根问题          |
 | 73    | [73. 矩阵置零](https://leetcode-cn.com/problems/set-matrix-zeroes/) | 首先先开两个标记 首行和首列是否要清0，然后对于非首行首列为0的，将其转换为对应的(row, 0), (0, col)，最后再根据flag和(row,0),(0,col)进行置零操作 |
+| 1798  | [1798. 你能构造出连续值的最大数目](https://leetcode-cn.com/problems/maximum-number-of-consecutive-values-you-can-make/) | 数学题：因为要求从0开始，假设[0,x]可覆盖，现在遇到y，则[y, y+x]肯定能覆盖。要使得可以延伸区间，则一定有y<=x+1 |
 
 ### 回文系列
 
