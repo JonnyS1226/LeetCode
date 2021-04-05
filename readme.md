@@ -59,6 +59,7 @@
 | 1774        | [1774. 最接近目标价格的甜点成本](https://leetcode-cn.com/problems/closest-dessert-cost/) | 也可以迭代枚举子集，两次枚举二进制子集，或者直接枚举三进制子集 |
 | 1178        | [1178. 猜字谜](https://leetcode-cn.com/problems/number-of-valid-words-for-each-puzzle/)(hard) | 状态压缩 + 二进制枚举子集                                    |
 | 338         | [338. 比特位计数](https://leetcode-cn.com/problems/counting-bits/) | 运用 (n-1)&n 和动态规划 的思想                               |
+| 190         | [190. 颠倒二进制位](https://leetcode-cn.com/problems/reverse-bits/) | 逐位颠倒，或者**位运算分治（妙啊）**                         |
 
 ### 二分查找/分治减治思想
 
@@ -155,7 +156,7 @@
 | 1770  | [1770. 执行乘法运算的最大分数](https://leetcode-cn.com/problems/maximum-score-from-performing-multiplication-operations/) | `dp[i][j]表示前i个数，后j个数乘以mul后最大值,最后遍历所有i+j=m的情况下的最大值` |
 | 718   | [718. 最长重复子数组](https://leetcode-cn.com/problems/maximum-length-of-repeated-subarray/) | `dp[i] [j]`表示A前i个和B前j个 最长公共子数组长度(且要求取到公共子数组必须以i和j结尾) |
 | 97    | [97. 交错字符串](https://leetcode-cn.com/problems/interleaving-string/)（hard） |                                                              |
-| 5419  | [5419. 两个子序列的最大点积](https://leetcode-cn.com/problems/max-dot-product-of-two-subsequences/) | 类似72，1143，  两个数组的dp， $O(n^2)$                      |
+| 1458  | [[1458. 两个子序列的最大点积](https://leetcode-cn.com/problems/max-dot-product-of-two-subsequences/)](https://leetcode-cn.com/problems/max-dot-product-of-two-subsequences/) | 类似72，1143，  两个数组的dp， $O(n^2)$                      |
 | 139   | [139. 单词拆分](https://leetcode-cn.com/problems/word-break/) | 动态规划, dp[i]表示前i个字符是否能被分隔                     |
 | 140   | [140. 单词拆分 II](https://leetcode-cn.com/problems/word-break-ii/) | 动态规划 + 回溯                                              |
 | 1139  | [1139. 最大的以 1 为边界的正方形](https://leetcode-cn.com/problems/largest-1-bordered-square/) | 三维dp或者用两个二维dp，分别表示向上能扩展的个数和向左能扩展的个数。更新时，看右上角和左下角分别向左和向上延伸的长度是否符合要求 |
@@ -280,6 +281,7 @@
 | *    | [二叉查找树中第 K 小的元素 II]((https://leetcode-cn.com/leetbook/read/high-frequency-algorithm-exercise/5hhxs5/)) | 递归，有nodenum_root，复杂度O(h)                             |
 | 331  | [331. 验证二叉树的前序序列化](https://leetcode-cn.com/problems/verify-preorder-serialization-of-a-binary-tree/) | 运用n0=n2+1，一次遍历                                        |
 | 386  | [386. 字典序排数](https://leetcode-cn.com/problems/lexicographical-numbers/) | 可以转换为10叉树先序遍历，或者直接模拟                       |
+| 173  | [173. 二叉搜索树迭代器](https://leetcode-cn.com/problems/binary-search-tree-iterator/) | 迭代中序遍历即可                                             |
 
 
 
@@ -310,6 +312,7 @@
 | 5482 | [5482. 二维网格图中探测环](https://leetcode-cn.com/problems/detect-cycles-in-2d-grid/)（hard） | 带前置节点的dfs或者bfs                                       |
 | 841  | [841. 钥匙和房间](https://leetcode-cn.com/problems/keys-and-rooms/) | 建图dfs， 或者拓扑排序判环                                   |
 | 78   | [78. 子集](https://leetcode-cn.com/problems/subsets/)        | 简单dfs                                                      |
+|      |                                                              |                                                              |
 | 1034 | [1034. 边框着色](https://leetcode-cn.com/problems/coloring-a-border/) | DFS求连通分量的边界（通过控制属于该分量返回1，不属于返回0来实现） |
 | 1293 | [1293. 网格中的最短路径](https://leetcode-cn.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/)（hard） | bfs，增加一维 k （重点题）                                   |
 | 1654 | [1654. 到家的最少跳跃次数](https://leetcode-cn.com/problems/minimum-jumps-to-reach-home/) | bfs，和1293很像，增加一维状态                                |
@@ -375,6 +378,7 @@
 | ----- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 46    | [46. 全排列](https://leetcode-cn.com/problems/permutations/) | 回溯剪枝，可以用交换法，也可以选取法                         |
 | 47    | [47. 全排列 II](https://leetcode-cn.com/problems/permutations-ii/) | 回溯剪枝，排序，判断好去重条件(前后两个数相等，并且前面一个数没有使用) |
+| 90    | [90. 子集 II](https://leetcode-cn.com/problems/subsets-ii/)  | 回溯，去重                                                   |
 | 784   | [784. 字母大小写全排列](https://leetcode-cn.com/problems/letter-case-permutation/) | 回溯剪枝，但结果集不需要等到搜索到叶子才添加，而是每一个节点更改都要添加 |
 | 93    | [93. 复原IP地址](https://leetcode-cn.com/problems/restore-ip-addresses/) |                                                              |
 | 140   | [140. 单词拆分 II](https://leetcode-cn.com/problems/word-break-ii/) | 回溯剪枝                                                     |
@@ -537,6 +541,7 @@
 | 705  | [705. 设计哈希集合](https://leetcode-cn.com/problems/design-hashset/) | 链地址法，数组+链表                                          |
 | 706  | [706. 设计哈希映射](https://leetcode-cn.com/problems/design-hashmap/) | 链地址法，数组+链表+自定义node                               |
 | 5703 | [5703. 最大平均通过率](https://leetcode-cn.com/problems/maximum-average-pass-ratio/) | 堆，贪心策略每次选增量最大的                                 |
+| 781  | [781. 森林中的兔子](https://leetcode-cn.com/problems/rabbits-in-forest/) | 以兔子说的个数为组，进行分组统计（hash），对号入座           |
 
 
 ### 字符串独立专题（前缀、后缀、字典树及其它技巧）
@@ -583,6 +588,7 @@
 | 319*  | [319. 灯泡开关](https://leetcode-cn.com/problems/bulb-switcher/) | 转化为分解因子 -> 求1-n中平方数个数 -> 求平方根问题          |
 | 73    | [73. 矩阵置零](https://leetcode-cn.com/problems/set-matrix-zeroes/) | 首先先开两个标记 首行和首列是否要清0，然后对于非首行首列为0的，将其转换为对应的(row, 0), (0, col)，最后再根据flag和(row,0),(0,col)进行置零操作 |
 | 1798  | [1798. 你能构造出连续值的最大数目](https://leetcode-cn.com/problems/maximum-number-of-consecutive-values-you-can-make/) | 数学题：因为要求从0开始，假设[0,x]可覆盖，现在遇到y，则[y, y+x]肯定能覆盖。要使得可以延伸区间，则一定有y<=x+1 |
+| 5725  | [5725. 序列中不同最大公约数的数目](https://leetcode-cn.com/problems/number-of-different-subsequences-gcds/)(hard) | 一个序列中最大公约数为g，当且仅当这个序列中所有g的倍数的最大公约数为g。g[y] 表示当前遍历过的数中，y的倍数的最大公约数。g[y] 表示当前遍历过的数中，y的倍数的最大公约数。对每个数进行求因子 |
 
 ### 回文系列
 
@@ -598,7 +604,7 @@
 | 5    | [5. 最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/) | 中心扩展暴力，或者manacher算法                               |
 | 516  | [516. 最长回文子序列](https://leetcode-cn.com/problems/longest-palindromic-subsequence/) | 注意子串和子序列的区别，子序列问题常用动态规划               |
 | 214  | [214. 最短回文串](https://leetcode-cn.com/problems/shortest-palindrome/)（hard） | 用kmp, s匹配~s 即可, 匹配剩下的部分加上 就是答案   或者manacher |
-|      |                                                              |                                                              |
+| 1312 | [1312. 让字符串成为回文串的最少插入次数](https://leetcode-cn.com/problems/minimum-insertion-steps-to-make-a-string-palindrome/)（hard） | 经典回文序列dp法，但注意如何根据dp值还原生成的回文串         |
 
 
 
