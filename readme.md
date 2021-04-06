@@ -295,7 +295,6 @@
 | 417  | [417. 太平洋大西洋水流问题](https://leetcode-cn.com/problems/pacific-atlantic-water-flow/) | 从两个边界开始 两次dfs（或BFS），都遍历到的地方就是结果集一部分 |
 | 5426 | [5426. 重新规划路线](https://leetcode-cn.com/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero/) | $O(n^2)$超时，可以建两种顺序的图，BFS，也可以并查集          |
 | 200  | [200. 岛屿数量](https://leetcode-cn.com/problems/number-of-islands/) | bfs或者dfs 模版题                                            |
-| 127  | [127. 单词接龙](https://leetcode-cn.com/problems/word-ladder/) |                                                              |
 | 785  | [785. 判断二分图](https://leetcode-cn.com/problems/is-graph-bipartite/) | 经典染色法，dfs或者bfs                                       |
 | 886  | [886. 可能的二分法](https://leetcode-cn.com/problems/possible-bipartition/) | 相当于二着色问题，每个点都要遍历一次dfs，因为可能存在非连通图 |
 | 1349 | [1349. 参加考试的最大学生数](https://leetcode-cn.com/problems/maximum-students-taking-exam/)（hard） |                                                              |
@@ -317,7 +316,7 @@
 | 1293 | [1293. 网格中的最短路径](https://leetcode-cn.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/)（hard） | bfs，增加一维 k （重点题）                                   |
 | 1654 | [1654. 到家的最少跳跃次数](https://leetcode-cn.com/problems/minimum-jumps-to-reach-home/) | bfs，和1293很像，增加一维状态                                |
 | 847  | [847. 访问所有节点的最短路径](https://leetcode-cn.com/problems/shortest-path-visiting-all-nodes/) |                                                              |
-| 854  | [854. 相似度为 K 的字符串](https://leetcode-cn.com/problems/k-similar-strings/) |                                                              |
+| 854  | [854. 相似度为 K 的字符串q](https://leetcode-cn.com/problems/k-similar-strings/) |                                                              |
 | 1345 | [1345. 跳跃游戏 IV](https://leetcode-cn.com/problems/jump-game-iv/)(hard) | bfs+倒排索引+同值跳跃只发生一次                              |
 | 301  | [301. 删除无效的括号](https://leetcode-cn.com/problems/remove-invalid-parentheses/)（hard） | 对当前串，考虑多删除一个字符后的所有新串，做bfs              |
 | 1774 | [1774. 最接近目标价格的甜点成本](https://leetcode-cn.com/problems/closest-dessert-cost/) | 可以用dfs枚举情况                                            |
@@ -498,6 +497,7 @@
 | 15   | [15. 三数之和](https://leetcode-cn.com/problems/3sum/)       | 暴力枚举+二分$O(n^2\log n)$超时，使用枚举+双指针$O(n^2)$     |
 | 160  | [160. 相交链表](https://leetcode-cn.com/problems/intersection-of-two-linked-lists/) | 相当于让一个指针先走一个长度差的距离，然后再一起走，就能得到第一个相遇点 |
 | 75   | [75. 颜色分类](https://leetcode-cn.com/problems/sort-colors/) | 类似三路快排，0放左边，1不动，2放右边                        |
+| 80   | [80. 删除有序数组中的重复项 II](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array-ii/) | 模拟记录一个len，如果新来的元素不会构成连续三个相同元素，就加入序列 |
 
 ### 线段树/树状数组
 
