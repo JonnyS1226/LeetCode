@@ -6,6 +6,8 @@
     - [二分查找/分治减治思想](#二分查找分治减治思想)
     - [链表类型题](#链表类型题)
     - [动态规划](#动态规划)
+      - [树形dp](#树形dp)
+      - [区间dp](#区间dp)
     - [贪心思想](#贪心思想)
     - [二叉树及树专题](#二叉树及树专题)
     - [DFS/BFS/四种最短路算法(dijkstra,bellman-ford,spfa,floyd)](#dfsbfs四种最短路算法dijkstrabellman-fordspfafloyd)
@@ -70,6 +72,7 @@
 | 1095  | [山脉数组中查找目标值](https://leetcode-cn.com/problems/find-in-mountain-array/) | 三次二分查找（找山顶，再在前后两个有序数组中二分找target）   |
 | 162   | [162. 寻找峰值](https://leetcode-cn.com/problems/find-peak-element/) | 就是1095的第一步（找山顶）                                   |
 | 33.   | [搜索旋转排序数组](https://leetcode-cn.com/problems/search-in-rotated-sorted-array/) | 整个旋转数组是两段有序数组，因此可以进行二分                 |
+| 81    | [81. 搜索旋转排序数组 II](https://leetcode-cn.com/problems/search-in-rotated-sorted-array-ii/) | 相比33 数组有重复元素，所以遇到重复元素，直接lo++，因此最坏情况复杂度On |
 | 34.   | [在排序数组中查找元素的第一个和最后一个位置](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/) | 直接找左边界和有边界                                         |
 | 35.   | [搜索插入位置](https://leetcode-cn.com/problems/search-insert-position/) | 直接二分查找即可，若找不到，返回值就是插入位置               |
 | 1011. | [在D天内送达包裹的能力](https://leetcode-cn.com/problems/capacity-to-ship-packages-within-d-days/) | 本质上是枚举遍历，只不过使用二分进行了优化                   |
@@ -144,12 +147,10 @@
 | 343   | [343. Integer Break](https://leetcode-cn.com/problems/integer-break/) | `dp[i]`表示n的题设下，分割整数后的乘积最大值                 |
 | 746   | [746. Min Cost Climbing Stairs](https://leetcode-cn.com/problems/min-cost-climbing-stairs/) | `dp[i]`表示选择了i所需要的最小cost                           |
 | 96    | [96. 不同的二叉搜索树](https://leetcode-cn.com/problems/unique-binary-search-trees/) | 讨论时分析每个数为根节点的情况，可以递推出：`dp[i] = dp[0]*dp[i-1] + dp[1]*dp[i-2] + ... + dp[i-1]*dp[0]` |
-|       |                                                              |                                                              |
 | 198   | [198. 打家劫舍](https://leetcode-cn.com/problems/house-robber/) | `dp[i]`表示前i+1个房屋最大偷窃金额，`dp[i] = max(dp[i-1], dp[i-2] + nums[i])` |
 | 213   | [213. 打家劫舍 II](https://leetcode-cn.com/problems/house-robber-ii/) | 类似198，可以将环形划分解成[0:n-2]和[1:n-1]两个线性的dp，使用同198的递推式分段解决，求最大值 |
 | 740   | [740. 删除与获得点数](https://leetcode-cn.com/problems/delete-and-earn/) | 可以转换为198问题                                            |
 | 410   | [410. 分割数组的最大值](https://leetcode-cn.com/problems/split-array-largest-sum/)（hard） |                                                              |
-| 516   | [516. 最长回文子序列](https://leetcode-cn.com/problems/longest-palindromic-subsequence/) | 子序列问题的动态规划，dp(i)(j)表示s[i]-s[j]区间内最长回文子序列长度，注意区间dp要斜着打表或者反着打表。 <br>也可以转换为求逆字符串，再求最长公共子序列 |
 | 300   | [300. 最长上升子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/) | `dp[i]=max{dp[j]}+1，if num[i] > num[j]`, 其中i>j，其中dp[i]表示前i个得最长递增序列长度，且nums[i]必须选择 |
 | 1143  | [1143. 最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) | `dp[i] [j]`代表text1前i个字符和text2前j个字符的最长公共子序列 |
 | 712   | [712. 两个字符串的最小ASCII删除和](https://leetcode-cn.com/problems/minimum-ascii-delete-sum-for-two-strings/) | 和1143一样思路，只不过目标是找到ascii码最大的子串            |
@@ -161,12 +162,12 @@
 | 140   | [140. 单词拆分 II](https://leetcode-cn.com/problems/word-break-ii/) | 动态规划 + 回溯                                              |
 | 1139  | [1139. 最大的以 1 为边界的正方形](https://leetcode-cn.com/problems/largest-1-bordered-square/) | 三维dp或者用两个二维dp，分别表示向上能扩展的个数和向左能扩展的个数。更新时，看右上角和左下角分别向左和向上延伸的长度是否符合要求 |
 | 392   | [392. 判断子序列](https://leetcode-cn.com/problems/is-subsequence/)（进阶挑战） |                                                              |
-| 514   | [514. 自由之路](https://leetcode-cn.com/problems/freedom-trail/)（hard） | `dp[i][j]` 表示在ring的第j处找到key的第i个字符所需要移动的步数。最后返回 `*max_element(dp[m-1][t], t=1~n-1)`。使用pos记录ring中每个字符的位置 |
+| 514   | [514. 自由之路](https://leetcode-cn.com/problems/freedom-trail/)（hard） | `dp[i][j]` 表示在ring的第j处找到key的第i个字符所需要移动的步数。最后返回 `*max_element(dp[m-1][t], t=1~n-1)`。使用pos记录sring中每个字符的位置 |
 | 64    | [64. 最小路径和](https://leetcode-cn.com/problems/minimum-path-sum/) | `dp[i][j] = min(dp[i-1][j], dp[i][j-1]) + grid[i][j]​`        |
 | 10    | [10. 正则表达式匹配](https://leetcode-cn.com/problems/regular-expression-matching/)（hard） | 用dp i  j 表示 s的前 i 个字符与 p中的前 j 个字符是否能够匹配。 |
 | 5411  | [5411. 摘樱桃 II](https://leetcode-cn.com/problems/cherry-pickup-ii/)（hard） | 三层dp `dp[i][j][k]`表示第i行，机器人1在j列，机器人2在k列的最大樱桃数 |
 | 5431  | [5431. 给房子涂色 III](https://leetcode-cn.com/problems/paint-house-iii/)（hard） | 三维dp，`dp[i][j][k]` 表示第i个房子，涂了第j个颜色，且形成了k个社区的最小花费 |
-| 837   | [837. 新21点](https://leetcode-cn.com/problems/new-21-game/) | `dp[i]`表示当前和为i（i < K）时获胜的概率， dp[i] = 摸j点的概率(1/w) 乘以 摸完之后成功的概率`(dp[]i+j])`，并遍历j求和 |
+| 837   | [837. 新21点](https://leetcode-cn.com/problems/new-21-game/) | `dp[i]`表示当前和为i（i < K）时获胜的概率， dp[i] = 摸j点的概率(1/w) 乘以 摸完之后成功的概率`(dp[i+j])`，并遍历j求和 |
 | 1494  | [1494. 并行课程 II](https://leetcode-cn.com/problems/parallel-courses-ii/)（hard） |                                                              |
 | 32    | [32. 最长有效括号](https://leetcode-cn.com/problems/longest-valid-parentheses/)（hard） | 有多种方法，栈，dp，双向扫描。此处用dp，dp[i]表示以i位置结尾的最长有小括号子串长度。更新时，如果当前位置是(，显然长度为0，如果当前位置是右括号，那么要尝试找到与之对应左括号，需要判断i-`dp[i-1]-1`的位置是否是左括号，如果是：dp[i] = `dp[i-1] + 2 + dp[i-dp[i-1]-2] ` (还需要看匹配位置之前有没有有小括号) |
 | 44    | [44. 通配符匹配](https://leetcode-cn.com/problems/wildcard-matching/)（hard） | `dp[i][j]`表示s前i个和p前j个是否能匹配                       |
@@ -177,16 +178,11 @@
 | 188   | [188. 买卖股票的最佳时机 IV](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iv/) |                                                              |
 | 714   | [714. 买卖股票的最佳时机含手续费](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/) |                                                              |
 | 309   | [309. 最佳买卖股票时机含冷冻期](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/) | dp`[i][0]`表示持有股票；dp`[i][1]`表示不持有股票，处于冷冻期;dp`[i][2]`表示不持有股票，不处于冷冻期。这里的「处于冷冻期」指的是在第 i 天结束之后的状态 |
-| 877   | [877. 石子游戏](https://leetcode-cn.com/problems/stone-game/) | `dp[i][j]`表示从i到j序列，先手和后手的差值；递推时分析 如果选开头堆如何更新，选末尾堆如何更新即可推出递推式 |
 | 1140  | [1140. 石子游戏 II](https://leetcode-cn.com/problems/stone-game-ii/) | `dp[i][j] 表示 对于 piles[i:] 和给定的 M=j 情况下的最大值`   |
 | 1406  | [1406. 石子游戏 III](https://leetcode-cn.com/problems/stone-game-iii/)（hard） | `dp[i]` 表示从i开始拿，后续剩余数组 最多能领先多少           |
 | 5447  | [5447. 石子游戏 IV](https://leetcode-cn.com/problems/stone-game-iv/)（hard） | 博弈dp，`dp[i]` 表示对于数i是否能先手赢                      |
-| 1690  | [1690. 石子游戏 VII](https://leetcode-cn.com/problems/stone-game-vii/) | 前缀和+区间dp                                                |
 | 1025  | [1025. 除数博弈](https://leetcode-cn.com/problems/divisor-game/) | 同石子游戏Ⅳ                                                  |
-| 312   | [312. 戳气球](https://leetcode-cn.com/problems/burst-balloons/)（hard） | 本质和矩阵链乘法 一样的dp；`dp[i][j] = v[i] * v[k] * [j] + dp[i][k] + dp[k][j];` |
 | LCP13 | [LCP 13. 寻宝](https://leetcode-cn.com/problems/xun-bao/)（hard） |                                                              |
-| 5486  | [5486. 切棍子的最小成本](https://leetcode-cn.com/problems/minimum-cost-to-cut-a-stick/)（hard） | 倒过来想，区间dp，`dp[i][j] `表示区间cuts[i]到cuts[j]的距离的合并的最小代价 |
-| 1000  | [1000. 合并石头的最低成本](https://leetcode-cn.com/problems/minimum-cost-to-merge-stones/)(hard) | 区间dp，`dp[i][j][k]为合并第i到第j堆石头为一堆的成本，每次合并k堆` |
 | 546   | [546. 移除盒子](https://leetcode-cn.com/problems/remove-boxes/)（hard） |                                                              |
 | 1024  | [1024. 视频拼接](https://leetcode-cn.com/problems/video-stitching/) | 动态规划问题，`dp[i]` 表示将区间`[0,i)`覆盖所需要的最少子区间的数量 |
 | 845   | [845. 数组中的最长山脉](https://leetcode-cn.com/problems/longest-mountain-in-array/) | 两遍扫描，类似dp思想，设定left和right数组表示向左向右能扩展的最大距离 |
@@ -203,6 +199,30 @@
 | 119   | [119. 杨辉三角 II](https://leetcode-cn.com/problems/pascals-triangle-ii/) | 重点是优化空间，类似背包问题中的方式，从尾开始加，滚动数组   |
 | 1771  | [1771. 由子序列构造的最长回文串的长度](https://leetcode-cn.com/problems/maximize-palindrome-length-from-subsequences/)（hard） | 类似516，`dp[i][j]表示 s[i]到s[j]范围内最长回文串长度`       |
 | 132   | [132. 分割回文串 II](https://leetcode-cn.com/problems/palindrome-partitioning-ii/) | 预处理回文串（dp） + LIS dp， O(n^2)复杂度                   |
+| 1824  | [1824. 最少侧跳次数](https://leetcode-cn.com/problems/minimum-sideway-jumps/) | dpij表示第i个节点第j跑道 最小侧跳次数                        |
+
+#### 树形dp
+
+| No.    | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                                                       |
+| ------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| lcp 34 | [LCP 34. 二叉树染色](https://leetcode-cn.com/problems/er-cha-shu-ran-se-UGC/) | 树形dp, `dp[node][k] ` 表示以node为根的子树，与node相连结点数还剩k个余额的情况下，最大价值 |
+| 337    | [337. 打家劫舍 III](https://leetcode-cn.com/problems/house-robber-iii/) | 树形dp， `dp[node][j] `表示以node为根的子数，最大金额， j=0表示不选根，j=1表示选根 |
+| 124    | [124. 二叉树中的最大路径和](https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/) | 类似树形dp的递归                                             |
+| 687    | [687. 最长同值路径](https://leetcode-cn.com/problems/longest-univalue-path/) | 类似树形dp的递归                                             |
+| 543    | [543. 二叉树的直径](https://leetcode-cn.com/problems/diameter-of-binary-tree/) | 类似树形dp的递归                                             |
+| 1372   | [1372. 二叉树中的最长交错路径](https://leetcode-cn.com/problems/longest-zigzag-path-in-a-binary-tree/) | `dp[node][j]`表示以node为根子树最长交错路径，j=0表示下一步向左，j=1表示下一步向右 |
+|        |                                                              |                                                              |
+
+#### 区间dp
+
+| No.  | <span style="white-space:nowrap;">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> | Remark                                                       |
+| ---- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 1000 | [1000. 合并石头的最低成本](https://leetcode-cn.com/problems/minimum-cost-to-merge-stones/)(hard) | 区间dp，`dp[i][j][k]为合并第i到第j堆石头为一堆的成本，每次合并k堆` |
+| 5486 | [5486. 切棍子的最小成本](https://leetcode-cn.com/problems/minimum-cost-to-cut-a-stick/)（hard） | 倒过来想，区间dp，`dp[i][j] `表示区间cuts[i]到cuts[j]的距离的合并的最小代价 |
+| 1690 | [1690. 石子游戏 VII](https://leetcode-cn.com/problems/stone-game-vii/) | 前缀和+区间dp                                                |
+| 312  | [312. 戳气球](https://leetcode-cn.com/problems/burst-balloons/)（hard） | 本质和矩阵链乘法 一样的dp；`dp[i][j] = v[i] * v[k] * [j] + dp[i][k] + dp[k][j];` |
+| 877  | [877. 石子游戏](https://leetcode-cn.com/problems/stone-game/) | `dp[i][j]`表示从i到j序列，先手和后手的差值；递推时分析 如果选开头堆如何更新，选末尾堆如何更新即可推出递推式 |
+| 516  | [516. 最长回文子序列](https://leetcode-cn.com/problems/longest-palindromic-subsequence/) | 子序列问题的动态规划，dp(i)(j)表示s[i]-s[j]区间内最长回文子序列长度，注意区间dp要斜着打表或者反着打表。 <br>也可以转换为求逆字符串，再求最长公共子序列 |
 
 
 
@@ -262,8 +282,8 @@
 | 889  | [889. 根据前序和后序遍历构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-postorder-traversal/) | 类似思路，但要注意特殊情况                                   |
 | 1028 | [1028. 从先序遍历还原二叉树](https://leetcode-cn.com/problems/recover-a-tree-from-preorder-traversal/)（hard） | 通过-确定层级关系，控制出入栈                                |
 | 101  | [101. 对称二叉树](https://leetcode-cn.com/problems/symmetric-tree/) | 递归：相当于两个指针，分别比较左右子树；迭代：一次从队列取出两个 比较值是否相等或者是否只有一个为空 |
-| 124  | [124. 二叉树中的最大路径和](https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/)（hard） | 递归 dfs                                                     |
-| 543  | [543. 二叉树的直径](https://leetcode-cn.com/problems/diameter-of-binary-tree/) | 类似124，687，dfs                                            |
+| 124  | [124. 二叉树中的最大路径和](https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/)（hard） | 递归 dfs。   有点类似于树形dp的想法                          |
+| 543  | [543. 二叉树的直径](https://leetcode-cn.com/problems/diameter-of-binary-tree/) | 类似124，687，dfs。有点类似树形dp思想                        |
 | 99   | [99. 恢复二叉搜索树](https://leetcode-cn.com/problems/recover-binary-search-tree/)（hard） |                                                              |
 | 95   | [95. 不同的二叉搜索树 II](https://leetcode-cn.com/problems/unique-binary-search-trees-ii/) | 考虑枚举[start,end]中的值 i 为当前二叉搜索树的根，再对划分出的两部分递归求解，最后左子树右子树各选择一颗接上去即可 |
 | 110  | [110. 平衡二叉树](https://leetcode-cn.com/problems/balanced-binary-tree/) |                                                              |
