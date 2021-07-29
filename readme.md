@@ -72,6 +72,7 @@
 | 338         | [338. 比特位计数](https://leetcode-cn.com/problems/counting-bits/) | 运用 (n-1)&n 和动态规划 的思想                               |
 | 190         | [190. 颠倒二进制位](https://leetcode-cn.com/problems/reverse-bits/) | 逐位颠倒，或者**位运算分治（妙啊）**                         |
 | 1835        | [1835. 所有数对按位与结果的异或和](https://leetcode-cn.com/problems/find-xor-sum-of-all-pairs-bitwise-and/)（hard） | 用到`(a&b)^(a&c)=a&(b^c)`                                    |
+| 1829        | [1829. 每个查询的最大异或值](https://leetcode-cn.com/problems/maximum-xor-for-each-query/) | 前缀和 + 异或运算 找到0的地方k取1，1的地方k取0               |
 
 ## 二分查找/分治减治思想
 
@@ -161,7 +162,7 @@
 | 96    | [96. 不同的二叉搜索树](https://leetcode-cn.com/problems/unique-binary-search-trees/) | 讨论时分析每个数为根节点的情况，可以递推出：`dp[i] = dp[0]*dp[i-1] + dp[1]*dp[i-2] + ... + dp[i-1]*dp[0]` |
 | 198   | [198. 打家劫舍](https://leetcode-cn.com/problems/house-robber/) | `dp[i]`表示前i+1个房屋最大偷窃金额，`dp[i] = max(dp[i-1], dp[i-2] + nums[i])` |
 | 213   | [213. 打家劫舍 II](https://leetcode-cn.com/problems/house-robber-ii/) | 类似198，可以将环形划分解成[0:n-2]和[1:n-1]两个线性的dp，使用同198的递推式分段解决，求最大值 |
-| 740   | [740. 删除与获得点数](https://leetcode-cn.com/problems/delete-and-earn/) | 可以转换为198问题                                            |
+| 740   | [740. 删除并获得点数](https://leetcode-cn.com/problems/delete-and-earn/) | 转换为值域，然后就可以转换为打家劫舍问题                     |
 | 410   | [410. 分割数组的最大值](https://leetcode-cn.com/problems/split-array-largest-sum/)（hard） |                                                              |
 | 300   | [300. 最长上升子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/) | `dp[i]=max{dp[j]}+1，if num[i] > num[j]`, 其中i>j，其中dp[i]表示前i个得最长递增序列长度，且nums[i]必须选择 |
 | 1143  | [1143. 最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) | `dp[i] [j]`代表text1前i个字符和text2前j个字符的最长公共子序列 |
@@ -169,7 +170,7 @@
 | 1770  | [1770. 执行乘法运算的最大分数](https://leetcode-cn.com/problems/maximum-score-from-performing-multiplication-operations/) | `dp[i][j]表示前i个数，后j个数乘以mul后最大值,最后遍历所有i+j=m的情况下的最大值` |
 | 718   | [718. 最长重复子数组](https://leetcode-cn.com/problems/maximum-length-of-repeated-subarray/) | `dp[i] [j]`表示A前i个和B前j个 最长公共子数组长度(且要求取到公共子数组必须以i和j结尾) |
 | 97    | [97. 交错字符串](https://leetcode-cn.com/problems/interleaving-string/)（hard） |                                                              |
-| 1458  | [[1458. 两个子序列的最大点积](https://leetcode-cn.com/problems/max-dot-product-of-two-subsequences/)](https://leetcode-cn.com/problems/max-dot-product-of-two-subsequences/) | 类似72，1143，  两个数组的dp， $O(n^2)$                      |
+| 1458  | [1458. 两个子序列的最大点积](https://leetcode-cn.com/problems/max-dot-product-of-two-subsequences/) | 类似72，1143，  两个数组的dp， $O(n^2)$                      |
 | 139   | [139. 单词拆分](https://leetcode-cn.com/problems/word-break/) | 动态规划, dp[i]表示前i个字符是否能被分隔                     |
 | 140   | [140. 单词拆分 II](https://leetcode-cn.com/problems/word-break-ii/) | 动态规划 + 回溯                                              |
 | 1139  | [1139. 最大的以 1 为边界的正方形](https://leetcode-cn.com/problems/largest-1-bordered-square/) | 三维dp或者用两个二维dp，分别表示向上能扩展的个数和向左能扩展的个数。更新时，看右上角和左下角分别向左和向上延伸的长度是否符合要求 |
@@ -203,6 +204,7 @@
 | 1681  | [1681. 最小不兼容性](https://leetcode-cn.com/problems/minimum-incompatibility/)（hard） | 状态压缩动态规划                                             |
 | 1187  | [1187. 使数组严格递增](https://leetcode-cn.com/problems/make-array-strictly-increasing/)（hard） | `dp[i][j] 表示arr1前i个数，经过不多于j次变化，最后一个（即第i个）数的值，最后从小到大遍历dp[n-1][j]找到第一个符合的即可` |
 | 354   | [354. 俄罗斯套娃信封问题](https://leetcode-cn.com/problems/russian-doll-envelopes/)（hard） | 按一维排序后，转换为最大上升序列问题。然后可以使用O(n2)或者借助二分的O(nlgn)解决 |
+| 368   | [368. 最大整除子集](https://leetcode-cn.com/problems/largest-divisible-subset/) | 类似最大上升子序列，最后得到了长度如何得到具体数组是关键     |
 | 376   | [376. 摆动序列](https://leetcode-cn.com/problems/wiggle-subsequence/) | dp[i]表示前i个元素摆动序列长度，第二维是状态:0表示最后上升,1表示最后下降 |
 | 978   | [978. 最长湍流子数组](https://leetcode-cn.com/problems/longest-turbulent-subarray/) | 376的变形，在于要连续，所以要置1                             |
 | 1691  | [1691. 堆叠长方体的最大高度](https://leetcode-cn.com/problems/maximum-height-by-stacking-cuboids/)（hard） | 可以把每个长方体所有情况放入数组一起考虑，三维最长递增子序列 |
@@ -212,6 +214,8 @@
 | 1771  | [1771. 由子序列构造的最长回文串的长度](https://leetcode-cn.com/problems/maximize-palindrome-length-from-subsequences/)（hard） | 类似516，`dp[i][j]表示 s[i]到s[j]范围内最长回文串长度`       |
 | 132   | [132. 分割回文串 II](https://leetcode-cn.com/problems/palindrome-partitioning-ii/) | 预处理回文串（dp） + LIS dp， O(n^2)复杂度                   |
 | 1824  | [1824. 最少侧跳次数](https://leetcode-cn.com/problems/minimum-sideway-jumps/) | dpij表示第i个节点第j跑道 最小侧跳次数                        |
+| 403   | [403. 青蛙过河](https://leetcode-cn.com/problems/frog-jump/)(hard) | `dp[i][k]`表示能否跳k步到达第i个石头                         |
+|       |                                                              |                                                              |
 
 ### 树形dp
 
@@ -302,7 +306,8 @@
 | 110  | [110. 平衡二叉树](https://leetcode-cn.com/problems/balanced-binary-tree/) |                                                              |
 |      | 完全二叉树                                                   |                                                              |
 | 404  | [404. 左叶子之和](https://leetcode-cn.com/problems/sum-of-left-leaves/) | 先序遍历，递归或迭代，找到**满足左叶子条件**就记录结果       |
-| 114  | [114. 二叉树展开为链表](https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/) | 按根右左的遍历，通过右指针组成链表                           |
+| 114  | [114. 二叉树展开为链表](https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/) | 按右左根的遍历，通过右指针组成链表                           |
+| 897  | [897. 递增顺序搜索树](https://leetcode-cn.com/problems/increasing-order-search-tree/) | 类似114，按右根左的顺序进行遍历，通过右指针组成链表          |
 | 430  | [430. 扁平化多级双向链表](https://leetcode-cn.com/problems/flatten-a-multilevel-doubly-linked-list/) | 同114，把child看成左，next看成右即可                         |
 | 235  | [235. 二叉搜索树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/) | 可以用236的普遍方法，也可以直接利用二叉搜索树的性质求LCA     |
 | 236  | [236. 二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/) | 左右搜，如果分列左右，那么分岔点就是。否则就向左/右搜        |
@@ -315,6 +320,9 @@
 | 331  | [331. 验证二叉树的前序序列化](https://leetcode-cn.com/problems/verify-preorder-serialization-of-a-binary-tree/) | 运用n0=n2+1，一次遍历                                        |
 | 386  | [386. 字典序排数](https://leetcode-cn.com/problems/lexicographical-numbers/) | 可以转换为10叉树先序遍历，或者直接模拟                       |
 | 173  | [173. 二叉搜索树迭代器](https://leetcode-cn.com/problems/binary-search-tree-iterator/) | 迭代中序遍历即可                                             |
+| 865  | [865. 具有所有最深节点的最小子树](https://leetcode-cn.com/problems/smallest-subtree-with-all-the-deepest-nodes/) | 两个递归，一个求depth，一个是不断往深的方向递归              |
+| 863  | [863. 二叉树中所有距离为 K 的结点](https://leetcode-cn.com/problems/all-nodes-distance-k-in-binary-tree/) | 用map记录父节点，然后dfs                                     |
+| 1104 | [1104. 二叉树寻路](https://leetcode-cn.com/problems/path-in-zigzag-labelled-binary-tree/) | 推导公式                                                     |
 
 ## 图论题
 
@@ -496,6 +504,7 @@
 | 697  | [697. 数组的度](https://leetcode-cn.com/problems/degree-of-an-array/) | 可以使用滑动窗口，也可以用多个hashmap记录首尾位置            |
 | 1438 | [1438. 绝对差不超过限制的最长连续子数组](https://leetcode-cn.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/) | 滑动窗口+单调队列维护区间最大最小值                          |
 | 1358 | [1358. 包含所有三种字符的子字符串数目](https://leetcode-cn.com/problems/number-of-substrings-containing-all-three-characters/) | 滑动窗口，注意累加的时候，[i,j]符合条件的话，[i,j+1],[i,j+2]这些都会符合条件 |
+| 1838 | [1838. 最高频元素的频数](https://leetcode-cn.com/problems/frequency-of-the-most-frequent-element/) | 上界右移一位 增加(right - left) * (nums[right] - nums[right-1]). presum超过k，则收缩下界 |
 
 ## 快慢指针/双指针
 
