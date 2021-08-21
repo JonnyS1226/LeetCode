@@ -363,6 +363,7 @@
 | 1774 | [1774. 最接近目标价格的甜点成本](https://leetcode-cn.com/problems/closest-dessert-cost/) | 可以用dfs枚举情况                                            |
 | 1786 | [1786. 从第一个节点出发到最后一个节点的受限路径数](https://leetcode-cn.com/problems/number-of-restricted-paths-from-first-to-last-node/) | 堆优化的dijkstra + dp（注意剪枝）                            |
 | 79   | [79. 单词搜索](https://leetcode-cn.com/problems/word-search/) | 对每个点做dfs                                                |
+| 743  | [743. 网络延迟时间](https://leetcode-cn.com/problems/network-delay-time/) | dijkstra                                                     |
 
 ### 拓扑排序
 
@@ -540,6 +541,8 @@
 | 160  | [160. 相交链表](https://leetcode-cn.com/problems/intersection-of-two-linked-lists/) | 相当于让一个指针先走一个长度差的距离，然后再一起走，就能得到第一个相遇点 |
 | 75   | [75. 颜色分类](https://leetcode-cn.com/problems/sort-colors/) | 类似三路快排，0放左边，1不动，2放右边                        |
 | 80   | [80. 删除有序数组中的重复项 II](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array-ii/) | 模拟记录一个len，如果新来的元素不会构成连续三个相同元素，就加入序列 |
+| 345  | [345. 反转字符串中的元音字母](https://leetcode-cn.com/problems/reverse-vowels-of-a-string/) | 类似快排的双指针                                             |
+| 443  | [443. 压缩字符串](https://leetcode-cn.com/problems/string-compression/) | 原地修改数组的双指针                                         |
 
 ## 线段树/树状数组
 
