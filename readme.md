@@ -215,7 +215,7 @@
 | 132   | [132. 分割回文串 II](https://leetcode-cn.com/problems/palindrome-partitioning-ii/) | 预处理回文串（dp） + LIS dp， O(n^2)复杂度                   |
 | 1824  | [1824. 最少侧跳次数](https://leetcode-cn.com/problems/minimum-sideway-jumps/) | dpij表示第i个节点第j跑道 最小侧跳次数                        |
 | 403   | [403. 青蛙过河](https://leetcode-cn.com/problems/frog-jump/)(hard) | `dp[i][k]`表示能否跳k步到达第i个石头                         |
-|       |                                                              |                                                              |
+| 673   | [673. 最长递增子序列的个数](https://leetcode-cn.com/problems/number-of-longest-increasing-subsequence/) | 类似300，多了一个cnt计数                                     |
 
 ### 树形dp
 
@@ -352,7 +352,7 @@
 | 5482 | [5482. 二维网格图中探测环](https://leetcode-cn.com/problems/detect-cycles-in-2d-grid/)（hard） | 带前置节点的dfs或者bfs                                       |
 | 841  | [841. 钥匙和房间](https://leetcode-cn.com/problems/keys-and-rooms/) | 建图dfs， 或者拓扑排序判环                                   |
 | 78   | [78. 子集](https://leetcode-cn.com/problems/subsets/)        | 简单dfs                                                      |
-|      |                                                              |                                                              |
+| 797  | [797. 所有可能的路径](https://leetcode-cn.com/problems/all-paths-from-source-to-target/) | 简单dfs或者bfs即可                                           |
 | 1034 | [1034. 边框着色](https://leetcode-cn.com/problems/coloring-a-border/) | DFS求连通分量的边界（通过控制属于该分量返回1，不属于返回0来实现） |
 | 1293 | [1293. 网格中的最短路径](https://leetcode-cn.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/)（hard） | bfs，增加一维 k （重点题）                                   |
 | 1654 | [1654. 到家的最少跳跃次数](https://leetcode-cn.com/problems/minimum-jumps-to-reach-home/) | bfs，和1293很像，增加一维状态                                |
@@ -543,6 +543,7 @@
 | 80   | [80. 删除有序数组中的重复项 II](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array-ii/) | 模拟记录一个len，如果新来的元素不会构成连续三个相同元素，就加入序列 |
 | 345  | [345. 反转字符串中的元音字母](https://leetcode-cn.com/problems/reverse-vowels-of-a-string/) | 类似快排的双指针                                             |
 | 443  | [443. 压缩字符串](https://leetcode-cn.com/problems/string-compression/) | 原地修改数组的双指针                                         |
+| 524  | [524. 通过删除字母匹配到字典里最长单词](https://leetcode-cn.com/problems/longest-word-in-dictionary-through-deleting/) | 双指针判断字典中单词是否匹配单词s                            |
 
 ## 线段树/树状数组
 
