@@ -73,6 +73,7 @@
 | 190         | [190. 颠倒二进制位](https://leetcode-cn.com/problems/reverse-bits/) | 逐位颠倒，或者**位运算分治（妙啊）**                         |
 | 1835        | [1835. 所有数对按位与结果的异或和](https://leetcode-cn.com/problems/find-xor-sum-of-all-pairs-bitwise-and/)（hard） | 用到`(a&b)^(a&c)=a&(b^c)`                                    |
 | 1829        | [1829. 每个查询的最大异或值](https://leetcode-cn.com/problems/maximum-xor-for-each-query/) | 前缀和 + 异或运算 找到0的地方k取1，1的地方k取0               |
+| 371         | [371. 两整数之和](https://leetcode-cn.com/problems/sum-of-two-integers/) | 补码的操作原理                                               |
 
 ## 二分查找/分治减治思想
 
@@ -477,6 +478,7 @@
 | 150  | [150. 逆波兰表达式求值](https://leetcode-cn.com/problems/evaluate-reverse-polish-notation/) | 经典问题，一个数字栈即可                                     |
 | 1047 | [1047. 删除字符串中的所有相邻重复项](https://leetcode-cn.com/problems/remove-all-adjacent-duplicates-in-string/) | 栈的简单使用，关键是要想到用栈                               |
 | 456  | [456. 132 模式](https://leetcode-cn.com/problems/132-pattern/) | 记录左侧最小值作为“1”（贪心思想）， 单调递减栈 找小于“3”的右边的最大元素（因此从右往左遍历）。 最后判断找到的“2” 是否大于 “1” |
+| 71   | [71. 简化路径](https://leetcode-cn.com/problems/simplify-path/) | 用栈/deque去模拟路径，遇到..出栈                             |
 
 ## 滑动窗口/单调队列/双端队列
 
@@ -583,7 +585,9 @@
 | 1046 | [1046. 最后一块石头的重量](https://leetcode-cn.com/problems/last-stone-weight/) | 优先队列（堆）模拟                                           |
 | 1705 | [1705. 吃苹果的最大数目](https://leetcode-cn.com/problems/maximum-number-of-eaten-apples/) | 优先队列（堆）模拟                                           |
 | 5703 | [5703. 最大平均通过率](https://leetcode-cn.com/problems/maximum-average-pass-ratio/) | 堆，贪心策略每次选增量最大的                                 |
-|      |                                                              |                                                              |
+| 786  | [786. 第 K 个最小的素数分数](https://leetcode-cn.com/problems/k-th-smallest-prime-fraction/)（hard） | 优先队列                                                     |
+| 373  | [373. 查找和最小的K对数字](https://leetcode-cn.com/problems/find-k-pairs-with-smallest-sums/) | 每次选最小的，可以和378类似                                  |
+| 378  | [378. 有序矩阵中第 K 小的元素](https://leetcode-cn.com/problems/kth-smallest-element-in-a-sorted-matrix/) | 和373类似，这里使用最小堆                                    |
 
 
 
@@ -737,3 +741,5 @@
 # 说明
 * 分类并不严格，菜🐔的自我挣扎
 * 小结并不完善，但是参考别人的一定会写清楚
+
+[回到顶部](#Leetcode & codeforces)
