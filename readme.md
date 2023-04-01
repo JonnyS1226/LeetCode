@@ -666,6 +666,7 @@
 | 1798    | [1798. 你能构造出连续值的最大数目](https://leetcode-cn.com/problems/maximum-number-of-consecutive-values-you-can-make/) | 数学题：因为要求从0开始，假设[0,x]可覆盖，现在遇到y，则[y, y+x]肯定能覆盖。要使得可以延伸区间，则一定有y<=x+1 |
 | 5725    | [5725. 序列中不同最大公约数的数目](https://leetcode-cn.com/problems/number-of-different-subsequences-gcds/)(hard) | 一个序列中最大公约数为g，当且仅当这个序列中所有g的倍数的最大公约数为g。g[y] 表示当前遍历过的数中，y的倍数的最大公约数。g[y] 表示当前遍历过的数中，y的倍数的最大公约数。对每个数进行求因子 |
 | cf1512E | [Permutation by Sum](https://codeforces.ml/problemset/problem/1512/E) | 本质就是k个格子，从大到小遍历元素，根据k个元素可满足的最大和最小值，判断当前元素是否可以放入这个格子 |
+｜233     ｜ [数字1的个数](https://leetcode.cn/problems/number-of-digit-one/)        | 对于某一位，针对其本身是0还是1还是大于1三种情况，分别考虑这一位是1的话有多少种可能 |
 
 ## 回文系列
 
